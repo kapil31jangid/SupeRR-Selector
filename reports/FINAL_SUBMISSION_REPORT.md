@@ -69,7 +69,7 @@ RK  ID     PLAYER NAME          NAT.  AGE  CATEGORY     PRESSURE  SCOUTING  2026
  3  6280   Harry Brook          OS     28  Prime-age       93.30     89.42  STRONG       Elite Clutch Finisher / Spin Destroyer
  4  6931   Pathum Nissanka      OS     28  Prime-age       86.07     81.13  POSITIVE     High-Floor Top-Order Accumulator
  5  4369   Shai Hope            OS     33  Experienced     87.20     76.28  STRONG       Dual-Role WK-Anchor / Senior Stabilizer
- 6  3782   M Shahrukh Khan      IND    31  Experienced     84.65     74.36  POSITIVE     Domestic Power-Hitting Death Finisher
+ 6  3782   M Shahrukh Khan      IND    31  Experienced     84.65     73.76  POSITIVE     Domestic Power-Hitting Death Finisher
  7  772    Rilee Rossouw        OS     37  Experienced     89.28     71.41  POSITIVE     Middle-Order Boundary Striker (Backup)
  8  838    Glenn Maxwell        OS     38  Experienced     89.04     70.92  MIXED        High-Variance Match-Winner / Spin AR
  9  930    Karun Nair           IND    35  Experienced     88.02     68.41  WEAK         Domestic Top/Middle Anchor Reserve
@@ -124,7 +124,7 @@ RK  ID     PLAYER NAME          NAT.  AGE  CATEGORY     EQ SCORE  SCOUTING  2026
 3. **Harry Brook (Rank 3 | ENG | Age 28 | Prime-Age):** Verified score **89.42**. Peak prime world-class match-winner. 690 T20I runs in 2026 (avg 49.29, SR 189.04, 2x100). Flawless middle-overs finisher against pace and spin.
 4. **Pathum Nissanka (Rank 4 | SL | Age 28 | Prime-Age):** Verified score **81.13**. 406 observed pressure deliveries. In 2026, scored 540 runs (avg 38.57, SR 138.82). High-floor technical anchor for Sawai Mansingh Stadium conditions.
 5. **Shai Hope (Rank 5 | WI | Age 33 | Experienced):** Verified score **76.28**. In 2026, scored 624 runs (avg 44.57, SR 152.20, 2x100 vs India). Dual-role keeper-batter who provides insurance for Dhruv Jurel.
-6. **M Shahrukh Khan (Rank 6 | IND | Age 31 | Experienced):** Verified score **74.36**. Top active domestic power-hitting finisher. 52 high-extreme pressure balls in IPL. Frees up overseas slots for top-order stars.
+6. **M Shahrukh Khan (Rank 6 | IND | Age 31 | Experienced):** Verified score **73.76**. Top active domestic power-hitting finisher. 52 high-extreme pressure balls in IPL. Frees up overseas slots for top-order stars.
 7. **Karun Nair (Rank 9 | IND | Age 35 | Experienced) & Vijay Shankar (Rank 10 | IND | Age 36 | Experienced):** Verified scores **68.41** and **66.85**. High historical clutch reliability (76 and 92 HE balls). Retained as domestic batting crisis reserves.
 
 ### Bowlers: Key Highlights & Verified Facts

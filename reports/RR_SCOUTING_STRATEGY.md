@@ -73,7 +73,7 @@ RK  PLAYER NAME          NAT.  AGE  CATEGORY     PRESSURE  SCOUTING  2026 FORM  
  3  Harry Brook          OS     28  Prime-age       93.30     89.42  STRONG       Elite Clutch Finisher / Spin Destroyer
  4  Pathum Nissanka      OS     28  Prime-age       86.07     81.13  POSITIVE     High-Floor Top-Order Accumulator
  5  Shai Hope            OS     33  Experienced     87.20     76.28  STRONG       Dual-Role WK-Anchor / Senior Stabilizer
- 6  M Shahrukh Khan      IND    31  Experienced     84.65     74.36  POSITIVE     Domestic Power-Hitting Death Finisher
+ 6  M Shahrukh Khan      IND    31  Experienced     84.65     73.76  POSITIVE     Domestic Power-Hitting Death Finisher
  7  Rilee Rossouw        OS     37  Experienced     89.28     71.41  POSITIVE     Middle-Order Boundary Striker (Backup)
  8  Glenn Maxwell        OS     38  Experienced     89.04     70.92  MIXED        High-Variance Match-Winner / Spin AR
  9  Karun Nair           IND    35  Experienced     88.02     68.41  WEAK         Domestic Top/Middle Anchor Reserve
@@ -137,7 +137,7 @@ RK  PLAYER NAME          NAT.  AGE  CATEGORY     PRESSURE  SCOUTING  2026 FORM  
 
 #### 6. M Shahrukh Khan (Rank 6 | Indian | India)
 - **Age (as of 1 April 2027):** 31 years, 10 months | **Category:** Experienced performer
-- **Historical Pressure Score:** 84.65 | **RR Scouting Score:** **74.36** (Rises from #11 to #6)
+- **Historical Pressure Score:** 84.65 | **RR Scouting Score:** **73.76** (Rises from #11 to #6)
 - **Current-Form Assessment:** **POSITIVE** (265 runs, SR 166.4 in high-pressure domestic finishes)
 - **Pressure-Evidence Confidence:** HIGH (100 pressure deliveries; 52 high-extreme balls; 48 death balls)
 - **Main Strengths (*Verified Facts*):** Tremendous raw bat speed; 52 high-extreme pressure deliveries in IPL; specialized death-overs boundary power; handy off-spin.

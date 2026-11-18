@@ -28,12 +28,12 @@ Evidence-Based T20 Player Ranking System
 | Rank | Player | PRESSURE-X | Nationality |
 |------|--------|-----------|-------------|
 | 1 | Mohammad Ghazanfar | 84.52 | Afghan |
-| 2 | Tanvir Islam Mondol (Ripon Mondol) | 81.95 | Bangladeshi |
+| 2 | Ripon Mondol | 81.95 | Bangladeshi |
 | 3 | Mujeeb Ur Rahman | 79.94 | Afghan |
 | 4 | Harry Tector | 76.18 | Irish |
-| 5 | Jason Forde (Matthew Forde) | 75.80 | Trinidadian |
+| 5 | Matthew Forde | 75.80 | West Indian |
 | 6 | Ashton Agar | 74.04 | Australian |
-| 7 | Ben Sears | 73.26 | New Zealander |
+| 7 | Benjamin Sears | 73.26 | New Zealander |
 | 8 | Michael Bracewell | 69.48 | New Zealander |
 | 9 | Sikandar Raza | 65.95 | Zimbabwean |
 | 10 | Simarjeet Singh | 65.68 | Indian |

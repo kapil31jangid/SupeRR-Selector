@@ -40,12 +40,12 @@ Historical scores for all finalists originate from Task 07F/07H/07J/07K outputs.
 | Rank | Player | PRESSURE-X | Nationality | Tier |
 |------|--------|-----------|-------------|------|
 | 1 | Mohammad Ghazanfar | 84.52 | Afghan | T3 |
-| 2 | Tanvir Islam Mondol (a.k.a. Ripon Mondol) | 81.95 | Bangladeshi | T3 |
+| 2 | Ripon Mondol | 81.95 | Bangladeshi | T3 |
 | 3 | Mujeeb Ur Rahman | 79.94 | Afghan | T2 |
 | 4 | Harry Tector | 76.18 | Irish | T4 |
-| 5 | Jason Forde (a.k.a. Matthew Forde) | 75.80 | Trinidadian | T3 |
+| 5 | Matthew Forde | 75.80 | West Indian | T3 |
 | 6 | Ashton Agar | 74.04 | Australian | T2 |
-| 7 | Ben Sears | 73.26 | New Zealander | T2 |
+| 7 | Benjamin Sears | 73.26 | New Zealander | T2 |
 | 8 | Michael Bracewell | 69.48 | New Zealander | T2 |
 | 9 | Sikandar Raza | 65.95 | Zimbabwean (eligible) | T3 |
 | 10 | Simarjeet Singh | 65.68 | Indian | T1 |
@@ -76,7 +76,8 @@ The following bowlers have zero observed opportunities in one or more pressure p
 - **Sikandar Raza**: Zimbabwe national; IPL-eligible. Verified.
 - **Mujeeb Ur Rahman**: Afghanistan national; IPL-eligible. Verified.
 - **Mohammad Ghazanfar**: Afghanistan national; IPL-eligible. Verified.
-- **Tanvir Islam Mondol**: Bangladesh national; IPL-eligible. Verified.
+- **Ripon Mondol**: Bangladesh national; IPL-eligible. Verified.
+- **Matthew Forde**: West Indies (Barbados) national; IPL-eligible. Verified.
 
 ---
 
