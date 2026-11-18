@@ -158,17 +158,39 @@ CRITICAL RULES:
             return []
         try:
             response = await client.list_models_by_provider(self.provider)
+            # The SDK may return: an object with .models list, OR a bare list directly
+            raw_list = getattr(response, 'models', None)
+            if raw_list is None:
+                # Try treating the response itself as an iterable of models
+                try:
+                    raw_list = list(response)
+                except TypeError:
+                    raw_list = []
             models = []
-            for m in getattr(response, 'models', []):
-                # Backboard Model objects use the .name attribute for model identifier
-                model_name = getattr(m, 'name', None) or getattr(m, 'model_name', None)
-                if model_name:
-                    models.append({
-                        "model_name": str(model_name),
-                        "provider": self.provider,
-                        "supports_tools": getattr(m, 'supports_tools', True),
-                        "context_window": getattr(m, 'context_limit', None)
-                    })
+            for m in raw_list:
+                # Backboard Model objects expose the model identifier on .name
+                # Guard against the attribute being a complex object instead of a plain string
+                name_attr = getattr(m, 'name', None) or getattr(m, 'model_name', None)
+                if name_attr is None:
+                    continue
+                # Ensure we store a plain string — if the attr is an object, str() it
+                name_str = str(name_attr)
+                # If str() produced a complex repr (e.g. contains '='), try to extract
+                # the gemini model identifier with a regex
+                if '=' in name_str or len(name_str) > 60:
+                    import re as _re
+                    _m = _re.search(r'gemini[-\w.]+', name_str, _re.IGNORECASE)
+                    if _m:
+                        name_str = _m.group(0)
+                    else:
+                        # Cannot parse a clean model name — skip this entry
+                        continue
+                models.append({
+                    "model_name": name_str,
+                    "provider": self.provider,
+                    "supports_tools": getattr(m, 'supports_tools', True),
+                    "context_window": getattr(m, 'context_limit', None)
+                })
             return models
         except Exception as e:
             logger.warning(f"Could not fetch Backboard Google models catalogue: {e}")
@@ -186,6 +208,7 @@ CRITICAL RULES:
         """
         Verify the selected Google Gemini model against Backboard catalogue.
         Falls back to known supported Gemini models if necessary.
+        Always returns a plain string model identifier (never a Model object).
         """
         catalogue = self.get_google_models_catalogue()
         if catalogue:
@@ -193,17 +216,34 @@ CRITICAL RULES:
             self._available_google_models = available_names
             # If current model is available, use it
             if self.model_name in available_names:
-                return self.model_name
+                return self._safe_model_name(self.model_name)
             # Otherwise search for preferred fallback
             for pref in self.FALLBACK_MODELS:
                 for avail in available_names:
                     if pref in avail:
                         self.model_name = avail
-                        return self.model_name
+                        return self._safe_model_name(self.model_name)
             if available_names:
                 self.model_name = available_names[0]
-                return self.model_name
-        return self.model_name
+                return self._safe_model_name(self.model_name)
+        return self._safe_model_name(self.model_name)
+
+    def _safe_model_name(self, name: Any) -> str:
+        """
+        Guarantee that a model identifier is returned as a clean plain string.
+        If name looks like a complex object repr, extract the gemini-* substring.
+        """
+        import re as _re
+        name_str = str(name) if name is not None else self.DEFAULT_MODEL
+        # If the string is suspiciously long or contains '=' it is a repr of an object
+        if len(name_str) > 60 or '=' in name_str:
+            _m = _re.search(r'gemini[-\w.]+', name_str, _re.IGNORECASE)
+            if _m:
+                clean = _m.group(0)
+                self.model_name = clean
+                return clean
+            return self.DEFAULT_MODEL
+        return name_str
 
     # -------------------------------------------------------------------------
     # Stateful Assistant & Thread Management (Persistent Memory)

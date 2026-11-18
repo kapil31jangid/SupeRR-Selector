@@ -19,7 +19,7 @@ RR_DANGER = "#EF4444"
 
 
 def format_category_badge(category: str) -> str:
-    """Return colored pill badge for development category."""
+    """Return colored pill badge for development category (single-line HTML, no internal whitespace)."""
     color_map = {
         "Emerging": ("#10B981", "#064E3B"),
         "Young development candidate": ("#3B82F6", "#1E3A8A"),
@@ -27,38 +27,38 @@ def format_category_badge(category: str) -> str:
         "Experienced performer": ("#F59E0B", "#78350F")
     }
     border, bg = color_map.get(str(category).strip(), ("#6B7280", "#374151"))
-    return f"""<span style="background-color: {bg}; color: #FFFFFF; padding: 3px 8px; 
-                 border-radius: 12px; font-size: 0.75rem; border: 1px solid {border}; font-weight: 500;">
-                 {category}</span>"""
+    return (f'<span style="background-color:{bg};color:#FFFFFF;padding:3px 8px;'
+            f'border-radius:12px;font-size:0.75rem;border:1px solid {border};font-weight:500;">'
+            f'{category}</span>')
 
 
 def format_nationality_badge(nationality: str) -> str:
-    """Return badge for Indian vs Overseas."""
+    """Return badge for Indian vs Overseas (single-line HTML)."""
     if str(nationality).lower() == "indian":
-        return """<span style="background-color: #064E3B; color: #34D399; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">🇮🇳 Indian</span>"""
-    return """<span style="background-color: #1E3A8A; color: #93C5FD; padding: 2px 8px; 
-                 border-radius: 10px; font-size: 0.75rem; font-weight: 600;">✈️ Overseas</span>"""
+        return ('<span style="background-color:#064E3B;color:#34D399;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">🇮🇳 Indian</span>')
+    return ('<span style="background-color:#1E3A8A;color:#93C5FD;padding:2px 8px;'
+            'border-radius:10px;font-size:0.75rem;font-weight:600;">✈️ Overseas</span>')
 
 
 def format_form_badge(rating: str) -> str:
-    """Return badge for current form rating."""
+    """Return badge for current form rating (single-line HTML)."""
     r = str(rating).upper()
     if "STRONG" in r:
-        return """<span style="background-color: #065F46; color: #6EE7B7; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">🔥 STRONG</span>"""
+        return ('<span style="background-color:#065F46;color:#6EE7B7;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">🔥 STRONG</span>')
     elif "POSITIVE" in r:
-        return """<span style="background-color: #1E3A8A; color: #93C5FD; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">📈 POSITIVE</span>"""
+        return ('<span style="background-color:#1E3A8A;color:#93C5FD;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">📈 POSITIVE</span>')
     elif "MIXED" in r:
-        return """<span style="background-color: #78350F; color: #FCD34D; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">⚖️ MIXED</span>"""
+        return ('<span style="background-color:#78350F;color:#FCD34D;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">⚖️ MIXED</span>')
     elif "WEAK" in r:
-        return """<span style="background-color: #7F1D1D; color: #FCA5A5; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">⚠️ WEAK</span>"""
+        return ('<span style="background-color:#7F1D1D;color:#FCA5A5;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">⚠️ WEAK</span>')
     else:
-        return """<span style="background-color: #374151; color: #D1D5DB; padding: 2px 8px; 
-                     border-radius: 10px; font-size: 0.75rem; font-weight: 600;">ℹ️ INSUFFICIENT DATA</span>"""
+        return ('<span style="background-color:#374151;color:#D1D5DB;padding:2px 8px;'
+                'border-radius:10px;font-size:0.75rem;font-weight:600;">ℹ️ INSUFFICIENT DATA</span>')
 
 
 def apply_custom_css():

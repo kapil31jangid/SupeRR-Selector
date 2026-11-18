@@ -101,8 +101,17 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
         st.success(_status_badge(is_on))
         col_model, col_key = st.columns(2)
         with col_model:
-            confirmed_model = assistant.verify_and_select_gemini_model()
-            st.caption(f"**Provider:** `{assistant.provider}`  |  **Model:** `{confirmed_model}`  |  **API Key:** `{assistant.masked_api_key}`")
+            import re as _re
+            # Read the stored model name — do NOT call verify_and_select_gemini_model()
+            # here as it triggers a live API call every render and may return a Model object
+            # on certain SDK versions. The model is already resolved during first query.
+            raw_name = str(assistant.model_name or assistant.DEFAULT_MODEL)
+            # Safety extract: if the string looks like a repr (contains 'description=')
+            # pull out the actual gemini-* identifier with regex
+            if "gemini" not in raw_name.lower():
+                _m = _re.search(r"gemini[-\w.]+", raw_name, _re.IGNORECASE)
+                raw_name = _m.group(0) if _m else assistant.DEFAULT_MODEL
+            st.caption(f"**Provider:** `{assistant.provider}`  |  **Model:** `{raw_name}`  |  **API Key:** `{assistant.masked_api_key}`")
     else:
         st.warning(_status_badge(is_on))
         st.info(
@@ -127,7 +136,13 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
 
     # ── Filters sidebar panel ────────────────────────────────────────────────
     with st.expander("🎯 Candidate Pool Filters", expanded=True):
-        fc1, fc2, fc3, fc4 = st.columns(4)
+        fc0, fc1, fc2, fc3, fc4 = st.columns([1.5, 1, 1, 1.2, 1])
+        with fc0:
+            pool_scope = st.selectbox(
+                "Search Scope",
+                ["Complete Auction Dataset (303 Players)", "Final Shortlist Only (28 Players)"],
+                key="ai_pool_scope"
+            )
         with fc1:
             role_filter = st.selectbox(
                 "Role",
@@ -141,7 +156,7 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                 key="ai_nat_filter"
             )
         with fc3:
-            cat_opts = ["All"] + sorted(all_players_df['development_category'].dropna().unique().tolist())
+            cat_opts = ["All"] + sorted(active_pool_df['development_category'].dropna().unique().tolist())
             cat_filter = st.selectbox("Development Stage", cat_opts, key="ai_cat_filter")
         with fc4:
             max_age = st.number_input(
@@ -150,16 +165,20 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                 key="ai_max_age"
             )
 
+        active_pool_df = all_players_df.copy()
+        if "Shortlist" in pool_scope and 'is_shortlisted' in active_pool_df.columns:
+            active_pool_df = active_pool_df[active_pool_df['is_shortlisted'] == True]
+
         # Show eligible pool count
         try:
             preview_df = assistant.filter_eligible_candidates(
-                all_players_df,
+                active_pool_df,
                 role=None if role_filter == "All" else role_filter,
                 nationality=None if nat_filter == "All" else nat_filter,
                 development_category=None if cat_filter == "All" else cat_filter,
                 max_age=max_age
             )
-            st.caption(f"**{len(preview_df)} eligible candidates** match current filters.")
+            st.caption(f"🔍 **{len(preview_df)} eligible candidates** in active search scope matching filters.")
         except Exception:
             pass
 
@@ -224,7 +243,7 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
         with st.spinner("🤖 Querying Backboard AI with Google Gemini..."):
             result = assistant.query_scouting_assistant(
                 user_query=user_query.strip(),
-                candidates_df=all_players_df,
+                candidates_df=active_pool_df,
                 thread_id=thread_id,
                 role_filter=None if role_filter == "All" else role_filter,
                 nationality_filter=None if nat_filter == "All" else nat_filter,
