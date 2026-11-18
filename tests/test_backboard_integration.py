@@ -316,7 +316,8 @@ class TestDeterministicFallback(unittest.TestCase):
         self.assertGreater(len(result["squad_balance_note"]), 10)
 
     def test_full_query_routes_to_fallback_without_key(self):
-        result = self.asst.query_scouting_assistant("Top batters", SAMPLE_CANDIDATES)
+        asst = BackboardScoutingAssistant(api_key="")
+        result = asst.query_scouting_assistant("Top batters", SAMPLE_CANDIDATES)
         self.assertTrue(result["success"])
         self.assertEqual(result["source"], "deterministic_fallback")
 
@@ -325,11 +326,11 @@ class TestPersistentConversation(unittest.TestCase):
     """TC-07: Persistent conversation (threads / assistant) handling."""
 
     def test_no_thread_on_first_unconfigured_call(self):
-        asst = BackboardScoutingAssistant()
+        asst = BackboardScoutingAssistant(api_key="")
         self.assertIsNone(asst.create_thread())
 
     def test_no_assistant_on_unconfigured(self):
-        asst = BackboardScoutingAssistant()
+        asst = BackboardScoutingAssistant(api_key="")
         self.assertIsNone(asst.get_or_create_assistant())
 
     def test_thread_id_propagated_in_fallback_result(self):

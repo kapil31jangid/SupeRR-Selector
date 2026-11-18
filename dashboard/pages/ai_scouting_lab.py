@@ -32,44 +32,42 @@ def _render_player_card(rec: dict, rank: int) -> None:
     age = rec.get("age_as_of_2027_04_01", 0.0)
     category = rec.get("development_category", "")
 
-    st.markdown(
-        f"""
-        <div style="background:#1C2541;border:1px solid rgba(234,27,134,0.3);
-                    border-radius:8px;padding:14px 18px;margin-bottom:12px;">
-            <div style="font-size:1.05rem;font-weight:800;color:#FFFFFF;">
-                #{rank} {nat_icon} {rec.get("player_name")}
-                <span style="font-size:0.8rem;color:#94A3B8;font-weight:400;">
-                    &nbsp;{rec.get("country","")} · {rec.get("role","")} · Age {age:.1f}
-                </span>
-            </div>
-            <div style="font-size:0.78rem;color:#94A3B8;margin:4px 0 8px 0;">{category}</div>
-            <div style="display:flex;gap:24px;margin-bottom:10px;">
-                <div>
-                    <span style="font-size:0.7rem;color:#94A3B8;">RR Scouting Score</span><br>
-                    <span style="font-size:1.3rem;font-weight:800;color:#EA1B86;">{score:.2f}</span>
-                </div>
-                <div>
-                    <span style="font-size:0.7rem;color:#94A3B8;">Pressure / EQ Score</span><br>
-                    <span style="font-size:1.3rem;font-weight:800;color:#004BA0;">{p_score:.2f}</span>
-                </div>
-                <div>
-                    <span style="font-size:0.7rem;color:#94A3B8;">Form</span><br>
-                    <span style="font-size:0.9rem;font-weight:600;color:#F59E0B;">{rec.get("current_form_rating","")}</span>
-                </div>
-            </div>
-            <div style="font-size:0.82rem;color:#E2E8F0;margin-bottom:6px;">
-                <b style="color:#10B981;">Tactical Fit:</b> {rec.get("tactical_role_fit","")}
-            </div>
-            <div style="font-size:0.82rem;color:#CBD5E1;margin-bottom:4px;">
-                <b style="color:#FFFFFF;">Suitability:</b> {rec.get("suitability_explanation","")}
-            </div>
-            <div style="font-size:0.78rem;color:#F59E0B;">
-                ⚠️ <b>Risk:</b> {rec.get("risk_assessment","")}
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    card_html = f"""
+<div style="background:#1C2541;border:1px solid rgba(234,27,134,0.3);border-radius:8px;padding:14px 18px;margin-bottom:12px;">
+<div style="font-size:1.05rem;font-weight:800;color:#FFFFFF;">
+#{rank} {nat_icon} {rec.get("player_name")}
+<span style="font-size:0.8rem;color:#94A3B8;font-weight:400;">
+&nbsp;{rec.get("country","")} · {rec.get("role","")} · Age {age:.1f}
+</span>
+</div>
+<div style="font-size:0.78rem;color:#94A3B8;margin:4px 0 8px 0;">{category}</div>
+<div style="display:flex;gap:24px;margin-bottom:10px;">
+<div>
+<span style="font-size:0.7rem;color:#94A3B8;">RR Scouting Score</span><br>
+<span style="font-size:1.3rem;font-weight:800;color:#EA1B86;">{score:.2f}</span>
+</div>
+<div>
+<span style="font-size:0.7rem;color:#94A3B8;">Pressure / EQ Score</span><br>
+<span style="font-size:1.3rem;font-weight:800;color:#004BA0;">{p_score:.2f}</span>
+</div>
+<div>
+<span style="font-size:0.7rem;color:#94A3B8;">Form</span><br>
+<span style="font-size:0.9rem;font-weight:600;color:#F59E0B;">{rec.get("current_form_rating","")}</span>
+</div>
+</div>
+<div style="font-size:0.82rem;color:#E2E8F0;margin-bottom:6px;">
+<b style="color:#10B981;">Tactical Fit:</b> {rec.get("tactical_role_fit","")}
+</div>
+<div style="font-size:0.82rem;color:#CBD5E1;margin-bottom:4px;">
+<b style="color:#FFFFFF;">Suitability:</b> {rec.get("suitability_explanation","")}
+</div>
+<div style="font-size:0.78rem;color:#F59E0B;">
+⚠️ <b>Risk:</b> {rec.get("risk_assessment","")}
+</div>
+</div>
+"""
+    clean_html = "\n".join(line.strip() for line in card_html.splitlines() if line.strip())
+    st.markdown(clean_html, unsafe_allow_html=True)
 
 
 # ── Main render function (called from app.py) ────────────────────────────────

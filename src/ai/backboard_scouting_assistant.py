@@ -105,7 +105,10 @@ CRITICAL RULES:
         2. Environment variable BACKBOARD_API_KEY
         3. Streamlit secrets st.secrets['BACKBOARD_API_KEY'] (if in Streamlit app)
         """
-        resolved_key = api_key or os.environ.get("BACKBOARD_API_KEY")
+        if api_key is not None:
+            resolved_key = api_key
+        else:
+            resolved_key = os.environ.get("BACKBOARD_API_KEY")
         if not resolved_key and HAS_STREAMLIT:
             try:
                 resolved_key = st.secrets.get("BACKBOARD_API_KEY")
@@ -157,12 +160,15 @@ CRITICAL RULES:
             response = await client.list_models_by_provider(self.provider)
             models = []
             for m in getattr(response, 'models', []):
-                models.append({
-                    "model_name": getattr(m, 'model_name', str(m)),
-                    "provider": self.provider,
-                    "supports_tools": getattr(m, 'supports_tools', True),
-                    "context_window": getattr(m, 'context_window', None)
-                })
+                # Backboard Model objects use the .name attribute for model identifier
+                model_name = getattr(m, 'name', None) or getattr(m, 'model_name', None)
+                if model_name:
+                    models.append({
+                        "model_name": str(model_name),
+                        "provider": self.provider,
+                        "supports_tools": getattr(m, 'supports_tools', True),
+                        "context_window": getattr(m, 'context_limit', None)
+                    })
             return models
         except Exception as e:
             logger.warning(f"Could not fetch Backboard Google models catalogue: {e}")
@@ -348,10 +354,28 @@ Respond with a single valid JSON object with EXACTLY this structure:
 """
             model_to_use = self.verify_and_select_gemini_model()
 
+            valid_thread_id = None
+            if thread_id:
+                try:
+                    import uuid
+                    uuid.UUID(str(thread_id))
+                    valid_thread_id = str(thread_id)
+                except (ValueError, TypeError):
+                    valid_thread_id = None
+
+            valid_assistant_id = None
+            if assistant_id:
+                try:
+                    import uuid
+                    uuid.UUID(str(assistant_id))
+                    valid_assistant_id = str(assistant_id)
+                except (ValueError, TypeError):
+                    valid_assistant_id = None
+
             response = await client.send_message(
                 content=prompt_content,
-                thread_id=thread_id,
-                assistant_id=assistant_id,
+                thread_id=valid_thread_id,
+                assistant_id=valid_assistant_id,
                 llm_provider=self.provider,
                 model_name=model_to_use,
                 json_output=True,
