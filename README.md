@@ -74,8 +74,8 @@ The following 28 players represent the **immutable, audited shortlist** produced
 | Rank | Player | Country | Nationality | Age (2027) | Career Stage | Historical Pressure | RR Scouting Score | 2026 Form |
 |:---:|:---|:---:|:---:|:---:|:---|:---:|:---:|:---:|
 | **1** | **Jake Fraser-McGurk** | AUS | Overseas | 24 | Young development candidate | 92.20 | **91.88** | STRONG |
-| **2** | **Jacob Bethell** | ENG | Overseas | 23 | Emerging | 87.18 | **90.27** | POSITIVE |
-| **3** | **Harry Brook** | ENG | Overseas | 28 | Prime-age performer | 93.30 | **89.42** | STRONG |
+| **2** | **Harry Brook** | ENG | Overseas | 28 | Prime-age performer | 93.30 | **89.42** | STRONG |
+| **3** | **Jacob Bethell** | ENG | Overseas | 23 | Emerging | 87.18 | **88.57** | POSITIVE |
 | **4** | **Pathum Nissanka** | SL | Overseas | 28 | Prime-age performer | 86.07 | **81.13** | POSITIVE |
 | **5** | **Shai Hope** | WI | Overseas | 33 | Experienced performer | 87.20 | **76.28** | STRONG |
 | **6** | **M Shahrukh Khan** | IND | Indian | 31 | Experienced performer | 84.65 | **73.76** | POSITIVE |
@@ -84,7 +84,7 @@ The following 28 players represent the **immutable, audited shortlist** produced
 | **9** | **Karun Nair** | IND | Indian | 35 | Experienced performer | 88.02 | **68.41** | WEAK |
 | **10** | **Vijay Shankar** | IND | Indian | 36 | Experienced performer | 85.63 | **66.85** | INSUFFICIENT DATA |
 
-*Note on Bethell (#2) vs Brook (#3):* Harry Brook carries the higher base historical pressure score (93.30 vs 87.18), but Jacob Bethell ranks #2 overall due to his generational age runway (Age 23, Emerging category = 100 pts vs Brook Age 28 = 65 pts), unlocking an 8–10 year franchise core asset.
+*Note on Brook (#2) vs Bethell (#3):* Harry Brook carries the higher base historical pressure score (93.30 vs 87.18), but Jacob Bethell's generational age runway (Age 23, Emerging = 100 pts vs Brook Age 28 = 65 pts) narrows the gap to just 0.85 points.
 
 ---
 
