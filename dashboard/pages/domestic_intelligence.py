@@ -334,13 +334,14 @@ def render_domestic_intelligence():
     st.markdown("---")
 
     # =========================================================================
-    # SECTION 5: COMPETITION-LEVEL DRILLDOWN
+    # SECTION 5: COMPETITION-LEVEL DRILLDOWN (FIXED WITH MINIMUM SAMPLE THRESHOLDS)
     # =========================================================================
     st.markdown("### 🔬 Competition-Level Drilldown")
 
     st.markdown("""
     **Note:** Competition-level data includes all tiers (1-5). Filter by tier to analyze
-    performance in specific competition categories.
+    performance in specific competition categories. Minimum sample thresholds are enforced
+    to prevent low-sample entries from dominating rankings.
     """)
 
     # Combine batter and bowler competition data
@@ -361,30 +362,261 @@ def render_domestic_intelligence():
         if not comp_bowl_filtered.empty:
             comp_bowl_filtered = comp_bowl_filtered[comp_bowl_filtered['comp_tier'] == tier_num]
 
-    # Show top performers in selected tier
-    ct1, ct2 = st.columns(2)
+    # Leaderboard mode selector
+    leaderboard_mode = st.radio(
+        "Leaderboard Mode",
+        ["A: Competition-Season Records", "B: Aggregated Player Performance"],
+        horizontal=True,
+        key="leaderboard_mode",
+        help="Mode A: Individual competition-season records with tier filter. Mode B: Aggregated across all selected tiers/seasons per player."
+    )
 
-    with ct1:
-        st.markdown(f"#### 🏏 Top Batters in {tier_filter}")
-        if not comp_bat_filtered.empty:
-            top_bat = comp_bat_filtered.nlargest(10, 'strike_rate')[
-                ['striker_name', 'comp_name', 'comp_tier', 'total_balls', 'total_runs', 'strike_rate', 'boundary_pct']
-            ].copy()
-            top_bat.columns = ['Player', 'Competition', 'Tier', 'Balls', 'Runs', 'SR', 'Boundary %']
-            st.dataframe(top_bat, hide_index=True, use_container_width=True)
-        else:
-            st.info("No batter data for selected tier.")
+    # Minimum sample threshold controls
+    thresh_col1, thresh_col2, thresh_col3 = st.columns(3)
+    with thresh_col1:
+        min_bat_balls = st.number_input("Min Balls Faced (Batter)", 0, 300, 60, 10, key="min_bat_balls",
+                                        help="Minimum balls faced for batter inclusion. Default 60 for competition-season, 100 for aggregated.")
+    with thresh_col2:
+        min_bowl_balls = st.number_input("Min Balls Bowled (Bowler)", 0, 300, 60, 10, key="min_bowl_balls",
+                                         help="Minimum balls bowled for bowler inclusion. Default 60 for competition-season, 100 for aggregated.")
+    with thresh_col3:
+        min_matches = st.number_input("Min Matches", 0, 20, 1, 1, key="min_matches",
+                                      help="Minimum matches/innings for inclusion.")
 
-    with ct2:
-        st.markdown(f"#### 🎳 Top Bowlers in {tier_filter}")
-        if not comp_bowl_filtered.empty:
-            top_bowl = comp_bowl_filtered.nlargest(10, 'wicket_rate')[
-                ['bowler_name', 'comp_name', 'comp_tier', 'total_balls', 'total_wickets', 'economy', 'wicket_rate']
+    # Ranking metric selector
+    rank_col1, rank_col2 = st.columns(2)
+    with rank_col1:
+        bat_rank_metric = st.selectbox(
+            "Batter Ranking Metric",
+            ["Strike Rate", "Runs", "Boundary %", "Batting Average"],
+            key="bat_rank_metric",
+            help="Choose how to rank batters. Batting Average requires valid dismissals."
+        )
+    with rank_col2:
+        bowl_rank_metric = st.selectbox(
+            "Bowler Ranking Metric",
+            ["Wickets", "Economy", "Wicket Rate", "Bowling Average", "Dot Ball %"],
+            key="bowl_rank_metric",
+            help="Choose how to rank bowlers. Bowling Average requires wickets."
+        )
+
+    # Get role mapping from player master
+    role_lookup = {}
+    if not master.empty:
+        role_lookup = dict(zip(master['player_id'].astype(int), master['role']))
+
+    def get_role(pid):
+        """Get player role from master, fallback to 'Unverified'."""
+        role = role_lookup.get(int(pid), 'Unverified')
+        if pd.isna(role) or role == '':
+            return 'Unverified'
+        return role
+
+    # =========================================================================
+    # BATTER LEADERBOARD
+    # =========================================================================
+    st.markdown(f"#### 🏏 Top Batters — {leaderboard_mode.split(':')[0]} in {tier_filter}")
+
+    if not comp_bat_filtered.empty:
+        if leaderboard_mode == "A: Competition-Season Records":
+            # Mode A: Competition-season records with minimum thresholds
+            bat_df = comp_bat_filtered.copy()
+            # Apply minimum thresholds
+            bat_df = bat_df[
+                (bat_df['total_balls'] >= min_bat_balls) &
+                (bat_df['matches'] >= min_matches) &
+                (bat_df['strike_rate'].notna()) &
+                (bat_df['strike_rate'] > 0)
             ].copy()
-            top_bowl.columns = ['Player', 'Competition', 'Tier', 'Balls', 'Wickets', 'Econ', 'Wicket Rate']
-            st.dataframe(top_bowl, hide_index=True, use_container_width=True)
+
+            if not bat_df.empty:
+                # Add role from master
+                bat_df['Role'] = bat_df['striker_id'].map(lambda x: get_role(x))
+
+                # Sort by selected metric
+                if bat_rank_metric == "Strike Rate":
+                    bat_df = bat_df.sort_values('strike_rate', ascending=False)
+                elif bat_rank_metric == "Runs":
+                    bat_df = bat_df.sort_values('total_runs', ascending=False)
+                elif bat_rank_metric == "Boundary %":
+                    bat_df = bat_df.sort_values('boundary_pct', ascending=False)
+                elif bat_rank_metric == "Batting Average":
+                    # Calculate average = runs / dismissals where dismissals > 0
+                    bat_df = bat_df[bat_df['total_dismissals'] > 0].copy()
+                    if not bat_df.empty:
+                        bat_df['batting_average'] = bat_df['total_runs'] / bat_df['total_dismissals']
+                        bat_df = bat_df.sort_values('batting_average', ascending=False)
+
+                top_bat = bat_df.head(15)[
+                    ['striker_name', 'comp_name', 'comp_tier', 'Role', 'matches', 'total_balls', 'total_runs',
+                     'strike_rate', 'boundary_pct'] + (['batting_average'] if 'batting_average' in bat_df.columns else [])
+                ].copy()
+
+                # Rename columns
+                col_map = {
+                    'striker_name': 'Player', 'comp_name': 'Competition', 'comp_tier': 'Tier',
+                    'Role': 'Role', 'matches': 'Matches', 'total_balls': 'Balls',
+                    'total_runs': 'Runs', 'strike_rate': 'SR', 'boundary_pct': 'Boundary %',
+                    'batting_average': 'Avg'
+                }
+                top_bat = top_bat.rename(columns=col_map)
+
+                st.dataframe(top_bat, hide_index=True, use_container_width=True)
+            else:
+                st.info(f"No batter data meets thresholds (≥{min_bat_balls} balls, ≥{min_matches} matches).")
+
         else:
-            st.info("No bowler data for selected tier.")
+            # Mode B: Aggregated by player across selected tiers/seasons
+            bat_agg = comp_bat_filtered.groupby('striker_id').agg(
+                Player=('striker_name', 'first'),
+                total_matches=('matches', 'sum'),
+                total_balls=('total_balls', 'sum'),
+                total_runs=('total_runs', 'sum'),
+                total_fours=('total_fours', 'sum') if 'total_fours' in comp_bat_filtered.columns else ('total_runs', lambda x: 0),
+                total_sixes=('total_sixes', 'sum') if 'total_sixes' in comp_bat_filtered.columns else ('total_runs', lambda x: 0),
+                total_boundaries=('total_boundaries', 'sum') if 'total_boundaries' in comp_bat_filtered.columns else ('total_runs', lambda x: 0),
+                total_dismissals=('total_dismissals', 'sum')
+            ).reset_index()
+
+            if not bat_agg.empty:
+                bat_agg = bat_agg[
+                    (bat_agg['total_balls'] >= min_bat_balls) &
+                    (bat_agg['total_matches'] >= min_matches)
+                ].copy()
+
+                if not bat_agg.empty:
+                    # Calculate aggregate metrics from totals
+                    bat_agg['Strike Rate'] = (bat_agg['total_runs'] / bat_agg['total_balls'] * 100).round(1)
+                    bat_agg['Boundary %'] = ((bat_agg['total_boundaries'] / bat_agg['total_balls'] * 100).round(1)
+                                             if 'total_boundaries' in bat_agg.columns else 0)
+                    bat_agg['Batting Average'] = 0.0
+                    mask = bat_agg['total_dismissals'] > 0
+                    bat_agg.loc[mask, 'Batting Average'] = (bat_agg.loc[mask, 'total_runs'] / bat_agg.loc[mask, 'total_dismissals']).round(2)
+
+                    # Add role
+                    bat_agg['Role'] = bat_agg['striker_id'].map(lambda x: get_role(x))
+
+                    # Sort by selected metric
+                    sort_col = {'Strike Rate': 'Strike Rate', 'Runs': 'total_runs',
+                                'Boundary %': 'Boundary %', 'Batting Average': 'Batting Average'}[bat_rank_metric]
+                    bat_agg = bat_agg.sort_values(sort_col, ascending=False).head(15)
+
+                    top_bat = bat_agg[['Player', 'Role', 'total_matches', 'total_balls', 'total_runs',
+                                       'Strike Rate', 'Boundary %', 'Batting Average']].copy()
+                    top_bat.columns = ['Player', 'Role', 'Matches', 'Balls', 'Runs', 'SR', 'Boundary %', 'Avg']
+                    st.dataframe(top_bat, hide_index=True, use_container_width=True)
+                else:
+                    st.info(f"No batter data meets thresholds (≥{min_bat_balls} balls, ≥{min_matches} matches).")
+            else:
+                st.info("No batter data available.")
+    else:
+        st.info("No batter data for selected tier.")
+
+    # =========================================================================
+    # BOWLER LEADERBOARD
+    # =========================================================================
+    st.markdown(f"#### 🎳 Top Bowlers — {leaderboard_mode.split(':')[0]} in {tier_filter}")
+
+    if not comp_bowl_filtered.empty:
+        if leaderboard_mode == "A: Competition-Season Records":
+            # Mode A: Competition-season records with minimum thresholds
+            bowl_df = comp_bowl_filtered.copy()
+            # Apply minimum thresholds
+            bowl_df = bowl_df[
+                (bowl_df['total_balls'] >= min_bowl_balls) &
+                (bowl_df['matches'] >= min_matches) &
+                (bowl_df['economy'].notna()) &
+                (bowl_df['wicket_rate'].notna())
+            ].copy()
+
+            if not bowl_df.empty:
+                # Add role from master
+                bowl_df['Role'] = bowl_df['bowler_id'].map(lambda x: get_role(x))
+
+                # Sort by selected metric
+                if bowl_rank_metric == "Wickets":
+                    bowl_df = bowl_df.sort_values('total_wickets', ascending=False)
+                elif bowl_rank_metric == "Economy":
+                    bowl_df = bowl_df.sort_values('economy', ascending=True)
+                elif bowl_rank_metric == "Wicket Rate":
+                    bowl_df = bowl_df.sort_values('wicket_rate', ascending=False)
+                elif bowl_rank_metric == "Bowling Average":
+                    bowl_df = bowl_df[bowl_df['total_wickets'] > 0].copy()
+                    if not bowl_df.empty:
+                        bowl_df['bowling_average'] = bowl_df['total_runs'] / bowl_df['total_wickets']
+                        bowl_df = bowl_df.sort_values('bowling_average', ascending=True)
+                elif bowl_rank_metric == "Dot Ball %":
+                    bowl_df = bowl_df.sort_values('dot_ball_pct', ascending=False)
+
+                top_bowl = bowl_df.head(15)[
+                    ['bowler_name', 'comp_name', 'comp_tier', 'Role', 'matches', 'total_balls',
+                     'total_wickets', 'total_runs', 'economy', 'wicket_rate', 'dot_ball_pct'] +
+                    (['bowling_average'] if 'bowling_average' in bowl_df.columns else [])
+                ].copy()
+
+                col_map = {
+                    'bowler_name': 'Player', 'comp_name': 'Competition', 'comp_tier': 'Tier',
+                    'Role': 'Role', 'matches': 'Matches', 'total_balls': 'Balls',
+                    'total_wickets': 'Wickets', 'total_runs': 'Runs', 'economy': 'Econ',
+                    'wicket_rate': 'Wicket Rate', 'dot_ball_pct': 'Dot Ball %',
+                    'bowling_average': 'Avg'
+                }
+                top_bowl = top_bowl.rename(columns=col_map)
+
+                st.dataframe(top_bowl, hide_index=True, use_container_width=True)
+            else:
+                st.info(f"No bowler data meets thresholds (≥{min_bowl_balls} balls, ≥{min_matches} matches).")
+
+        else:
+            # Mode B: Aggregated by player across selected tiers/seasons
+            bowl_agg = comp_bowl_filtered.groupby('bowler_id').agg(
+                Player=('bowler_name', 'first'),
+                total_matches=('matches', 'sum'),
+                total_balls=('total_balls', 'sum'),
+                total_runs=('total_runs', 'sum'),
+                total_wickets=('total_wickets', 'sum'),
+                total_dots=('total_dots', 'sum') if 'total_dots' in comp_bowl_filtered.columns else ('total_runs', lambda x: 0),
+            ).reset_index()
+
+            if not bowl_agg.empty:
+                bowl_agg = bowl_agg[
+                    (bowl_agg['total_balls'] >= min_bowl_balls) &
+                    (bowl_agg['total_matches'] >= min_matches)
+                ].copy()
+
+                if not bowl_agg.empty:
+                    # Calculate aggregate metrics from totals
+                    bowl_agg['Economy'] = (bowl_agg['total_runs'] / bowl_agg['total_balls'] * 6).round(2)
+                    bowl_agg['Wicket Rate'] = (bowl_agg['total_wickets'] / bowl_agg['total_balls'] * 100).round(2)
+                    bowl_agg['Dot Ball %'] = (bowl_agg['total_dots'] / bowl_agg['total_balls'] * 100).round(1)
+                    bowl_agg['Bowling Average'] = 0.0
+                    mask = bowl_agg['total_wickets'] > 0
+                    bowl_agg.loc[mask, 'Bowling Average'] = (bowl_agg.loc[mask, 'total_runs'] / bowl_agg.loc[mask, 'total_wickets']).round(2)
+
+                    # Add role
+                    bowl_agg['Role'] = bowl_agg['bowler_id'].map(lambda x: get_role(x))
+
+                    # Sort by selected metric
+                    sort_col = {'Wickets': 'total_wickets', 'Economy': 'Economy',
+                                'Wicket Rate': 'Wicket Rate', 'Bowling Average': 'Bowling Average',
+                                'Dot Ball %': 'Dot Ball %'}[bowl_rank_metric]
+                    ascending = bowl_rank_metric == "Economy" or bowl_rank_metric == "Bowling Average"
+                    bowl_agg = bowl_agg.sort_values(sort_col, ascending=ascending).head(15)
+
+                    top_bowl = bowl_agg[['Player', 'Role', 'total_matches', 'total_balls', 'total_wickets',
+                                         'total_runs', 'Economy', 'Wicket Rate', 'Bowling Average', 'Dot Ball %']].copy()
+                    top_bowl.columns = ['Player', 'Role', 'Matches', 'Balls', 'Wickets', 'Runs', 'Econ', 'Wicket Rate', 'Avg', 'Dot Ball %']
+                    st.dataframe(top_bowl, hide_index=True, use_container_width=True)
+                else:
+                    st.info(f"No bowler data meets thresholds (≥{min_bowl_balls} balls, ≥{min_matches} matches).")
+            else:
+                st.info("No bowler data available.")
+    else:
+        st.info("No bowler data for selected tier.")
+
+    st.caption(f"Thresholds: Batters ≥{min_bat_balls} balls, ≥{min_matches} matches | Bowlers ≥{min_bowl_balls} balls, ≥{min_matches} matches. "
+               f"Aggregate metrics calculated from total runs/balls/wickets, not averaged competition-level rates. "
+               f"Roles from canonical player master (Unverified if missing).")
 
     st.markdown("---")
 
