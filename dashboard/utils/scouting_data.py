@@ -17,7 +17,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR
+from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR, OFFICIAL_REFERENCE_DIR
 
 # -----------------------------------------------------------------------------
 # 1. READ-ONLY OFFICIAL FINAL DELIVERABLES
@@ -26,7 +26,7 @@ from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR
 @st.cache_data(ttl=3600)
 def load_official_batters() -> pd.DataFrame:
     """Load verified final Top 10 batters (read-only official ranking)."""
-    p = OUTPUTS_DIR / "final_combined_top10_batters.csv"
+    p = OFFICIAL_REFERENCE_DIR / "final_combined_top10_batters.csv"
     if p.exists():
         df = pd.read_csv(p)
         df['role'] = 'Batter'
@@ -38,7 +38,7 @@ def load_official_batters() -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def load_official_bowlers() -> pd.DataFrame:
     """Load verified final Top 10 bowlers (read-only official ranking)."""
-    p = OUTPUTS_DIR / "final_combined_top10_bowlers.csv"
+    p = OFFICIAL_REFERENCE_DIR / "final_combined_top10_bowlers.csv"
     if p.exists():
         df = pd.read_csv(p)
         df['role'] = 'Bowler'
@@ -50,7 +50,7 @@ def load_official_bowlers() -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def load_official_reserves() -> pd.DataFrame:
     """Load verified final reserves (read-only official ranking)."""
-    p = OUTPUTS_DIR / "final_combined_reserves.csv"
+    p = OFFICIAL_REFERENCE_DIR / "final_combined_reserves.csv"
     if p.exists():
         df = pd.read_csv(p)
         df['is_official_ranking'] = True
