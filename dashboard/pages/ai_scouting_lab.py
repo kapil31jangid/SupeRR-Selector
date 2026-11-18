@@ -143,6 +143,11 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                 ["Complete Auction Dataset (303 Players)", "Final Shortlist Only (28 Players)"],
                 key="ai_pool_scope"
             )
+
+        active_pool_df = all_players_df.copy()
+        if "Shortlist" in pool_scope and 'is_shortlisted' in active_pool_df.columns:
+            active_pool_df = active_pool_df[active_pool_df['is_shortlisted'] == True]
+
         with fc1:
             role_filter = st.selectbox(
                 "Role",
@@ -156,7 +161,7 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                 key="ai_nat_filter"
             )
         with fc3:
-            cat_opts = ["All"] + sorted(active_pool_df['development_category'].dropna().unique().tolist())
+            cat_opts = ["All"] + sorted(all_players_df['development_category'].dropna().unique().tolist())
             cat_filter = st.selectbox("Development Stage", cat_opts, key="ai_cat_filter")
         with fc4:
             max_age = st.number_input(
@@ -164,10 +169,6 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                 min_value=18.0, max_value=45.0, value=35.0, step=0.5,
                 key="ai_max_age"
             )
-
-        active_pool_df = all_players_df.copy()
-        if "Shortlist" in pool_scope and 'is_shortlisted' in active_pool_df.columns:
-            active_pool_df = active_pool_df[active_pool_df['is_shortlisted'] == True]
 
         # Show eligible pool count
         try:
