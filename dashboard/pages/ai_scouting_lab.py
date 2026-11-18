@@ -302,3 +302,4 @@ def render_ai_scouting_lab(all_players_df: pd.DataFrame) -> None:
                     f"**{i}.** {src_icon} `{entry['source']}` → "
                     f"**{entry['count']} players** · _{entry['query'][:80]}{'...' if len(entry['query']) > 80 else ''}_"
                 )
+

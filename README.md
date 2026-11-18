@@ -172,6 +172,41 @@ streamlit run app.py
 python src/pipeline.py
 ```
 
+### Run Automated Test Suite
+
+```bash
+# Run unit tests and Backboard integration suite (48 test cases)
+python tests/test_backboard_integration.py
+```
+
+---
+
+## 6. AI Scouting Lab (Backboard API + Google Gemini)
+
+The dashboard includes an **AI Scouting Lab** powered by **Backboard API** (`https://app.backboard.io/api`) routing to **Google Gemini** (`gemini-2.5-pro`):
+
+- **Unified Infrastructure:** Uses `backboard-sdk` to connect to Backboard's multi-provider API.
+- **Provider & Model:** Set explicitly to `provider="google"`, defaulting to `model_name="gemini-2.5-pro"` (with dynamic catalogue discovery via `list_models_by_provider("google")`).
+- **Persistent Conversational Memory:** Uses stateful Backboard Assistants and Threads (`create_assistant`, `create_thread`, `memory="Auto"`) to remember scout preferences across conversation turns.
+- **Strict Evidence Protection:** Ground-truth player IDs and scores are injected into context and validated upon return; hallucinated IDs or scores are rejected.
+- **Zero-Failure Fallback:** If the API key is not configured or the network is unavailable, the assistant falls back transparently to a deterministic 40/30/20/10 RR recommendation engine.
+
+### Setting Up Backboard API Key
+
+Get your API key at [app.backboard.io/dashboard/api-keys](https://app.backboard.io/dashboard/api-keys), then configure it in either:
+
+1. **Streamlit Secrets** (`.streamlit/secrets.toml`):
+   ```toml
+   BACKBOARD_API_KEY = "your_backboard_api_key_here"
+   ```
+2. **Environment Variable**:
+   ```bash
+   export BACKBOARD_API_KEY="your_backboard_api_key_here"  # Linux/macOS
+   $env:BACKBOARD_API_KEY="your_backboard_api_key_here"    # PowerShell
+   ```
+
+*(Note: `.streamlit/secrets.toml` is ignored by Git and never committed.)*
+
 ---
 
 ## 7. Project Directory Structure
@@ -194,6 +229,7 @@ SupeRR-Selector-2027/
 │   └── rr_scouting_model.py           ← 40/30/20/10 RR Scouting Composite Engine
 │
 ├── src/
+│   ├── ai/                            ← Backboard AI Assistant (Google Gemini integration)
 │   ├── data_cleaning/                 ← Delivery filtering & player identity normalization
 │   ├── preprocessing/                 ← Match state reconstruction & competition tiers
 │   ├── feature_engineering/           ← Phase feature aggregation & James-Stein shrinkage
@@ -207,6 +243,7 @@ SupeRR-Selector-2027/
 │   └── supporting_evidence/               ← 16 forensic audit CSVs & markdown proofs
 │
 ├── dashboard/
+│   ├── pages/                         ← Dedicated dashboard sub-pages (AI Scouting Lab)
 │   ├── components/                    ← KPI cards, player profiles, styled tables
 │   ├── charts/                        ← Plotly bar charts, scatter plots, radar charts
 │   └── utils/                         ← Cached data loaders & RR color palette
