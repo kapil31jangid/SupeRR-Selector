@@ -1,7 +1,7 @@
 # PRESSURE-X | Rajasthan Royals IPL 2027 Auction Intelligence
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](http://localhost:8501)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://rrsuperselector.streamlit.app/)
 [![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white)](https://plotly.com/)
 [![License: Proprietary](https://img.shields.io/badge/license-Proprietary-red.svg)]()
 
@@ -15,6 +15,7 @@
 Traditional T20 scouting heavily over-indexes on raw aggregate strike rates, overall economy, and unadjusted boundary counts across disparate global competitions. A strike rate of 160 in a domestic developmental league does not translate to high-leverage IPL playoff encounters against express pace and elite mystery spin.
 
 **PRESSURE-X** solves this fundamental valuation problem through:
+
 1. **Match-Situation Win Probability Weighting:** Evaluating ball-by-ball execution strictly under leverage (High-Extreme, Death Overs 17–20, Powerplay Overs 1–6, and 2nd Inning Run Chases).
 2. **Empirical Bayes Shrinkage (James-Stein):** Pulling noisy low-sample rate metrics toward global population priors to eliminate small-sample noise.
 3. **Cross-Tier Competition Calibration:** Adjusting raw performances across 5 competition tiers (T1 IPL baseline down to T5 domestic) using paired empirical factors.
@@ -52,7 +53,7 @@ flowchart TD
     end
 
     subgraph Presentation Layer
-        SHORT --> DASH["Streamlit Interactive Dashboard<br/>(Plotly Visuals & War Room Tools)"]
+        SHORT --> DASH["Streamlit Interactive Dashboard<br/>(10 Pages, Plotly Visuals)"]
     end
 
     style RAW fill:#0B132B,stroke:#004BA0,color:#fff
@@ -64,7 +65,9 @@ flowchart TD
 
 ---
 
-## 3. Official Verified Auction Shortlist
+## 3. Official Verified Auction Shortlist (Archived Benchmark — View B)
+
+The following 28 players represent the **immutable, audited shortlist** produced by the PRESSURE-X pipeline. This is the **archived benchmark (View B)** — the complete discovery universe contains **311 unique eligible players (664 player-seasons)** accessible via **View A** in the dashboard.
 
 ### 🏏 Top 10 Batters (Combined Indian + Overseas)
 
@@ -126,32 +129,39 @@ Where:
 
 ---
 
-## 5. Interactive Scouting Dashboard
+## 5. Interactive Scouting Dashboard (10 Pages)
 
-The project includes an interactive **Streamlit + Plotly** scouting application designed for franchise executives, analysts, and coaching staff.
+The project includes a full-featured **Streamlit + Plotly** scouting application designed for franchise executives, analysts, and coaching staff.
 
-### Features
-- **Page 1 — Executive Overview:** High-level KPIs, qualification funnel, roster composition, and CSV downloads.
-- **Page 2 — Top 10 Batters:** Interactive filtering, horizontal score breakdown, age runway vs scouting, and player spotlight cards.
-- **Page 3 — Top 10 Bowlers:** Evidence-qualified bowler tables, phase delivery distribution, and codified tactical boundaries.
-- **Page 4 — Player Comparison:** Side-by-side 5-dimension radar charts and comparative metric tables.
-- **Page 5 — RR Long-Term Strategy:** Age distributions, development runways, and reserve roster reviews.
-- **Page 6 — Methodology & Reliability:** Mathematical formulas, shrinkage parameters, and data boundary disclosures.
+### Page Overview
+
+| Page | Title | Purpose |
+|:---:|:---|:---|
+| **1** | 📊 **Executive Overview** | High-level KPIs, qualification funnel, 3 platform views (A/B/C), CSV downloads |
+| **2** | 🎯 **Scouting Explorer** | Filter-first table with **311 unique eligible players (664 player-seasons)**; role, nationality, age runway, quantitative thresholds, domestic T20 filters; live KPIs, tabbed analytics, player deep-dive |
+| **3** | 📐 **Dynamic Ranking Engine** | Customizable 40/30/20/10 weight sliders (must sum to 100); 6 predefined profiles (RR Default, Pressure First, Youth Focus, Ceiling Chaser, Form Watcher, Balanced Evidence); missing data policies; sensitivity analysis with rank stability metrics; CSV export |
+| **4** | 🛡️ **RR Current Squad** | 19 retained players with roles, ages, nationalities, retention types; role coverage matrix; age distribution; nationality split; CSV download |
+| **5** | 🔍 **RR Gap Analysis** | Need vs strength matrix; vacancy fit scoring (role scarcity, age complementarity, nationality balance, skill gap); top auction targets per gap; retention value assessment |
+| **6** | 🏏 **Domestic Intelligence** | Competition tier landscape (5 tiers); domestic batter/bowler leaderboards; competition-level drilldown; emerging domestic talent radar; domestic-to-IPL transition analysis with Tier 5 multiplier (0.68×) projections |
+| **7** | ⚔️ **Player Comparison** | Multi-select comparison (up to 5 players); 5-dimension radar charts; metric summary tables; war-room player cards |
+| **8** | 🤖 **AI Assistant** | Backboard × Google Gemini (gemini-2.5-pro); persistent conversation threads; candidate filtering before API call; deterministic fallback when offline |
+| **9** | 📋 **Standard Scouting Report** | One-click CSV export with 60+ standardized columns; dynamic rankings export; official shortlist export |
+| **10** | 📐 **Methodology & Reliability** | Mathematical formulations, shrinkage parameters, EQ bowling logic, data boundary disclosures, validation summary |
 
 ---
 
 ## 6. Quick Start & Execution Guide
 
 ### Prerequisites
-- Python 3.9+ (Python 3.10/3.11 recommended)
+- **Python 3.11** (pinned via `.python-version` for Streamlit Cloud)
 - Virtual environment recommended
 
 ### Installation
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/kapi31jangid/SupeRR-Selector-2027.git
-cd SupeRR-Selector-2027
+git clone https://github.com/kapil31jangid/SupeRR-Selector.git
+cd SupeRR-Selector
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -169,20 +179,22 @@ streamlit run app.py
 
 ```bash
 # Execute automated data validation and model initialization
-python src/pipeline.py
+python -m src.pipeline
 ```
 
 ### Run Automated Test Suite
 
 ```bash
-# Run full automated test suite (66 tests: 18 Explorer + 48 Backboard & Live API)
-python -m unittest tests.test_scouting_explorer -v
-python -m unittest tests.test_backboard_integration -v
+# Backboard AI integration tests (48 tests)
+python -m pytest tests/test_backboard_integration.py -v
+
+# Scouting explorer tests (may need path updates for new output locations)
+python -m pytest tests/test_scouting_explorer.py -v
 ```
 
 ---
 
-## 6. Interactive Scouting Explorer & Optional Backboard AI
+## 7. Interactive Scouting Explorer & Optional Backboard AI
 
 The **PRESSURE-X** dashboard is designed around a **filter-first architecture**: the primary scouting explorer operates independently through interactive controls, dynamic Plotly visual analytics, searchable candidate tables, and candidate comparison tools—without requiring any chatbot interaction.
 
@@ -228,19 +240,23 @@ When Backboard API is configured, AI insights provide natural-language tactical 
 
 ---
 
-## 7. Project Directory Structure
+## 8. Project Directory Structure
 
 ```
-SupeRR-Selector-2027/
-├── app.py                             ← Streamlit Interactive Scouting Dashboard
+SupeRR-Selector/
+├── app.py                             ← Streamlit Interactive Scouting Dashboard (10 pages)
 ├── README.md                          ← Project Documentation & Landing Page
 ├── DATA_DICTIONARY.md                 ← Complete Dataset Field Specifications
-├── requirements.txt                   ← Dependencies (pandas, numpy, scipy, streamlit, plotly)
-├── .gitignore                         ← Virtualenv and cache exclusions
+├── requirements.txt                   ← Dependencies (pandas, numpy, scipy, streamlit, plotly, backboard-sdk)
+├── .gitignore                         ← Virtualenv, cache, secrets exclusions
+├── .python-version                    ← Python 3.11 pin for Streamlit Cloud
+├── .env.example                       ← Environment variable template
 │
 ├── data/
 │   ├── raw/                           ← Immutable challenge source data (ball_by_ball, matches, etc.)
-│   └── processed/                     ← Cleaned, phase-annotated feature tables across 5 tiers
+│   ├── processed/                     ← 11 cleaned, phase-annotated feature tables across 5 tiers
+│   └── reference/
+│       └── rr_current_squad.csv       ← 19 RR retained players (enriched)
 │
 ├── models/
 │   ├── pressure_model.py              ← Bayesian shrinkage & competition tier scoring
@@ -252,60 +268,95 @@ SupeRR-Selector-2027/
 │   ├── data_cleaning/                 ← Delivery filtering & player identity normalization
 │   ├── preprocessing/                 ← Match state reconstruction & competition tiers
 │   ├── feature_engineering/           ← Phase feature aggregation & James-Stein shrinkage
+│   ├── scoring/
+│   │   └── dynamic_scouting_engine.py ← Dynamic ranking engine (custom weights, sensitivity)
 │   ├── utilities/                     ← Automated data validator & relative path resolution
 │   └── pipeline.py                    ← End-to-end execution runner
 │
 ├── outputs/
-│   ├── final_combined_top10_batters.csv   ← FINAL VERIFIED BATTER TARGETS
-│   ├── final_combined_top10_bowlers.csv   ← FINAL VERIFIED BOWLER TARGETS
-│   ├── final_combined_reserves.csv        ← Key reserve candidates
-│   └── supporting_evidence/               ← 16 forensic audit CSVs & markdown proofs
+│   ├── official_reference/            ← FINAL VERIFIED DELIVERABLES (immutable)
+│   │   ├── final_combined_top10_batters.csv
+│   │   ├── final_combined_top10_bowlers.csv
+│   │   └── final_combined_reserves.csv
+│   ├── supporting_evidence/           ← 16 forensic audit CSVs & markdown proofs
+│   └── dataset_inventory.csv          ← Complete dataset inventory
 │
 ├── dashboard/
-│   ├── pages/                         ← Dedicated dashboard sub-pages (AI Scouting Lab)
+│   ├── pages/                         ← 10 dashboard sub-pages
 │   ├── components/                    ← KPI cards, player profiles, styled tables
-│   ├── charts/                        ← Plotly bar charts, scatter plots, radar charts
+│   ├── charts/                        ← Plotly bar charts, scatter plots, radar charts, distributions
 │   └── utils/                         ← Cached data loaders & RR color palette
 │
-├── reports/
+├── docs/
 │   ├── FINAL_SUBMISSION_REPORT.md     ← Comprehensive submission playbook
 │   ├── METHODOLOGY.md                 ← Mathematical formulation & shrinkage equations
+│   ├── DATASET_COVERAGE_AUDIT.md      ← Dataset sources, coverage, player counts, gaps
 │   ├── VALIDATION_AND_LIMITATIONS.md  ← Audit findings, ID corrections & caveats
 │   ├── RR_SCOUTING_STRATEGY.md        ← Franchise talent development philosophy
-│   ├── FINAL_SUBMISSION_AUDIT.md      ← Pre-submission verification audit
-│   └── FINAL_PROJECT_STRUCTURE_AUDIT.md ← Final acceptance engineering audit
+│   ├── DEPLOYMENT_GUIDE.md            ← Streamlit Cloud deployment instructions
+│   └── FINAL_PROJECT_AUDIT.md         ← Final acceptance engineering audit
 │
 └── assets/
-    └── dashboard_visuals/             ← Visual assets and charts
+    └── rr_logo.png                    ← Rajasthan Royals official logo
 ```
 
 ---
 
-## 8. Deployment Guide (Streamlit Community Cloud)
+## 9. Deployment Guide (Streamlit Community Cloud)
 
-To deploy the dashboard publicly on Streamlit Community Cloud:
+### Deployed URL
+**Live Dashboard:** https://rrsuperselector.streamlit.app/
 
-1. **Push to GitHub:**
-   Ensure the repository is pushed to GitHub with `app.py` in the root directory.
-2. **Connect Streamlit Community Cloud:**
-   - Sign in at [share.streamlit.io](https://share.streamlit.io/).
-   - Click **New app**.
-   - Select repository: `SupeRR-Selector-2027`.
-   - Branch: `master` (or `main`).
-   - Main file path: `app.py`.
-3. **Deploy:**
-   Click **Deploy!**. Streamlit automatically resolves dependencies from `requirements.txt`.
+### Deployment Configuration
+| Setting | Value |
+|:---|:---|
+| **Repository** | https://github.com/kapil31jangid/SupeRR-Selector |
+| **Branch** | `main` |
+| **Entry Point** | `app.py` |
+| **Python Version** | 3.11 (pinned via `.python-version`) |
+| **Dependencies** | `requirements.txt` |
 
-*Deployment Status:* The application runs locally via `streamlit run app.py` and is fully configured for zero-configuration deployment to Streamlit Community Cloud.
+### Steps to Deploy
+1. Push repository to GitHub (already done)
+2. Go to [share.streamlit.io](https://share.streamlit.io/)
+3. Click **New app**
+4. Select repository: `kapil31jangid/SupeRR-Selector`
+5. Branch: `main`, Main file: `app.py`
+6. **Advanced Settings → Secrets** — add optional Backboard key:
+   ```toml
+   BACKBOARD_API_KEY = "your_backboard_api_key_here"
+   ```
+7. Click **Deploy!**
+
+### Environment Variables
+| Variable | Required | Description |
+|:---|:---|:---|
+| `BACKBOARD_API_KEY` | No | Enables AI Scouting Assistant (Google Gemini via Backboard) |
+
+**The application works fully without the API key** — deterministic fallback is used.
 
 ---
 
-## 9. Methodological Limitations & Integrity Declarations
+## 10. Methodological Limitations & Integrity Declarations
 
 - **Unobserved Bowling Phases:** Bowlers with 0 observed deliveries in specific pressure phases (e.g. Ghazanfar, Bracewell) are evaluated using Evidence-Qualified scoring across observed phases only; unobserved phases are never treated as proven capability.
 - **Sample Size Restrictions:** A strict threshold of $\ge 100$ qualifying balls faced or bowled was enforced to prevent small-sample bias.
 - **Auction Eligibility Filters:** All 184 retained players across the 10 IPL franchises and all Pakistani nationals were strictly excluded in compliance with BCCI regulations.
 - **Challenge Scope:** PRESSURE-X was developed independently for the SupeRR Selector Season 2 competition and represents a proposed analytical scouting framework.
+- **Archived Benchmark:** The 28-player shortlist (View B) is an immutable, audited benchmark. The complete discovery universe is **View A: 311 unique eligible players (664 player-seasons)** with dynamic ranking.
+
+---
+
+## 11. Repository & Deployment Status
+
+| Metric | Value |
+|:---|:---|
+| **Repository** | https://github.com/kapil31jangid/SupeRR-Selector |
+| **Live Dashboard** | https://rrsuperselector.streamlit.app/ |
+| **Default Branch** | `main` |
+| **Latest Commit** | `a221a9a` (data_loader path fix) |
+| **Python Version** | 3.11 (pinned) |
+| **Dependencies** | 8 packages in `requirements.txt` |
 
 ---
 
