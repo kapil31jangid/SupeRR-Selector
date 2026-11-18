@@ -35,7 +35,7 @@
 | **Pipeline** (`src/pipeline.py`) | Reads from `OFFICIAL_REFERENCE_DIR` | ✅ PASS |
 | **Validator** (`src/utilities/validator.py`) | Checks `OFFICIAL_REFERENCE_DIR` | ✅ PASS |
 | **Paths module** (`src/utilities/paths.py`) | `OFFICIAL_REFERENCE_DIR = OUTPUTS_DIR / "official_reference"` | ✅ PASS |
-| **Stale `outputs/` root refs** | Grep search | ✅ NONE FOUND |
+| **Stale `outputs/` root refs** | Grep search | ✅ NONE FOUND (fixed `scouting_data.py` to use `OFFICIAL_REFERENCE_DIR`) |
 | **Stale `reports/` refs** | Grep search in Python files | ✅ NONE FOUND |
 
 ---
@@ -106,7 +106,7 @@ nest_asyncio>=1.6.0
 | No credentials in history | ✅ PASS |
 | Raw datasets untouched | ✅ PASS |
 | Official ranking CSVs unchanged | ✅ PASS (in `outputs/official_reference/`) |
-| Latest commit | `8710525` |
+| Latest commit | `7b9266c` (scouting_data path fix) |
 
 ---
 
