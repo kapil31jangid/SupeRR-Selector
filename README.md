@@ -288,13 +288,20 @@ SupeRR-Selector/
 │   └── utils/                         ← Cached data loaders & RR color palette
 │
 ├── docs/
-│   ├── FINAL_SUBMISSION_REPORT.md     ← Comprehensive submission playbook
-│   ├── METHODOLOGY.md                 ← Mathematical formulation & shrinkage equations
-│   ├── DATASET_COVERAGE_AUDIT.md      ← Dataset sources, coverage, player counts, gaps
-│   ├── VALIDATION_AND_LIMITATIONS.md  ← Audit findings, ID corrections & caveats
-│   ├── RR_SCOUTING_STRATEGY.md        ← Franchise talent development philosophy
-│   ├── DEPLOYMENT_GUIDE.md            ← Streamlit Cloud deployment instructions
-│   └── FINAL_PROJECT_AUDIT.md         ← Final acceptance engineering audit
+│   ├── FINAL_SUBMISSION_REPORT.md           ← Comprehensive submission playbook
+│   ├── METHODOLOGY.md                       ← Mathematical formulation & shrinkage equations
+│   ├── DATASET_COVERAGE_AUDIT.md            ← Dataset sources, coverage, player counts, gaps
+│   ├── VALIDATION_AND_LIMITATIONS.md        ← Audit findings, ID corrections & caveats
+│   ├── RR_SCOUTING_STRATEGY.md              ← Franchise talent development philosophy
+│   ├── DEPLOYMENT_GUIDE.md                  ← Streamlit Cloud deployment instructions
+│   ├── FINAL_PROJECT_AUDIT.md               ← Final acceptance engineering audit
+│   ├── COMPLETE_CODEBASE_AUDIT_INVENTORY.md ← 40-dataset inventory, 80+ controls, 25+ datasets, 4 models, 7 calculation modules, AI integration, outputs, dependency map, 15+ risks
+│   ├── PLAYER_IDENTITY_AND_ROLE_AUDIT.md    ← Player master deduplication (1,570→1,217 unique), role classification fix (All-rounder over-assignment), evidence thresholds
+│   ├── DATASET_COVERAGE_RECONCILIATION_AUDIT.md ← 40-dataset inventory, 85 pure batters missing bowling data, domestic coverage (32%/23%), reconciliation matrix
+│   ├── BATTING_BOWLING_STATISTICAL_AUDIT.md ← Shrinkage (prior=30), EQ bowling 5-tier, official scores 28/28 within 0.01, sensitivity max delta=3, zero anomalies
+│   ├── DOMESTIC_INTELLIGENCE_BUG_FIX_REPORT.md ← 7 requirements fixed: thresholds, roles, two modes, multiple metrics, aggregates, validation notes, deployed
+│   ├── REGRESSION_TEST_REPORT.md            ← 50 regression tests covering data loading, filtering, scoring, exports, AI, EQ bowling, data integrity, domestic intelligence
+│   └── FINAL_VALIDATION_REPORT.md           ← All 14 phases passed, deployment approved
 │
 └── assets/
     └── rr_logo.png                    ← Rajasthan Royals official logo
@@ -354,7 +361,7 @@ SupeRR-Selector/
 | **Repository** | https://github.com/kapil31jangid/SupeRR-Selector |
 | **Live Dashboard** | https://rrsuperselector.streamlit.app/ |
 | **Default Branch** | `main` |
-| **Latest Commit** | `a221a9a` (data_loader path fix) |
+| **Latest Commit** | `dd58776` (PRESSURE-X 2.0 forensic audit & bug fixes) |
 | **Python Version** | 3.11 (pinned) |
 | **Dependencies** | 8 packages in `requirements.txt` |
 
