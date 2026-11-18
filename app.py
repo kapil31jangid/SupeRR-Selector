@@ -49,15 +49,22 @@ from dashboard.charts import (
     plot_career_stage_bar,
     plot_bowling_phase_evidence
 )
+from PIL import Image
+import base64
+
 from models.bowling_eq_model import EvidenceQualifiedBowlingModel
 from dashboard.pages.ai_scouting_lab import render_ai_scouting_lab
 from dashboard.pages.scouting_explorer import render_scouting_explorer
 from dashboard.utils.scouting_data import load_complete_pool_enriched
 
+# Resolve official logo path
+LOGO_PATH = PROJECT_ROOT / "assets" / "rr_logo.png"
+app_icon = Image.open(LOGO_PATH) if LOGO_PATH.exists() else "👑"
+
 # Configure Page
 st.set_page_config(
     page_title="PRESSURE-X | RR Scouting Intelligence",
-    page_icon="👑",
+    page_icon=app_icon,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -86,17 +93,30 @@ eq_model = EvidenceQualifiedBowlingModel()
 
 # Sidebar Branding & Navigation
 with st.sidebar:
-    st.markdown("""
-    <div style="text-align: center; padding: 12px 0 20px 0;">
-        <div style="font-size: 2.2rem;">👑</div>
-        <div style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px;">
-            RAJASTHAN <span style="color: #EA1B86;">ROYALS</span>
+    if LOGO_PATH.exists():
+        with open(LOGO_PATH, "rb") as _f_img:
+            _b64_logo = base64.b64encode(_f_img.read()).decode()
+        st.markdown(f"""
+        <div style="text-align: center; padding: 10px 0 16px 0;">
+            <div style="background: #FFFFFF; border-radius: 12px; padding: 10px 16px; display: inline-block; box-shadow: 0 4px 14px rgba(0,0,0,0.4); margin-bottom: 8px;">
+                <img src="data:image/png;base64,{_b64_logo}" style="width: 140px; display: block; margin: 0 auto;" alt="Rajasthan Royals">
+            </div>
+            <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                IPL 2027 Auction Intelligence
+            </div>
         </div>
-        <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px;">
-            IPL 2027 Auction Intelligence
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style="text-align: center; padding: 12px 0 20px 0;">
+            <div style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px;">
+                RAJASTHAN <span style="color: #EA1B86;">ROYALS</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px;">
+                IPL 2027 Auction Intelligence
+            </div>
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     page = st.radio(
         "Navigation",
@@ -107,7 +127,7 @@ with st.sidebar:
             "🎳 Top 10 Bowlers (Official)",
             "⚔️ Player Comparison",
             "🤖 Ask AI Assistant (Optional)",
-            "👑 RR Long-Term Strategy",
+            "🛡️ RR Long-Term Strategy",
             "📐 Methodology & Reliability"
         ],
         index=0
@@ -435,9 +455,9 @@ elif page == "🤖 Ask AI Assistant (Optional)":
 
 
 # ==============================================================================
-# PAGE 6: RR LONG-TERM STRATEGY
+# PAGE 7: RR LONG-TERM STRATEGY
 # ==============================================================================
-elif page == "👑 RR Long-Term Strategy":
+elif page == "🛡️ RR Long-Term Strategy":
     st.markdown("""
     <div class="rr-header-box">
         <h1 class="rr-title">Rajasthan Royals Talent Philosophy <span>| 2027-2030 Roadmap</span></h1>
