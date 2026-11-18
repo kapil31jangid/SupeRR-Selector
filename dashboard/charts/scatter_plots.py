@@ -35,8 +35,9 @@ def plot_pressure_vs_scouting(
 
     fig.update_traces(
         textposition='top right',
-        textfont=dict(size=10, color='#F8FAFC'),
-        marker=dict(line=dict(width=1.5, color='#FFFFFF'))
+        textfont=dict(size=11, color='#F8FAFC', family='Segoe UI'),
+        marker=dict(line=dict(width=1.5, color='#FFFFFF')),
+        cliponaxis=False
     )
 
     # Reference 45-degree diagonal line
@@ -50,28 +51,38 @@ def plot_pressure_vs_scouting(
     )
 
     fig.update_layout(
-        title=dict(text=f"<b>{title}</b>", font=dict(size=16, color='#FFFFFF')),
+        title=dict(
+            text=f"<b>{title}</b>",
+            font=dict(size=17, color='#FFFFFF', family='Segoe UI'),
+            y=0.97,
+            x=0.01,
+            xanchor='left'
+        ),
         paper_bgcolor='#0B132B',
         plot_bgcolor='#1C2541',
-        margin=dict(l=20, r=20, t=50, b=30),
+        margin=dict(l=30, r=30, t=70, b=75),
         xaxis=dict(
-            title=dict(text="Historical Pressure / Evidence-Qualified Score", font=dict(color='#94A3B8')),
-            tickfont=dict(color='#94A3B8'),
+            title=dict(text="Historical Pressure / Evidence-Qualified Score", font=dict(color='#94A3B8', size=12)),
+            tickfont=dict(color='#94A3B8', size=11),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
         yaxis=dict(
-            title=dict(text="RR Scouting Priority Score", font=dict(color='#94A3B8')),
-            tickfont=dict(color='#94A3B8'),
+            title=dict(text="RR Scouting Priority Score", font=dict(color='#94A3B8', size=12)),
+            tickfont=dict(color='#94A3B8', size=11),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
         legend=dict(
-            title=dict(text="Career Stage", font=dict(color='#94A3B8')),
-            font=dict(color='#FFFFFF', size=11),
-            bgcolor='rgba(12, 35, 64, 0.7)',
-            bordercolor='rgba(255, 255, 255, 0.1)',
-            borderwidth=1
+            title=dict(text="", font=dict(color='#94A3B8')),
+            font=dict(color='#FFFFFF', size=10),
+            bgcolor='rgba(12, 35, 64, 0.85)',
+            bordercolor='rgba(255, 255, 255, 0.15)',
+            borderwidth=1,
+            orientation='h',
+            y=-0.22,
+            x=0.5,
+            xanchor='center'
         ),
-        height=450
+        height=480
     )
     return fig
 
@@ -79,44 +90,70 @@ def plot_pressure_vs_scouting(
 def plot_age_vs_scouting(df: pd.DataFrame, title: str) -> go.Figure:
     """
     Scatter plot of Player Age vs RR Scouting Score illustrating development runway.
+    Optimized layout with full-width scaling, horizontal bottom legend, and non-overlapping labels.
     """
     fig = px.scatter(
         df,
         x='age_as_of_2027_04_01',
         y='verified_rr_scouting_score',
-        color='nationality',
-        symbol='development_category',
+        color='development_category',
+        symbol='nationality',
         text='player_name',
         hover_name='player_name',
-        color_discrete_map={'Indian': '#10B981', 'Overseas': '#EA1B86'}
+        color_discrete_map={
+            "Emerging": "#10B981",
+            "Young development candidate": "#00D2FF",
+            "Prime-age performer": "#8B5CF6",
+            "Experienced performer": "#F59E0B"
+        },
+        symbol_map={'Indian': 'circle', 'Overseas': 'diamond'}
     )
 
     fig.update_traces(
         textposition='top center',
-        textfont=dict(size=10, color='#F8FAFC'),
-        marker=dict(size=12, line=dict(width=1, color='#FFFFFF'))
+        textfont=dict(size=11, color='#F8FAFC', family='Segoe UI'),
+        marker=dict(size=14, line=dict(width=1.5, color='#FFFFFF')),
+        cliponaxis=False
     )
 
+    min_age = max(18.0, df['age_as_of_2027_04_01'].min() - 2.5)
+    max_age = df['age_as_of_2027_04_01'].max() + 2.5
+
     fig.update_layout(
-        title=dict(text=f"<b>{title}</b>", font=dict(size=16, color='#FFFFFF')),
+        title=dict(
+            text=f"<b>{title}</b>",
+            font=dict(size=17, color='#FFFFFF', family='Segoe UI'),
+            y=0.97,
+            x=0.01,
+            xanchor='left'
+        ),
         paper_bgcolor='#0B132B',
         plot_bgcolor='#1C2541',
-        margin=dict(l=20, r=20, t=50, b=30),
+        margin=dict(l=30, r=30, t=70, b=75),
         xaxis=dict(
-            title=dict(text="Age as of 1 April 2027", font=dict(color='#94A3B8')),
-            tickfont=dict(color='#94A3B8'),
-            gridcolor='rgba(255, 255, 255, 0.08)'
+            title=dict(text="Age as of 1 April 2027 (Years)", font=dict(color='#94A3B8', size=12)),
+            tickfont=dict(color='#94A3B8', size=11),
+            gridcolor='rgba(255, 255, 255, 0.08)',
+            range=[min_age, max_age],
+            dtick=2
         ),
         yaxis=dict(
-            title=dict(text="RR Scouting Score", font=dict(color='#94A3B8')),
-            tickfont=dict(color='#94A3B8'),
+            title=dict(text="RR Scouting Priority Score (40/30/20/10)", font=dict(color='#94A3B8', size=12)),
+            tickfont=dict(color='#94A3B8', size=11),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
         legend=dict(
-            font=dict(color='#FFFFFF', size=11),
-            bgcolor='rgba(12, 35, 64, 0.7)'
+            title=dict(text="", font=dict(color='#94A3B8')),
+            font=dict(color='#FFFFFF', size=10),
+            bgcolor='rgba(12, 35, 64, 0.85)',
+            bordercolor='rgba(255, 255, 255, 0.15)',
+            borderwidth=1,
+            orientation='h',
+            y=-0.22,
+            x=0.5,
+            xanchor='center'
         ),
-        height=420
+        height=480
     )
     return fig
 

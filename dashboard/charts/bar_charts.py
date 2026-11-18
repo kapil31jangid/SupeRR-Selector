@@ -48,11 +48,14 @@ def plot_ranking_bar_chart(
     fig.update_layout(
         title=dict(
             text=f"<b>{title}</b>",
-            font=dict(size=18, color='#FFFFFF', family='Segoe UI')
+            font=dict(size=17, color='#FFFFFF', family='Segoe UI'),
+            y=0.96,
+            x=0.01,
+            xanchor='left'
         ),
         paper_bgcolor='#0B132B',
         plot_bgcolor='#1C2541',
-        margin=dict(l=20, r=40, t=50, b=30),
+        margin=dict(l=30, r=40, t=70, b=40),
         xaxis=dict(
             title=dict(text="RR Scouting Priority Score (40/30/20/10)", font=dict(size=12, color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),

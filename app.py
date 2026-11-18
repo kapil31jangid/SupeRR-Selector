@@ -243,24 +243,27 @@ elif page == "🏏 Top 10 Batters":
     render_interactive_batter_table(filtered_df)
 
     st.markdown("---")
-    c1, c2 = st.columns([1.2, 1])
-    with c1:
+    st.markdown("### 📊 Scouting Visual Analytics")
+    v_tab1, v_tab2, v_tab3 = st.tabs([
+        "🏆 Target Priority Rankings",
+        "📈 Age & Development Runway",
+        "🔬 Pressure vs Scouting Correlation"
+    ])
+    with v_tab1:
         st.plotly_chart(
             plot_ranking_bar_chart(filtered_df, "Top Batters by RR Scouting Score (Top 3 Highlighted)", role="batter"),
             use_container_width=True
         )
-    with c2:
+    with v_tab2:
         st.plotly_chart(
             plot_age_vs_scouting(filtered_df, "Batter Age vs RR Scouting Score (Development Runway)"),
             use_container_width=True
         )
-
-    st.markdown("---")
-    st.markdown("### 🔬 Pressure Performance vs Long-Term Scouting Priority")
-    st.plotly_chart(
-        plot_pressure_vs_scouting(filtered_df, "Historical Pressure Performance vs RR Scouting Score", "validated_historical_pressure_score"),
-        use_container_width=True
-    )
+    with v_tab3:
+        st.plotly_chart(
+            plot_pressure_vs_scouting(filtered_df, "Historical Pressure Performance vs RR Scouting Score", "validated_historical_pressure_score"),
+            use_container_width=True
+        )
 
     # Top 3 Player Profiles
     st.markdown("### 🌟 Spotlight: Top 3 Franchise Targets")
@@ -317,21 +320,30 @@ elif page == "🎳 Top 10 Bowlers":
     """, unsafe_allow_html=True)
 
     st.markdown("---")
-    c1, c2 = st.columns([1.2, 1])
-    with c1:
+    st.markdown("### 📊 Bowling Visual Analytics")
+    bv_tab1, bv_tab2, bv_tab3, bv_tab4 = st.tabs([
+        "🏆 Target Priority Rankings",
+        "📈 Age & Development Runway",
+        "🔬 Evidence-Qualified Correlation",
+        "🎯 Audited Phase Deliveries"
+    ])
+    with bv_tab1:
         st.plotly_chart(
             plot_ranking_bar_chart(filtered_bowlers, "Top Bowlers by RR Scouting Score (Top 3 Highlighted)", role="bowler"),
             use_container_width=True
         )
-    with c2:
+    with bv_tab2:
         st.plotly_chart(
             plot_age_vs_scouting(filtered_bowlers, "Bowler Age vs RR Scouting Score (Development Runway)"),
             use_container_width=True
         )
-
-    st.markdown("---")
-    st.markdown("### 📊 Audited Bowling Phase Delivery Evidence")
-    st.plotly_chart(plot_bowling_phase_evidence(zero_opp_df), use_container_width=True)
+    with bv_tab3:
+        st.plotly_chart(
+            plot_pressure_vs_scouting(filtered_bowlers, "Evidence-Qualified Bowling Score vs RR Scouting Score", "validated_evidence_qualified_score"),
+            use_container_width=True
+        )
+    with bv_tab4:
+        st.plotly_chart(plot_bowling_phase_evidence(zero_opp_df), use_container_width=True)
 
     # Spotlight
     st.markdown("### 🌟 Spotlight: Top 3 Bowling Targets")
