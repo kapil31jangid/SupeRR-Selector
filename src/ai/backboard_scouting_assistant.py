@@ -236,7 +236,7 @@ CRITICAL RULES:
         import re as _re
         name_str = str(name) if name is not None else self.DEFAULT_MODEL
         # If the string is suspiciously long or contains '=' it is a repr of an object
-        if len(name_str) > 60 or '=' in name_str:
+        if len(name_str) > 50 or '=' in name_str or '{' in name_str or 'description=' in name_str:
             _m = _re.search(r'gemini[-\w.]+', name_str, _re.IGNORECASE)
             if _m:
                 clean = _m.group(0)

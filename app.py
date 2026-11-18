@@ -1,8 +1,19 @@
 """
-PRESSURE-X | Rajasthan Royals IPL 2027 Scouting Intelligence
-============================================================
-Streamlit Interactive Scouting Dashboard
-Entry point for judges, ownership, and war-room analytics.
+PRESSURE-X 2.0 | Rajasthan Royals IPL 2027 Scouting Intelligence
+=================================================================
+Complete Interactive Cricket Recruitment Intelligence Platform
+
+10-Page Navigation:
+1. Executive Overview — KPIs, mandate, official deliverables
+2. Scouting Explorer — Filter-first table with 664 players (View A)
+3. Dynamic Ranking Engine — Custom weight sliders, missing data policy, sensitivity
+4. RR Current Squad — Retained players from retained_players.csv (View C)
+5. RR Gap Analysis — Need vs strength, vacancy fit scoring
+6. Domestic Intelligence — All domestic competition tiers (Tier 5)
+7. Player Comparison — Multi-player radar, phase overlays
+8. Backboard AI Assistant — Persistent thread, natural language queries
+9. Standard Scouting Report — One-click CSV export
+10. Methodology & Reliability — Mathematical formulation, caveats
 """
 
 import sys
@@ -28,7 +39,8 @@ from dashboard.utils import (
     load_current_form_audit,
     load_retained_players,
     get_all_shortlist_players,
-    load_complete_eligible_pool,
+    load_complete_pool_enriched,
+    load_rr_current_squad,
     apply_custom_css,
     RR_PINK,
     RR_ROYAL_BLUE,
@@ -55,7 +67,9 @@ import base64
 from models.bowling_eq_model import EvidenceQualifiedBowlingModel
 from dashboard.pages.ai_scouting_lab import render_ai_scouting_lab
 from dashboard.pages.scouting_explorer import render_scouting_explorer
-from dashboard.utils.scouting_data import load_complete_pool_enriched
+from dashboard.pages.rr_squad_analysis import render_rr_squad_analysis
+from dashboard.pages.domestic_intelligence import render_domestic_intelligence
+from dashboard.pages.dynamic_ranking import render_dynamic_ranking
 
 # Resolve official logo path
 LOGO_PATH = PROJECT_ROOT / "assets" / "rr_logo.png"
@@ -63,7 +77,7 @@ app_icon = Image.open(LOGO_PATH) if LOGO_PATH.exists() else "👑"
 
 # Configure Page
 st.set_page_config(
-    page_title="PRESSURE-X | RR Scouting Intelligence",
+    page_title="PRESSURE-X 2.0 | RR Scouting Intelligence",
     page_icon=app_icon,
     layout="wide",
     initial_sidebar_state="expanded"
@@ -78,7 +92,7 @@ if not val_status['overall_pass']:
     st.error(f"⚠️ Critical Data Integrity Error: {val_status.get('details', 'Invalid dataset schemas detected.')}")
     st.stop()
 
-# Load Datasets
+# Load Core Datasets
 batters_df = load_final_batters()
 bowlers_df = load_final_bowlers()
 reserves_df = load_final_reserves()
@@ -87,8 +101,9 @@ deployment_df = load_bowling_deployment()
 zero_opp_df = load_zero_opportunity_audit()
 form_audit_df = load_current_form_audit()
 retained_df = load_retained_players()
-all_players_df = get_all_shortlist_players()
-complete_pool_df = load_complete_eligible_pool()
+official_shortlist_df = get_all_shortlist_players()
+complete_pool_df = load_complete_pool_enriched()
+rr_squad_df = load_rr_current_squad()
 eq_model = EvidenceQualifiedBowlingModel()
 
 # Sidebar Branding & Navigation
@@ -121,14 +136,16 @@ with st.sidebar:
     page = st.radio(
         "Navigation",
         [
-            "📊 Executive Overview",
-            "🎯 Interactive Scouting Explorer",
-            "🏏 Top 10 Batters (Official)",
-            "🎳 Top 10 Bowlers (Official)",
-            "⚔️ Player Comparison",
-            "🤖 Ask AI Assistant (Optional)",
-            "🛡️ RR Long-Term Strategy",
-            "📐 Methodology & Reliability"
+            "📊 1. Executive Overview",
+            "🎯 2. Scouting Explorer",
+            "📐 3. Dynamic Ranking Engine",
+            "🛡️ 4. RR Current Squad",
+            "🔍 5. RR Gap Analysis",
+            "🏏 6. Domestic Intelligence",
+            "⚔️ 7. Player Comparison",
+            "🤖 8. AI Assistant",
+            "📋 9. Standard Scouting Report",
+            "📐 10. Methodology & Reliability"
         ],
         index=0
     )
@@ -136,9 +153,10 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("""
     <div style="font-size: 0.75rem; color: #64748B; padding: 4px;">
-        <b>PRESSURE-X v3.0</b><br>
-        Evidence-Based Paired Adjustment<br>
-        40/30/20/10 RR Scouting Model<br>
+        <b>PRESSURE-X 2.0</b><br>
+        311 Unique Eligible Players (664 Player-Seasons)<br>
+        Dynamic 40/30/20/10 Model<br>
+        RR Squad Gap Analysis<br>
         Forensic Audit: 100% Verified
     </div>
     """, unsafe_allow_html=True)
@@ -147,34 +165,44 @@ with st.sidebar:
 # ==============================================================================
 # PAGE 1: EXECUTIVE OVERVIEW
 # ==============================================================================
-if page == "📊 Executive Overview":
+if page == "📊 1. Executive Overview":
     st.markdown("""
     <div class="rr-header-box">
-        <h1 class="rr-title">PRESSURE-X <span>| RR Scouting Intelligence</span></h1>
-        <p class="rr-subtitle">Data-driven pressure performance, player development runway, and IPL 2027 auction strategy.</p>
+        <h1 class="rr-title">PRESSURE-X 2.0 <span>| RR Scouting Intelligence</span></h1>
+        <p class="rr-subtitle">Complete cricket recruitment intelligence platform for IPL 2027 auction.</p>
     </div>
     """, unsafe_allow_html=True)
 
     # KPI Top Bar
-    k1, k2, k3, k4, k5 = st.columns(5)
+    k1, k2, k3, k4, k5, k6 = st.columns(6)
     with k1:
         render_kpi_card("Total Deliveries", "201,000+", "5 Competition Tiers", "#3B82F6")
     with k2:
-        render_kpi_card("Retained Excluded", f"{len(retained_df)} Players", "10 IPL Franchises", "#EF4444")
+        render_kpi_card("Eligible Pool", "311 Players", "All 5 Tiers (664 player-seasons)", "#EA1B86")
     with k3:
-        render_kpi_card("Top 10 Batters", f"{len(batters_df)}", "Combined IND + OS", "#EA1B86")
+        render_kpi_card("Official Shortlist", "28 Players", "View B (Archived)", "#10B981")
     with k4:
-        render_kpi_card("Top 10 Bowlers", f"{len(bowlers_df)}", "Evidence-Qualified", "#10B981")
+        render_kpi_card("RR Retained Squad", f"{len(rr_squad_df)} Players", "View C", "#F59E0B")
     with k5:
-        render_kpi_card("Reserve Depth", f"{len(reserves_df)}", "Tactical & Role Pivots", "#F59E0B")
+        render_kpi_card("Retained Excluded", f"{len(retained_df)} Players", "10 IPL Franchises", "#EF4444")
+    with k6:
+        render_kpi_card("Domestic Evidence", f"{(complete_pool_df['has_domestic_evidence'].sum() if not complete_pool_df.empty else 0):.0f} Players", "Tier 5 Coverage", "#6366F1")
 
     st.markdown("### 🎯 Executive Mandate")
     st.markdown("""
     <div class="insight-box">
-        <b>Core Challenge:</b> Traditional T20 scouting over-indexes on raw aggregate strike rates and unadjusted boundary counts. 
-        <b>PRESSURE-X</b> introduces a multi-tier, evidence-based Bayesian shrinkage framework evaluated strictly under game pressure 
-        (High-Extreme, Death, Powerplay, and Chase situations), refined through the <b>Rajasthan Royals Long-Term Talent Model</b> 
-        which prioritizes high-ceiling youth (8–10 year development runway) balanced by clutch international anchors.
+        <b>Core Challenge:</b> Traditional T20 scouting over-indexes on raw aggregate strike rates and unadjusted boundary counts.
+        <b>PRESSURE-X 2.0</b> introduces a complete interactive recruitment intelligence platform with:
+        <ul>
+        <li><b>View A:</b> Complete 664-player auction-eligible pool with dynamic ranking engine</li>
+        <li><b>View B:</b> Official 28-player verified shortlist (archived benchmark)</li>
+        <li><b>View C:</b> RR current squad with gap analysis and vacancy fit scoring</li>
+        <li><b>Dynamic Ranking:</b> Customizable 40/30/20/10 weights with sensitivity analysis</li>
+        <li><b>Domestic Intelligence:</b> Tier 5 competition deep-dive for hidden gems</li>
+        <li><b>AI Assistant:</b> Backboard × Google Gemini with persistent conversation threads</li>
+        </ul>
+        All evaluated under game pressure (High-Extreme, Death, Powerplay, Chase) with
+        Bayesian shrinkage (prior_weight=30), competition tier adjustment, and evidence-qualified bowling.
     </div>
     """, unsafe_allow_html=True)
 
@@ -193,7 +221,7 @@ if page == "📊 Executive Overview":
             "Weight": [40, 30, 20, 10],
             "Operational Focus": [
                 "Quantified Bayesian pressure score in high-win-probability-delta overs",
-                "Runway as of 1 Apr 2027: Emerging (<=23: 100), Young Dev (24-26: 85), Prime (27-30: 65), Exp (31+: 50)",
+                "Runway as of 1 Apr 2027: Emerging (≤23: 100), Young Dev (24-26: 85), Prime (27-30: 65), Exp (31+: 50)",
                 "Physical attributes, bat speed, mystery spin, 3D versatility & tactical squad fit",
                 "Audited recent 12-month match logs across international and domestic leagues"
             ]
@@ -201,12 +229,25 @@ if page == "📊 Executive Overview":
         st.dataframe(weights_data, hide_index=True, use_container_width=True)
 
     with col_r:
-        st.markdown("#### 🌐 Final Roster Composition")
-        all_finalists = pd.concat([batters_df, bowlers_df], ignore_index=True)
-        st.plotly_chart(plot_nationality_pie(all_finalists, "Finalist Nationality Split (Batters & Bowlers)"), use_container_width=True)
+        st.markdown("#### 🌐 Platform Views")
+        view_data = pd.DataFrame({
+            "View": ["View A: Complete Pool", "View B: Official Shortlist", "View C: RR Squad"],
+            "Players": [664, 28, len(rr_squad_df)],
+            "Purpose": [
+                "Full auction universe with dynamic ranking",
+                "Verified benchmark (10 bat, 10 bowl, 8 res)",
+                "Current retained squad with gap analysis"
+            ],
+            "Key Features": [
+                "Custom weights, sensitivity, filters",
+                "Read-only, audited, immutable",
+                "Vacancy fit, role coverage, runway"
+            ]
+        })
+        st.dataframe(view_data, hide_index=True, use_container_width=True)
 
     st.markdown("---")
-    st.markdown("#### 📥 Download Official Verified Deliverables")
+    st.markdown("#### 📥 Download Official Verified Deliverables (View B)")
     d1, d2, d3 = st.columns(3)
     with d1:
         st.download_button(
@@ -235,176 +276,130 @@ if page == "📊 Executive Overview":
 
 
 # ==============================================================================
-# PAGE 2: INTERACTIVE SCOUTING EXPLORER (PRIMARY DASHBOARD INTERACTION)
+# PAGE 2: SCOUTING EXPLORER (FILTER-FIRST WITH 664 PLAYERS)
 # ==============================================================================
-elif page == "🎯 Interactive Scouting Explorer":
+elif page == "🎯 2. Scouting Explorer":
     render_scouting_explorer()
 
 
 # ==============================================================================
-# PAGE 3: TOP 10 BATTERS (OFFICIAL VERIFIED RANKINGS)
+# PAGE 3: DYNAMIC RANKING ENGINE
 # ==============================================================================
-elif page == "🏏 Top 10 Batters (Official)":
+elif page == "📐 3. Dynamic Ranking Engine":
+    render_dynamic_ranking()
+
+
+# ==============================================================================
+# PAGE 4: RR CURRENT SQUAD
+# ==============================================================================
+elif page == "🛡️ 4. RR Current Squad":
     st.markdown("""
     <div class="rr-header-box">
-        <h1 class="rr-title">Official Top 10 Batters <span>| RR Auction Playbook</span></h1>
-        <p class="rr-subtitle">Verified read-only rankings ordered by audited RR Scouting Composite (40/30/20/10).</p>
+        <h1 class="rr-title">Rajasthan Royals Current Squad <span>| View C: 19 Retained Players</span></h1>
+        <p class="rr-subtitle">Complete retained squad from IPL 2027 retention with roles, ages, and nationalities.</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Interactive Filters
-    st.markdown("#### 🔍 Filter Target Pool")
-    f1, f2, f3 = st.columns(3)
-    with f1:
-        nat_filter = st.multiselect("Nationality", options=["All", "Indian", "Overseas"], default=["All"])
-    with f2:
-        cat_filter = st.multiselect("Career Stage", options=["All"] + sorted(batters_df['development_category'].unique().tolist()), default=["All"])
-    with f3:
-        form_filter = st.multiselect("2026 Form", options=["All"] + sorted(batters_df['current_form_rating'].unique().tolist()), default=["All"])
+    if rr_squad_df.empty:
+        st.error("RR squad data not available. Run build_rr_squad.py first.")
+    else:
+        # Add nationality column derived from overseas_status
+        if 'nationality' not in rr_squad_df.columns and 'overseas_status' in rr_squad_df.columns:
+            rr_squad_df = rr_squad_df.copy()
+            rr_squad_df['nationality'] = rr_squad_df['overseas_status'].map({'Domestic': 'Indian', 'Overseas': 'Overseas'})
 
-    filtered_df = batters_df.copy()
-    if "All" not in nat_filter and nat_filter:
-        filtered_df = filtered_df[filtered_df['nationality'].isin(nat_filter)]
-    if "All" not in cat_filter and cat_filter:
-        filtered_df = filtered_df[filtered_df['development_category'].isin(cat_filter)]
-    if "All" not in form_filter and form_filter:
-        filtered_df = filtered_df[filtered_df['current_form_rating'].isin(form_filter)]
+        # KPI Row
+        k1, k2, k3, k4 = st.columns(4)
+        with k1:
+            st.metric("Total Retained", len(rr_squad_df))
+        with k2:
+            overseas = (rr_squad_df['nationality'] == 'Overseas').sum()
+            st.metric("Overseas Slots Used", f"{overseas}/8")
+        with k3:
+            indian = (rr_squad_df['nationality'] == 'Indian').sum()
+            st.metric("Indian Players", indian)
+        with k4:
+            avg_age = rr_squad_df['age_as_of_2027_04_01'].mean()
+            st.metric("Average Age", f"{avg_age:.1f} yrs")
 
-    # Ranked Table
-    st.markdown("### 📋 Verified Rankings Table")
-    render_interactive_batter_table(filtered_df)
+        # Visuals
+        col_viz1, col_viz2 = st.columns(2)
+        with col_viz1:
+            st.plotly_chart(plot_nationality_pie(rr_squad_df, "RR Squad Nationality Split"), use_container_width=True)
+        with col_viz2:
+            st.plotly_chart(plot_career_stage_bar(rr_squad_df, "RR Squad Career Stage Distribution"), use_container_width=True)
 
-    st.markdown("---")
-    st.markdown("### 📊 Scouting Visual Analytics")
-    v_tab1, v_tab2, v_tab3 = st.tabs([
-        "🏆 Target Priority Rankings",
-        "📈 Age & Development Runway",
-        "🔬 Pressure vs Scouting Correlation"
-    ])
-    with v_tab1:
-        st.plotly_chart(
-            plot_ranking_bar_chart(filtered_df, "Top Batters by RR Scouting Score (Top 3 Highlighted)", role="batter"),
+        # Squad table
+        st.markdown("### 📋 Retained Squad Roster")
+        display_cols = ['player_id', 'player_name', 'primary_role', 'nationality', 'age_as_of_2027_04_01',
+                        'development_category', 'batting_style', 'bowling_style', 'wk_flag', 'retention_type']
+        clean_squad = rr_squad_df[[c for c in display_cols if c in rr_squad_df.columns]].copy()
+
+        st.dataframe(
+            clean_squad,
+            column_config={
+                "player_id": st.column_config.NumberColumn("ID", width="small"),
+                "player_name": st.column_config.TextColumn("Player", width="medium"),
+                "primary_role": st.column_config.TextColumn("Role", width="medium"),
+                "nationality": st.column_config.TextColumn("Nat", width="small"),
+                "age_as_of_2027_04_01": st.column_config.NumberColumn("Age", format="%.1f", width="small"),
+                "development_category": st.column_config.TextColumn("Dev Stage", width="medium"),
+                "batting_style": st.column_config.TextColumn("Bat Style", width="small"),
+                "bowling_style": st.column_config.TextColumn("Bowl Style", width="medium"),
+                "wk_flag": st.column_config.CheckboxColumn("WK", width="small"),
+                "retention_type": st.column_config.TextColumn("Type", width="small")
+            },
+            hide_index=True,
             use_container_width=True
         )
-    with v_tab2:
-        st.plotly_chart(
-            plot_age_vs_scouting(filtered_df, "Batter Age vs RR Scouting Score (Development Runway)"),
-            use_container_width=True
-        )
-    with v_tab3:
-        st.plotly_chart(
-            plot_pressure_vs_scouting(filtered_df, "Historical Pressure Performance vs RR Scouting Score", "validated_historical_pressure_score"),
-            use_container_width=True
-        )
 
-    # Top 3 Player Profiles
-    st.markdown("### 🌟 Spotlight: Top 3 Franchise Targets")
-    t1, t2, t3 = st.columns(3)
-    with t1:
-        render_player_scouting_card(batters_df.iloc[0].to_dict())
-    with t2:
-        render_player_scouting_card(batters_df.iloc[1].to_dict())
-    with t3:
-        render_player_scouting_card(batters_df.iloc[2].to_dict())
+        # Role coverage
+        st.markdown("### 🎯 Role Coverage")
+        role_counts = rr_squad_df['primary_role'].value_counts().reset_index()
+        role_counts.columns = ['Role', 'Count']
+        st.bar_chart(role_counts.set_index('Role'))
+
+        # Download
+        csv = rr_squad_df.to_csv(index=False)
+        st.download_button(
+            "⬇️ Download RR Squad CSV",
+            data=csv,
+            file_name="rr_current_squad.csv",
+            mime="text/csv",
+            use_container_width=True
+        )
 
 
 # ==============================================================================
-# PAGE 4: TOP 10 BOWLERS (OFFICIAL VERIFIED RANKINGS)
+# PAGE 5: RR GAP ANALYSIS
 # ==============================================================================
-elif page == "🎳 Top 10 Bowlers (Official)":
-    st.markdown("""
-    <div class="rr-header-box">
-        <h1 class="rr-title">Official Top 10 Bowlers <span>| Evidence-Qualified Playbook</span></h1>
-        <p class="rr-subtitle">Verified read-only rankings evaluated on observed deliveries with codified tactical boundaries.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Filters
-    st.markdown("#### 🔍 Filter Target Pool")
-    f1, f2 = st.columns(2)
-    with f1:
-        nat_filter_bowlers = st.multiselect("Nationality", options=["All", "Indian", "Overseas"], default=["All"], key="b_nat")
-    with f2:
-        cat_filter_bowlers = st.multiselect("Career Stage", options=["All"] + sorted(bowlers_df['development_category'].unique().tolist()), default=["All"], key="b_cat")
-
-    filtered_bowlers = bowlers_df.copy()
-    if "All" not in nat_filter_bowlers and nat_filter_bowlers:
-        filtered_bowlers = filtered_bowlers[filtered_bowlers['nationality'].isin(nat_filter_bowlers)]
-    if "All" not in cat_filter_bowlers and cat_filter_bowlers:
-        filtered_bowlers = filtered_bowlers[filtered_bowlers['development_category'].isin(cat_filter_bowlers)]
-
-    # Ranked Table
-    st.markdown("### 📋 Verified Bowler Rankings Table")
-    render_interactive_bowler_table(filtered_bowlers)
-
-    # Critical Tactical Prohibitions Banner
-    st.markdown("### 🚨 Mandatory Tactical Deployment Boundaries")
-    st.markdown("""
-    <div class="boundary-box">
-        <b>1. Mohammad Ghazanfar (Rank 1 | Age 21):</b> Middle Overs Specialist (Overs 7-15). 
-        <b>Strict Prohibition:</b> No death overs (17-20) and no powerplay overs in Year 1. Zero high-extreme deliveries in dataset.<br>
-        <b>2. Michael Bracewell (Rank 8 | Age 36):</b> PP & Middle Matchup Off-Spin vs LHB. 
-        <b>Strict Prohibition:</b> Zero death overs bowled in dataset; prohibited from death-phase execution.<br>
-        <b>3. Harry Tector (Rank 4 | Age 27):</b> Part-Time Matchup Spinner. 
-        <b>Strict Prohibition:</b> 0 death and 0 high-extreme deliveries; cannot be assigned frontline death responsibility.<br>
-        <b>4. Ripon Mondol (Rank 2 | Age 24):</b> Proven Death Overs Bowler (54 death deliveries in dataset); high-pace development enforcer under Shane Bond.
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("---")
-    st.markdown("### 📊 Bowling Visual Analytics")
-    bv_tab1, bv_tab2, bv_tab3, bv_tab4 = st.tabs([
-        "🏆 Target Priority Rankings",
-        "📈 Age & Development Runway",
-        "🔬 Evidence-Qualified Correlation",
-        "🎯 Audited Phase Deliveries"
-    ])
-    with bv_tab1:
-        st.plotly_chart(
-            plot_ranking_bar_chart(filtered_bowlers, "Top Bowlers by RR Scouting Score (Top 3 Highlighted)", role="bowler"),
-            use_container_width=True
-        )
-    with bv_tab2:
-        st.plotly_chart(
-            plot_age_vs_scouting(filtered_bowlers, "Bowler Age vs RR Scouting Score (Development Runway)"),
-            use_container_width=True
-        )
-    with bv_tab3:
-        st.plotly_chart(
-            plot_pressure_vs_scouting(filtered_bowlers, "Evidence-Qualified Bowling Score vs RR Scouting Score", "validated_evidence_qualified_score"),
-            use_container_width=True
-        )
-    with bv_tab4:
-        st.plotly_chart(plot_bowling_phase_evidence(zero_opp_df), use_container_width=True)
-
-    # Spotlight
-    st.markdown("### 🌟 Spotlight: Top 3 Bowling Targets")
-    t1, t2, t3 = st.columns(3)
-    with t1:
-        render_player_scouting_card(bowlers_df.iloc[0].to_dict(), eq_model.get_tactical_guideline(bowlers_df.iloc[0]['player_id']))
-    with t2:
-        render_player_scouting_card(bowlers_df.iloc[1].to_dict(), eq_model.get_tactical_guideline(bowlers_df.iloc[1]['player_id']))
-    with t3:
-        render_player_scouting_card(bowlers_df.iloc[2].to_dict(), eq_model.get_tactical_guideline(bowlers_df.iloc[2]['player_id']))
+elif page == "🔍 5. RR Gap Analysis":
+    render_rr_squad_analysis()
 
 
 # ==============================================================================
-# PAGE 5: PLAYER COMPARISON
+# PAGE 6: DOMESTIC INTELLIGENCE
 # ==============================================================================
-elif page == "⚔️ Player Comparison":
+elif page == "🏏 6. Domestic Intelligence":
+    render_domestic_intelligence()
+
+
+# ==============================================================================
+# PAGE 7: PLAYER COMPARISON
+# ==============================================================================
+elif page == "⚔️ 7. Player Comparison":
     st.markdown("""
     <div class="rr-header-box">
         <h1 class="rr-title">Head-to-Head Player Comparison <span>| War Room Tool</span></h1>
-        <p class="rr-subtitle">Multi-dimensional comparison across pressure execution, development runway, skill ceiling, and form.</p>
+        <p class="rr-subtitle">Multi-dimensional comparison across 664 eligible players with phase overlays.</p>
     </div>
     """, unsafe_allow_html=True)
 
-    enriched_pool = load_complete_pool_enriched()
-    player_options = enriched_pool['player_name'].tolist()
+    player_options = complete_pool_df['player_name'].tolist()
     default_selection = ["Jake Fraser-McGurk", "Jacob Bethell", "Harry Brook"]
-    
+
     selected_players = st.multiselect(
-        "Select Candidates to Compare (Search any of 303 Eligible Players)",
+        "Select Candidates to Compare (Search any of 664 Eligible Players)",
         options=player_options,
         default=[p for p in default_selection if p in player_options]
     )
@@ -412,8 +407,8 @@ elif page == "⚔️ Player Comparison":
     if len(selected_players) < 2:
         st.warning("Please select at least 2 players to compare.")
     else:
-        comp_df = enriched_pool[enriched_pool['player_name'].isin(selected_players)].copy()
-        
+        comp_df = complete_pool_df[complete_pool_df['player_name'].isin(selected_players)].copy()
+
         enriched_data = []
         for _, r in comp_df.iterrows():
             p_dict = r.to_dict()
@@ -421,7 +416,7 @@ elif page == "⚔️ Player Comparison":
             p_dict['dimB_age_dev'] = float(r.get('dimB_runway', 65.0))
             p_dict['dimC_skill_ceiling'] = float(r.get('dimC_ceiling', 70.0))
             p_dict['dimD_current_form'] = float(r.get('dimD_form', 70.0))
-            p_dict['tactical_fit'] = 90.0 if r['is_shortlisted'] else 75.0
+            p_dict['tactical_fit'] = 90.0 if r.get('is_shortlisted') else 75.0
             enriched_data.append(p_dict)
 
         c1, c2 = st.columns([1.2, 1])
@@ -448,55 +443,108 @@ elif page == "⚔️ Player Comparison":
 
 
 # ==============================================================================
-# PAGE 6: ASK AI ASSISTANT (OPTIONAL)
+# PAGE 8: AI ASSISTANT
 # ==============================================================================
-elif page == "🤖 Ask AI Assistant (Optional)":
+elif page == "🤖 8. AI Assistant":
     render_ai_scouting_lab(complete_pool_df)
 
 
 # ==============================================================================
-# PAGE 7: RR LONG-TERM STRATEGY
+# PAGE 9: STANDARD SCOUTING REPORT
 # ==============================================================================
-elif page == "🛡️ RR Long-Term Strategy":
+elif page == "📋 9. Standard Scouting Report":
+    from dashboard.utils.data_loader import build_standard_scouting_report, export_standard_scouting_report
+
     st.markdown("""
     <div class="rr-header-box">
-        <h1 class="rr-title">Rajasthan Royals Talent Philosophy <span>| 2027-2030 Roadmap</span></h1>
-        <p class="rr-subtitle">Balancing generational development upside with tactical match-winning anchors.</p>
+        <h1 class="rr-title">Standard Scouting Report <span>| One-Click CSV Export</span></h1>
+        <p class="rr-subtitle">Generate standardized scouting reports for any candidate subset.</p>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown("""
-    <div class="insight-box">
-        <b>The Rajasthan Royals Competitive Advantage:</b> Since 2008, RR has led the IPL in unearthing and cultivating 
-        young, high-ceiling talent. In 2027, the franchise pairs its retained core (Sanju Samson, Yashasvi Jaiswal, Riyan Parag, 
-        Dhruv Jurel, Sandeep Sharma, Shimron Hetmyer) with emerging international and domestic assets possessing 
-        8–10 year development runways.
-    </div>
-    """, unsafe_allow_html=True)
+    **Standard Report Columns:** Player ID, Name, Role, Country, Nationality, Age, Development Stage, View,
+    Official Shortlist, RR Scouting Score (40/30/20/10), Pressure/EQ Base Score, 4 Dimension Scores,
+    Form Rating, Observed Balls, Evidence Confidence, High-Extreme Balls, Career Stats, Domestic Stats,
+    Phase Stats (PP/Mid/Death), Deployment Guidelines, Form Evidence, Domestic Evidence,
+    Characteristics, Primary Role, Batting/Bowling Style, WK Flag, Overseas Status.
+    """)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("#### 👶 Age Distribution Across Shortlist")
-        st.plotly_chart(plot_career_stage_bar(all_players_df, "Candidate Count by Career Development Category"), use_container_width=True)
+    # Filter options
+    col_f1, col_f2, col_f3, col_f4 = st.columns(4)
+    with col_f1:
+        report_scope = st.selectbox(
+            "Report Scope",
+            ["All 311 Players (View A)", "Official Shortlist 28 (View B)", "RR Squad 19 (View C)", "Custom Selection"],
+            key="report_scope"
+        )
+    with col_f2:
+        report_role = st.selectbox("Role Filter", ["All", "Batter", "Bowler", "All-rounder"], key="report_role")
+    with col_f3:
+        report_nat = st.selectbox("Nationality", ["All", "Indian", "Overseas"], key="report_nat")
+    with col_f4:
+        report_limit = st.number_input("Max Players", 10, 664, 50, key="report_limit")
 
-    with col2:
-        st.markdown("#### 🌍 Balanced Roster Dynamics (No Fixed 5:5 Quotas)")
-        st.plotly_chart(plot_nationality_pie(all_players_df, "Shortlist Nationality Distribution (Finalists + Reserves)"), use_container_width=True)
+    # Build filtered pool
+    if report_scope == "All 311 Players (View A)":
+        report_pool = complete_pool_df.copy()
+    elif report_scope == "Official Shortlist 28 (View B)":
+        report_pool = complete_pool_df[complete_pool_df['is_shortlisted'] == True].copy()
+    elif report_scope == "RR Squad 19 (View C)":
+        report_pool = complete_pool_df[complete_pool_df['view'] == 'View C: RR Squad'].copy() if 'view' in complete_pool_df.columns else complete_pool_df[complete_pool_df['player_id'].isin(rr_squad_df['player_id'])].copy()
+    else:
+        report_pool = complete_pool_df.copy()
 
-    st.markdown("---")
-    st.markdown("### 🛡️ Verified Reserve Roster (Tactical & Budget Pivots)")
-    st.dataframe(
-        reserves_df[['player_id', 'player_name', 'role', 'country', 'nationality', 'age_as_of_2027_04_01',
-                     'development_category', 'validated_pressure_or_eq_score', 'verified_rr_scouting_score', 'current_form_rating']],
-        hide_index=True,
-        use_container_width=True
-    )
+    if report_role != "All":
+        report_pool = report_pool[report_pool['role'] == report_role]
+    if report_nat != "All":
+        report_pool = report_pool[report_pool['nationality'] == report_nat]
+
+    report_pool = report_pool.head(report_limit)
+
+    st.info(f"📊 Report will include **{len(report_pool)} players**")
+
+    # Preview
+    if st.checkbox("Show Preview (First 5 Rows)", value=True):
+        preview_df = build_standard_scouting_report(report_pool.head(5))
+        st.dataframe(preview_df, hide_index=True, use_container_width=True)
+
+    # Generate & Download
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button("📥 Generate & Download Standard Report (CSV)", type="primary", use_container_width=True):
+            report_df = build_standard_scouting_report(report_pool)
+            csv = report_df.to_csv(index=False)
+            st.download_button(
+                "⬇️ Download Standard Scouting Report",
+                data=csv,
+                file_name=f"standard_scouting_report_{report_scope.replace(' ', '_').replace('(', '').replace(')', '')}_{pd.Timestamp.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+            st.success(f"✅ Report generated with {len(report_df)} players!")
+
+    with c2:
+        if st.button("📊 Generate Dynamic Rankings Export", use_container_width=True):
+            from src.scoring.dynamic_scouting_engine import create_default_engine
+            engine = create_default_engine()
+            engine.fit(report_pool)
+            ranked = engine.rank_candidates(report_pool)
+            csv = ranked.to_csv(index=False)
+            st.download_button(
+                "⬇️ Download Dynamic Rankings",
+                data=csv,
+                file_name=f"dynamic_rankings_{pd.Timestamp.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+            st.success("✅ Dynamic rankings exported!")
 
 
 # ==============================================================================
-# PAGE 6: METHODOLOGY & RELIABILITY
+# PAGE 10: METHODOLOGY & RELIABILITY
 # ==============================================================================
-elif page == "📐 Methodology & Reliability":
+elif page == "📐 10. Methodology & Reliability":
     st.markdown("""
     <div class="rr-header-box">
         <h1 class="rr-title">PRESSURE-X Methodology <span>& Reliability Audit</span></h1>
@@ -517,21 +565,29 @@ elif page == "📐 Methodology & Reliability":
     - **Tier 3 (CPL, BPL, LPL, Super Smash):** Multiplier = `0.84`
     - **Tier 4 (Associate T20Is):** Multiplier = `0.76`
     - **Tier 5 (Domestic Tournaments - SMAT, Vitality Blast):** Multiplier = `0.68`
-
-    #### 2. James-Stein Empirical Bayes Shrinkage
-    Low sample sizes (e.g. 10 balls in death overs) produce extreme rate noise. We apply empirical shrinkage toward the global prior:
     """)
+
+    st.markdown("#### 2. James-Stein Empirical Bayes Shrinkage")
+    st.markdown("Low sample sizes (e.g. 10 balls in death overs) produce extreme rate noise. We apply empirical shrinkage toward the global prior:")
     st.latex(r"""
     \lambda_i = \frac{N_i}{N_i + k}, \quad \hat{\theta}_i = \lambda_i \cdot \bar{x}_i + (1 - \lambda_i) \cdot \mu_{\text{prior}}
     """)
+    st.markdown("With prior_weight `k = 30` calibrated on IPL population.")
 
-    st.markdown("""
-    #### 3. Evidence-Qualified (EQ) Bowling Formulation
-    When a bowler has 0 observed deliveries in high-extreme or death phases, treating shrinkage-imputed values as real performance 
-    creates an artifact. The Evidence-Qualified model re-normalizes weights across only observed phases:
-    """)
+    st.markdown("#### 3. Evidence-Qualified (EQ) Bowling Formulation")
+    st.markdown("When a bowler has 0 observed deliveries in high-extreme or death phases, treating shrinkage-imputed values as real performance creates an artifact. The Evidence-Qualified model re-normalizes weights across only observed phases:")
     st.latex(r"""
     \text{Score}_{\text{EQ}} = \frac{\sum_{i \in \text{Observed}} w_i \cdot s_i}{\sum_{i \in \text{Observed}} w_i}
+    """)
+
+    st.markdown("#### 4. Dynamic Ranking Engine")
+    st.markdown("""
+    The Dynamic Ranking Engine (`src/scoring/dynamic_scouting_engine.py`) enables:
+    - **Custom Weight Profiles**: RR Default (40/30/20/10), Pressure First, Youth Focus, Ceiling Chaser, Form Watcher
+    - **Missing Data Policies**: Population Mean/Median, Neutral, Zero, Weight Redistribution
+    - **Evidence Gating**: Confidence penalty for low sample sizes (< 30 balls default)
+    - **Sensitivity Analysis**: Rank stability under weight perturbations (±15 pts, 7 steps)
+    - **Domestic Bonus**: Optional bonus for verified domestic T20 evidence
     """)
 
     st.markdown("---")
@@ -543,7 +599,40 @@ elif page == "📐 Methodology & Reliability":
         • <b>Unobserved Phases:</b> Bowlers with 0 death deliveries (Bracewell, Tector, Ghazanfar) have codified deployment bans.<br>
         • <b>Current Form Window:</b> Evaluated across 2025–2026 match logs up to the research cutoff date.<br>
         • <b>Eligibility Enforcement:</b> 184 retained players and Pakistani nationals excluded per BCCI/IPL regulations.<br>
-        • <b>Challenge Scope:</b> Proposed scouting framework developed for SupeRR Selector Season 2; not an official internal document of Rajasthan Royals.
+        • <b>Domestic Data Limitation:</b> No ball-by-ball data for domestic competitions; metrics from available aggregates only.<br>
+        • <b>Player Metadata:</b> DOB, batting/bowling style, WK status only for shortlisted players (30); estimated for rest.<br>
+        • <b>Challenge Scope:</b> Proposed scouting framework for SupeRR Selector Season 2; not an official RR internal document.
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("### 📊 Validation Summary (Task 07E)")
+    val_data = pd.DataFrame({
+        "Check": [
+            "Monotonicity (Pre-delivery state)",
+            "Batter runs ≥ 0",
+            "Legal ball definition",
+            "Bowler runs per cricket laws",
+            "Bowler wicket credit rules",
+            "Player identity joins",
+            "Paired T1↔T2 factors",
+            "Paired T2↔T3 factors",
+            "Population T1 vs T2",
+            "Population T2 vs T3",
+            "Final shortlist corrections"
+        ],
+        "Status": ["PASS"] * 11,
+        "Details": [
+            "All pre-delivery variables monotonic",
+            "0 negatives across 200K+ deliveries",
+            "7,735 wides correctly excluded",
+            "Wides=extras1, NB=runs+extras1, Byes=0",
+            "Only Bowled/Caught/LBW/Stump/HitWicket/Obstructing",
+            "Join on player_id only; 3 ID corrections applied",
+            "107 batters, 110 bowlers overlap",
+            "104 batters, 108 bowlers overlap",
+            "154,631 legal balls; factor 1.02",
+            "19,298 legal balls; factor 1.00",
+            "5 corrections in final_shortlist_corrections.csv"
+        ]
+    })
+    st.dataframe(val_data, hide_index=True, use_container_width=True)

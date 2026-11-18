@@ -20,6 +20,8 @@ SUPPORTING_EVIDENCE_DIR = OUTPUTS_DIR / "supporting_evidence"
 REPORTS_DIR = PROJECT_ROOT / "reports"
 ASSETS_DIR = PROJECT_ROOT / "assets"
 DASHBOARD_VISUALS_DIR = ASSETS_DIR / "dashboard_visuals"
+REFERENCE_DATA_DIR = DATA_DIR / "reference"
+OFFICIAL_REFERENCE_DIR = OUTPUTS_DIR / "official_reference"
 
 
 def get_data_file(filename: str, processed: bool = True) -> Path:

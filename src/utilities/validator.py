@@ -6,16 +6,16 @@ Verifies file existence, column schema, duplicate IDs, and score sanity.
 from typing import Dict, List, Tuple
 from pathlib import Path
 import pandas as pd
-from .paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR
+from .paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR, OFFICIAL_REFERENCE_DIR
 
 
 class DataValidator:
     """Automated validator ensuring zero corrupt or missing datasets load into dashboard."""
 
     REQUIRED_FILES = [
-        OUTPUTS_DIR / "final_combined_top10_batters.csv",
-        OUTPUTS_DIR / "final_combined_top10_bowlers.csv",
-        OUTPUTS_DIR / "final_combined_reserves.csv",
+        OFFICIAL_REFERENCE_DIR / "final_combined_top10_batters.csv",
+        OFFICIAL_REFERENCE_DIR / "final_combined_top10_bowlers.csv",
+        OFFICIAL_REFERENCE_DIR / "final_combined_reserves.csv",
         SUPPORTING_EVIDENCE_DIR / "rr_scouting_priority_scores.csv",
         SUPPORTING_EVIDENCE_DIR / "evidence_qualified_bowler_comparison.csv",
         SUPPORTING_EVIDENCE_DIR / "bowling_deployment_validation.csv",
@@ -119,8 +119,8 @@ class DataValidator:
                 'details': f"Missing required data files: {missing_files}"
             }
 
-        batters_df = pd.read_csv(OUTPUTS_DIR / "final_combined_top10_batters.csv")
-        bowlers_df = pd.read_csv(OUTPUTS_DIR / "final_combined_top10_bowlers.csv")
+        batters_df = pd.read_csv(OFFICIAL_REFERENCE_DIR / "final_combined_top10_batters.csv")
+        bowlers_df = pd.read_csv(OFFICIAL_REFERENCE_DIR / "final_combined_top10_bowlers.csv")
 
         b_check = cls.validate_ranking_dataframe(batters_df, role='batter')
         bo_check = cls.validate_ranking_dataframe(bowlers_df, role='bowler')

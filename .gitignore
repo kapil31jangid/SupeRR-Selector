@@ -38,8 +38,19 @@ Desktop.ini
 
 # Secrets / credentials
 .env
+.env.*
+!.env.example
 *.key
 *.pem
 secrets/
 .streamlit/secrets.toml
 
+# Testing
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,20 @@
+player_id,player_name,franchise,overseas_status,trade_status,age_as_of_2027_04_01,primary_role,batting_style,bowling_style,wk_flag,final_nationality,is_retained,retention_type,development_category,eligibility_status,nationality
+47523,Aman Rao Perala,RR,Domestic,Retained,22,Unknown,Unknown,Unknown,False,Indian,True,Retained,Emerging,,Indian
+67036,Brijesh Sharma,RR,Domestic,Retained,23,All-rounder,RHB,Right-arm Fast,False,Indian,True,Retained,Emerging,,Indian
+2436,Dasun Shanaka,RR,Overseas,Retained,35,All-rounder,RHB,Right-arm medium,False,Overseas,True,Retained,Experienced performer,,Overseas
+7260,Dhruv Jurel,RR,Domestic,Retained,26,Batter,RHB,Unknown,False,Indian,True,Retained,Young development candidate,,Indian
+8182,Donovan Ferreira,RR,Overseas,Retained,28,All-rounder,RHB,Right-arm offbreak,False,Overseas,True,Retained,Prime-age performer,,Overseas
+3298,Jofra Archer,RR,Overseas,Retained,32,All-rounder,RHB,Right-arm Fast,False,Overseas,True,Retained,Experienced performer,,Overseas
+2334,Lhuan-dre Pretorius,RR,Overseas,Retained,20,All-rounder,RHB,Right-arm medium-fast,False,Overseas,True,Retained,Emerging,ELIGIBLE,Overseas
+6237,Manimaran Siddharth,RR,Domestic,Traded,26,Bowler,Unknown,Slow left-arm orthodox,False,Indian,True,Traded,Young development candidate,,Indian
+1566,Mohd. Shami,RR,Domestic,Traded,37,All-rounder,RHB,Right-arm Fast,False,Overseas,True,Traded,Experienced performer,,Overseas
+7312,Nandre Burger,RR,Overseas,Retained,28,All-rounder,LHB,Left-arm fast-medium,False,Overseas,True,Retained,Prime-age performer,,Overseas
+7503,Ravi Bishnoi,RR,Domestic,Retained,26,All-rounder,RHB,Right-arm Leg-Break,False,Indian,True,Retained,Young development candidate,,Indian
+152,Ravindra Jadeja,RR,Domestic,Retained,38,All-rounder,LHB,Slow left-arm orthodox,False,Indian,True,Retained,Experienced performer,,Indian
+6423,Riyan Parag,RR,Domestic,Retained,25,All-rounder,RHB,Right-arm offbreak,False,Indian,True,Retained,Young development candidate,,Indian
+2411,Sandeep Sharma,RR,Domestic,Retained,33,All-rounder,RHB,Right-arm medium-fast,False,Indian,True,Retained,Experienced performer,,Indian
+25139,Shubham Dubey,RR,Domestic,Retained,28,Batter,LHB,Unknown,False,Indian,True,Retained,Prime-age performer,,Indian
+7269,Sushant Mishra,RR,Domestic,Retained,24,All-rounder,LHB,Left-arm medium-fast,False,Indian,True,Retained,Young development candidate,,Indian
+50284,Vaibhav Suryavanshi,RR,Domestic,Retained,17,Batter,LHB,Unknown,False,Indian,True,Retained,Emerging,,Indian
+41503,Yash Raj Punja,RR,Domestic,Retained,22,Bowler,Unknown,Right-arm Leg-Break,False,Overseas,True,Retained,Emerging,,Overseas
+6819,Yashasvi Jaiswal,RR,Domestic,Retained,25,All-rounder,LHB,Right-arm Leg-Break,False,Indian,True,Retained,Young development candidate,,Indian

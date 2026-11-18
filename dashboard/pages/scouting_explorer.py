@@ -67,7 +67,7 @@ def _init_session_state():
         "se_dev_pref": "All",
         "se_limit": 10,
         "se_search": "",
-        "se_pool_scope": "Full Eligible Pool (303 Players)",
+        "se_pool_scope": "Full Eligible Pool (311 Players)",
         "se_ai_result": None,
         "se_ai_thread_id": None,
         "se_ai_filter_hash": None,
@@ -257,7 +257,7 @@ def render_scouting_explorer():
     """
     _init_session_state()
 
-    # Load complete pool of 303 players
+    # Load complete pool of 311 players
     full_pool_df = load_complete_pool_enriched()
     zero_opp_df = load_bowling_zero_opp()
 
@@ -268,7 +268,7 @@ def render_scouting_explorer():
                 padding:22px 28px;margin-bottom:20px;">
         <div style="font-size:1.7rem;font-weight:800;color:#FFFFFF;">
             🎯 Interactive Scouting Explorer
-            <span style="font-size:0.9rem;font-weight:400;color:#94A3B8;"> | Complete 303-Player Auction Pool</span>
+            <span style="font-size:0.9rem;font-weight:400;color:#94A3B8;"> | Complete 311-Player Auction Pool</span>
         </div>
         <div style="font-size:0.88rem;color:#94A3B8;margin-top:6px;">
             Filter, search, and analyze candidates across all 5 competition tiers using verified pressure evidence,
@@ -287,8 +287,8 @@ def render_scouting_explorer():
         with r1_c1:
             pool_scope = st.selectbox(
                 "Data Scope",
-                ["Full Eligible Pool (303 Players)", "Verified Shortlist Only (28 Players)"],
-                index=0 if st.session_state.se_pool_scope == "Full Eligible Pool (303 Players)" else 1,
+                ["Full Eligible Pool (311 Players)", "Verified Shortlist Only (28 Players)"],
+                index=0 if st.session_state.se_pool_scope == "Full Eligible Pool (311 Players)" else 1,
                 key="se_pool_scope"
             )
         with r1_c2:
@@ -400,7 +400,7 @@ def render_scouting_explorer():
             st.session_state.se_dev_pref = "All"
             st.session_state.se_limit = 10
             st.session_state.se_search = ""
-            st.session_state.se_pool_scope = "Full Eligible Pool (303 Players)"
+            st.session_state.se_pool_scope = "Full Eligible Pool (311 Players)"
             st.rerun()
 
     # Apply filters dynamically
@@ -552,7 +552,7 @@ def render_scouting_explorer():
                 icon="💡"
             )
         else:
-            model_name = assistant.model_name
+            model_name = assistant._safe_model_name(assistant.model_name or assistant.DEFAULT_MODEL)
             st.caption(f"🟢 **Backboard AI Active** | Provider: `{assistant.provider}` | Model: `{model_name}` | Key: `{assistant.masked_api_key}`")
 
             # Check for stale insights
