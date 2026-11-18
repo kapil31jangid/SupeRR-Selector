@@ -41,4 +41,5 @@ Desktop.ini
 *.key
 *.pem
 secrets/
+.streamlit/secrets.toml
 

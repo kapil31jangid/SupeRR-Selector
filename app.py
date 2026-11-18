@@ -49,6 +49,7 @@ from dashboard.charts import (
     plot_bowling_phase_evidence
 )
 from models.bowling_eq_model import EvidenceQualifiedBowlingModel
+from dashboard.pages.ai_scouting_lab import render_ai_scouting_lab
 
 # Configure Page
 st.set_page_config(
@@ -100,6 +101,7 @@ with st.sidebar:
             "🏏 Top 10 Batters",
             "🎳 Top 10 Bowlers",
             "⚔️ Player Comparison",
+            "🤖 AI Scouting Lab",
             "👑 RR Long-Term Strategy",
             "📐 Methodology & Reliability"
         ],
@@ -412,7 +414,14 @@ elif page == "⚔️ Player Comparison":
 
 
 # ==============================================================================
-# PAGE 5: RR LONG-TERM STRATEGY
+# PAGE 5: AI SCOUTING LAB
+# ==============================================================================
+elif page == "🤖 AI Scouting Lab":
+    render_ai_scouting_lab(all_players_df)
+
+
+# ==============================================================================
+# PAGE 6: RR LONG-TERM STRATEGY
 # ==============================================================================
 elif page == "👑 RR Long-Term Strategy":
     st.markdown("""

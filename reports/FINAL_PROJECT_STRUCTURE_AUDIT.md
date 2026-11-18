@@ -60,6 +60,9 @@ SupeRR-Selector-2027/
 │       ├── __init__.py
 │       ├── paths.py                   # Safe relative path definitions
 │       └── validator.py               # Pre-dashboard automated data validation suite
+│   └── ai/
+│       ├── __init__.py
+│       └── backboard_scouting_assistant.py  # Backboard SDK + Google Gemini integration
 │
 ├── outputs/
 │   ├── final_combined_top10_batters.csv   # FINAL VERIFIED BATTER RECOMMENDATIONS
@@ -95,6 +98,9 @@ SupeRR-Selector-2027/
 │   │   ├── scatter_plots.py           # Pressure vs Scouting & Age vs Scouting
 │   │   ├── radar_charts.py            # Multi-dimensional player comparison radars
 │   │   └── distributions.py           # Nationality, age, and phase delivery charts
+│   ├── pages/
+│   │   ├── __init__.py
+│   │   └── ai_scouting_lab.py         # AI Scouting Lab page (Backboard × Gemini)
 │   └── utils/
 │       ├── __init__.py
 │       ├── data_loader.py             # Streamlit-cached CSV dataset loader
@@ -235,4 +241,82 @@ Interactive Streamlit dashboard fully tested and verified locally.
 Documentation, Data Dictionary, and Architecture Diagrams complete.
 ========================================================================================
 ```
+
+---
+
+## Backboard AI Integration Audit
+**Completed:** 2026-11-18 | **SDK Version:** `backboard-sdk==1.5.19`
+
+### Architecture
+
+| Component | File | Description |
+|---|---|---|
+| AI Scouting Backend | `src/ai/backboard_scouting_assistant.py` | Backboard SDK client, Google Gemini routing, structured JSON output, ID validation, deterministic fallback |
+| Dashboard Page | `dashboard/pages/ai_scouting_lab.py` | Full Streamlit AI Scouting Lab UI with filter controls and persistent conversation UI |
+| Test Suite | `tests/test_backboard_integration.py` | 48 unit tests across 9 categories |
+| Secrets Template | `.streamlit/secrets.toml.template` | Safe credential configuration template |
+
+### Integration Parameters
+
+| Parameter | Value |
+|---|---|
+| API Infrastructure | Backboard (`https://app.backboard.io/api`) |
+| Authentication Header | `X-API-Key` |
+| SDK | `backboard-sdk>=1.5.0` (async, `BackboardClient`) |
+| AI Provider | `google` |
+| Default Model | `gemini-2.5-pro` |
+| Fallback Models | `gemini-2.5-flash`, `gemini-1.5-pro`, `gemini-1.5-flash` |
+| Model Discovery | Live `list_models_by_provider('google')` from Backboard catalogue |
+| Credential Sources | `BACKBOARD_API_KEY` env var → `.streamlit/secrets.toml` |
+| Persistent Memory | Backboard Assistants + Threads (`assistant_id`, `thread_id`) |
+| JSON Output Mode | `json_output=True` per-message |
+
+### Test Results (2026-11-18)
+
+```
+Ran 48 tests in 6.1 seconds
+OK (skipped=5)
+
+PASSED (43 tests):
+  TC-01 TestAPIKeyProtection            (6/6)  — Key never hardcoded/logged/exposed
+  TC-02 TestAuthenticationHandling      (3/3)  — Invalid keys caught, unconfigured state safe
+  TC-03 TestModelSelection              (5/5)  — Gemini model verified from catalogue
+  TC-04 TestCandidateFiltering          (6/6)  — Eligibility filters enforced before API call
+  TC-05 TestStructuredJSONValidation    (8/8)  — JSON parsed, IDs validated, scores canonical
+  TC-06 TestDeterministicFallback       (6/6)  — 100% deterministic engine without API key
+  TC-07 TestPersistentConversation      (5/5)  — Thread/assistant creation mocked and verified
+  TC-08 TestAPIFailureFallback          (4/4)  — Network errors, bad JSON, empty pool all handled
+
+SKIPPED (5 tests):
+  TC-09 TestLiveAPIIntegration          (5/5)  — Skipped: BACKBOARD_API_KEY not set in env
+                                                   Set the key to run live API validation.
+```
+
+> [!IMPORTANT]
+> Live API tests (TC-09) automatically activate when `BACKBOARD_API_KEY` is set.
+> They verify: authentication, Google Gemini model catalogue, structured JSON output,
+> player-ID integrity against real model responses, and multi-turn persistent thread continuation.
+
+### Security Controls Verified
+
+- ✅ No API key hardcoded in any source file
+- ✅ `.streamlit/secrets.toml` added to `.gitignore` — will not be committed
+- ✅ Masked key display (`sk-ab...mnop`) used in all UI components
+- ✅ Key never logged, printed or echoed by any module
+- ✅ Credential resolution chain: explicit param → env var → `st.secrets`
+
+### Eligibility and Score Integrity Guarantees
+
+- ✅ Candidate data filtered **before** sending to Backboard/Gemini (not after)
+- ✅ All `player_id` values in AI responses validated against the ground-truth candidate dataset
+- ✅ Canonical player names and scores **overwrite** any AI-generated values
+- ✅ Hallucinated player IDs are rejected and do not appear in recommendations
+- ✅ Original PRESSURE-X/EQ/scouting scores are immutable throughout the AI pipeline
+
+### Fallback Guarantee
+
+If `BACKBOARD_API_KEY` is unset or Backboard API is unavailable:
+- Dashboard filters, rankings, tables and visualisations remain fully functional
+- Deterministic scouting engine ranks candidates by verified RR Scouting Priority Score
+- Clear UI banner indicates AI-offline / deterministic mode
 

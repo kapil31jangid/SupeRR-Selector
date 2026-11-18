@@ -3,3 +3,6 @@ numpy>=1.24.0
 scipy>=1.10.0
 streamlit>=1.30.0
 plotly>=5.18.0
+backboard-sdk>=1.5.0
+python-dotenv>=1.0.0
+nest_asyncio>=1.6.0
