@@ -21,14 +21,29 @@ def plot_ranking_bar_chart(
 
     # Highlight Top 3 with Gold / Hot Pink
     colors = []
-    ranks = plot_df['final_verified_rank'].tolist()
+    if 'final_verified_rank' in plot_df.columns:
+        ranks = plot_df['final_verified_rank'].tolist()
+    else:
+        # Calculate dynamic rank based on descending score
+        ranks = list(range(len(plot_df), 0, -1))
+
     for r in ranks:
         if r == 1:
             colors.append('#F59E0B')  # Gold for #1
         elif r in (2, 3):
             colors.append('#EA1B86')  # RR Pink for #2 & #3
         else:
-            colors.append('#004BA0')  # Royal Blue for 4-10
+            colors.append('#004BA0')  # Royal Blue for 4+
+
+    custom_cols = []
+    for c in ['final_verified_rank', 'age_as_of_2027_04_01', 'development_category']:
+        if c in plot_df.columns:
+            custom_cols.append(c)
+
+    customdata = plot_df[custom_cols] if custom_cols else None
+    hovertemplate = "<b>%{y}</b><br>RR Scouting Score: %{x:.2f}<extra></extra>"
+    if len(custom_cols) == 3:
+        hovertemplate = "<b>%{y}</b><br>RR Scouting Score: %{x:.2f}<br>Rank: %{customdata[0]}<br>Age: %{customdata[1]}<br>Category: %{customdata[2]}<extra></extra>"
 
     fig = go.Figure(go.Bar(
         x=plot_df[score_col],
@@ -38,11 +53,11 @@ def plot_ranking_bar_chart(
             color=colors,
             line=dict(color='rgba(255, 255, 255, 0.2)', width=1)
         ),
-        text=plot_df[score_col].apply(lambda x: f"{x:.2f}"),
+        text=plot_df[score_col].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else "—"),
         textposition='outside',
         textfont=dict(color='#F8FAFC', size=12, family='Segoe UI'),
-        hovertemplate="<b>%{y}</b><br>RR Scouting Score: %{x:.2f}<br>Rank: %{customdata[0]}<br>Age: %{customdata[1]}<br>Category: %{customdata[2]}<extra></extra>",
-        customdata=plot_df[['final_verified_rank', 'age_as_of_2027_04_01', 'development_category']]
+        hovertemplate=hovertemplate,
+        customdata=customdata
     ))
 
     fig.update_layout(

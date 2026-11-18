@@ -16,14 +16,15 @@ def plot_pressure_vs_scouting(
     """
     Scatter plot comparing historical pressure execution vs long-term scouting priority.
     """
+    available_hover = [c for c in ['country', 'nationality', 'current_form_rating', 'final_verified_rank'] if c in df.columns]
     fig = px.scatter(
         df,
         x=pressure_col,
         y=scouting_col,
         color='development_category',
-        size='age_as_of_2027_04_01',
+        size='age_as_of_2027_04_01' if 'age_as_of_2027_04_01' in df.columns else None,
         hover_name='player_name',
-        hover_data=['country', 'nationality', 'current_form_rating', 'final_verified_rank'],
+        hover_data=available_hover,
         text='player_name',
         color_discrete_map={
             "Emerging": "#10B981",

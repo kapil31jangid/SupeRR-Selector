@@ -175,25 +175,44 @@ python src/pipeline.py
 ### Run Automated Test Suite
 
 ```bash
-# Run unit tests and Backboard integration suite (48 test cases)
-python tests/test_backboard_integration.py
+# Run full automated test suite (66 tests: 18 Explorer + 48 Backboard & Live API)
+python -m unittest tests.test_scouting_explorer -v
+python -m unittest tests.test_backboard_integration -v
 ```
 
 ---
 
-## 6. AI Scouting Lab (Backboard API + Google Gemini)
+## 6. Interactive Scouting Explorer & Optional Backboard AI
 
-The dashboard includes an **AI Scouting Lab** powered by **Backboard API** (`https://app.backboard.io/api`) routing to **Google Gemini** (`gemini-2.5-pro`):
+The **PRESSURE-X** dashboard is designed around a **filter-first architecture**: the primary scouting explorer operates independently through interactive controls, dynamic Plotly visual analytics, searchable candidate tables, and candidate comparison tools—without requiring any chatbot interaction.
 
-- **Unified Infrastructure:** Uses `backboard-sdk` to connect to Backboard's multi-provider API.
-- **Provider & Model:** Set explicitly to `provider="google"`, defaulting to `model_name="gemini-2.5-pro"` (with dynamic catalogue discovery via `list_models_by_provider("google")`).
-- **Persistent Conversational Memory:** Uses stateful Backboard Assistants and Threads (`create_assistant`, `create_thread`, `memory="Auto"`) to remember scout preferences across conversation turns.
-- **Strict Evidence Protection:** Ground-truth player IDs and scores are injected into context and validated upon return; hallucinated IDs or scores are rejected.
-- **Zero-Failure Fallback:** If the API key is not configured or the network is unavailable, the assistant falls back transparently to a deterministic 40/30/20/10 RR recommendation engine.
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   SECTION A: INTERACTIVE SCOUTING EXPLORER             │
+│  • Role / Category Filters (Batter, Bowler, All-Rounder, Any)          │
+│  • Nationality (Indian, Overseas, Country-Specific)                    │
+│  • Age Runway Groups (Emerging ≤23, Development 24-26, Prime, Exp)     │
+│  • Quantitative Thresholds (Pressure/EQ, RR Scouting Score, Balls)     │
+│  • Real Domestic T20 Performance Filters (Runs, Avg, SR, Wkts, Econ)   │
+│  • Observed Characteristics (Powerplay, Death Closer, Anchor, etc.)    │
+│  • Live KPI Summary + Tabbed Table & Visual Analytics + Detail Deep-Dive│
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ (Optional)
+┌───────────────────────────────────▼────────────────────────────────────┐
+│      SECTION B: ASK AI SCOUTING ASSISTANT (COLLAPSED BY DEFAULT)       │
+│  • Backboard API Client with Google Gemini (gemini-2.5-pro)            │
+│  • Explicit 'Generate AI Insights' trigger (no unsolicited API calls)  │
+│  • Strict Evidence Boundary: AI only sees currently filtered candidates│
+│  • Ground-Truth ID & Score Invariance (AI cannot hallucinate numbers)  │
+│  • Persistent Conversational Memory via Backboard Threads              │
+│  • Stale Insight Detection Alert when active filters change            │
+│  • Graceful Offline Degradation: deterministic fallback when offline   │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-### Setting Up Backboard API Key
+### Setting Up Backboard API Key (Optional)
 
-Get your API key at [app.backboard.io/dashboard/api-keys](https://app.backboard.io/dashboard/api-keys), then configure it in either:
+When Backboard API is configured, AI insights provide natural-language tactical rationales. Get your API key at [app.backboard.io/dashboard/api-keys](https://app.backboard.io/dashboard/api-keys), then configure it in either:
 
 1. **Streamlit Secrets** (`.streamlit/secrets.toml`):
    ```toml
@@ -205,7 +224,7 @@ Get your API key at [app.backboard.io/dashboard/api-keys](https://app.backboard.
    $env:BACKBOARD_API_KEY="your_backboard_api_key_here"    # PowerShell
    ```
 
-*(Note: `.streamlit/secrets.toml` is ignored by Git and never committed.)*
+*(Note: When no API key is provided, the dashboard functions completely with zero degradation and displays a gentle inline notice rather than an oversized error banner.)*
 
 ---
 

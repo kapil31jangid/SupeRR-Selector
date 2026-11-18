@@ -1,0 +1,665 @@
+player_id,player_name,role,season,composite_score,displayed_score,uncapped_score,total_balls,high_extreme_balls,competition_coverage,competition_tiers,origin,auction_rank,task07f_global_rank
+838,Glenn Maxwell,batter,2023,99.83932302,99.8,111.985631,273,104.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,1,209
+772,Rilee Rossouw,batter,2024,99.36824179,99.4,101.506203,115,46.0,['IPL'],[np.int64(1)],Overseas,2,150
+26843,Maaz Sadaqat,batter,2025,98.86448107,98.9,104.964874,145,6.0,['Other_T20'],[np.int64(5)],Overseas,3,8
+6280,Harry Brook,batter,2026,98.52798874,98.5,139.599708,215,14.0,['T20I'],[np.int64(2)],Overseas,4,422
+4106,Daryl Mitchell,batter,2026,96.37493431,96.4,99.371712,168,46.0,['T20I'],[np.int64(2)],Overseas,5,326
+2367,Travis Head,batter,2023,95.76334533,95.8,101.137489,119,38.0,['T20I'],[np.int64(2)],Overseas,6,279
+4369,Shai Hope,batter,2026,92.8504874,92.9,96.865772,227,51.0,['T20I'],[np.int64(2)],Overseas,7,514
+2533,Najibullah Zadran,batter,2022,92.15985535,92.2,102.667468,192,32.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,8,39
+88,Faf du Plessis,batter,2023,91.99940517,92.0,94.446585,472,81.0,['IPL'],[np.int64(1)],Domestic,9,520
+2921,Fakhar Zaman,batter,2024,91.87052222,91.9,94.34173,241,140.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,10,438
+7341,Jake McGurk,batter,2024,90.0,90.0,126.846204,218,30.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,11,53
+1318,Andre Russell,batter,2024,90.0,90.0,102.402084,179,41.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,12,391
+143,Dinesh Karthik,batter,2024,89.79206397,89.8,93.834037,173,86.0,['IPL'],[np.int64(1)],Domestic,13,433
+768,Reeza Hendricks,batter,2024,88.68108551,88.7,88.681086,292,178.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,14,570
+930,Karun Nair,batter,2025,88.01916968,88.0,88.522434,113,76.0,['IPL'],[np.int64(1)],Domestic,15,75
+23311,Jacob Bethell,batter,2025,87.17581157,87.2,87.445974,175,24.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,16,243
+88,Faf du Plessis,batter,2024,87.10486269,87.1,93.338951,271,60.0,['IPL'],[np.int64(1)],Domestic,17,520
+2367,Travis Head,batter,2026,87.08685699,87.1,94.061508,258,53.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,18,279
+1205,Jonny Bairstow,batter,2024,87.08178748,87.1,87.081787,229,107.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,19,568
+6280,Harry Brook,batter,2025,87.00372588,87.0,87.003726,167,44.0,['T20I'],[np.int64(2)],Overseas,20,422
+838,Glenn Maxwell,batter,2025,86.88803972,86.9,87.399797,141,91.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,21,209
+768,Reeza Hendricks,batter,2023,86.44603162,86.4,86.446032,206,129.0,['T20I'],[np.int64(2)],Overseas,22,570
+167,Ajinkya Rahane,batter,2023,86.31986308,86.3,96.071629,189,32.0,['IPL'],[np.int64(1)],Domestic,23,609
+3297,Shimron Hetmyer,batter,2026,86.31512292,86.3,86.775689,287,93.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,24,414
+6931,Pathum Nissanka,batter,2025,86.07453632,86.1,87.675654,406,87.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,25,459
+7912,Vikramjit Singh,batter,2024,85.87088495,85.9,94.24984,101,5.0,['T20I'],[np.int64(4)],Overseas,26,96
+2877,Vijay Shankar,batter,2023,85.63141357,85.6,88.287064,187,92.0,['IPL'],[np.int64(1)],Domestic,27,98
+2984,Sikandar Raza,batter,2026,85.27685598,85.3,87.094221,119,97.0,['T20I'],[np.int64(3)],Overseas,28,423
+3782,M Shahrukh Khan,batter,2025,84.6475309,84.6,83.827939,100,52.0,['IPL'],[np.int64(1)],Domestic,29,505
+28967,Tim Robinson,batter,2025,84.23262848,84.2,84.251526,187,11.0,['T20I'],[np.int64(2)],Overseas,30,108
+3648,Deepak Hooda,batter,2024,84.19759439,84.2,89.646187,105,24.0,['IPL'],[np.int64(1)],Domestic,31,590
+1318,Andre Russell,batter,2022,84.0831018,84.1,83.379691,189,114.0,['IPL'],[np.int64(1)],Overseas,32,391
+7690,Saim Ayub,batter,2024,84.06848466,84.1,85.683054,231,64.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,33,379
+3297,Shimron Hetmyer,batter,2025,83.81353309,83.8,92.431736,250,137.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,34,414
+22565,Muhammad Waseem,batter,2025,83.80617709,83.8,84.183195,281,146.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,35,115
+3091,Sahibzada Farhan,batter,2026,83.61382964,83.6,83.61383,192,22.0,['T20I'],[np.int64(2)],Overseas,36,427
+3639,Brandon King,batter,2023,83.28215334,83.3,83.282153,242,17.0,['T20I'],[np.int64(2)],Overseas,37,604
+142,Shikhar Dhawan,batter,2023,83.22055151,83.2,83.220552,258,60.0,['IPL'],[np.int64(1)],Domestic,38,470
+2367,Travis Head,batter,2024,82.71178721,82.7,95.830012,435,26.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,39,279
+4369,Shai Hope,batter,2024,82.68717427,82.7,82.687174,270,56.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,40,514
+1327,Johnson Charles,batter,2024,82.51445837,82.5,82.879112,124,54.0,['T20I'],[np.int64(2)],Overseas,41,588
+220,David Warner,batter,2022,81.77282106,81.8,81.772821,474,138.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,42,345
+8741,Mohammad Haris,batter,2025,81.74652176,81.7,85.917197,308,107.0,['T20I'],"[np.int64(2), np.int64(4)]",Overseas,43,137
+2379,Ben Duckett,batter,2025,81.57174138,81.6,82.369002,126,19.0,['T20I'],[np.int64(2)],Overseas,44,440
+19714,Abishek Porel,batter,2024,81.55510724,81.6,82.871548,204,81.0,['IPL'],[np.int64(1)],Domestic,45,273
+1440,Rahul Tripathi,batter,2022,81.47113181,81.5,83.021464,260,110.0,['IPL'],[np.int64(1)],Domestic,46,455
+3323,Jimmy Neesham,batter,2023,81.38105874,81.4,81.381059,138,91.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,47,144
+772,Rilee Rossouw,batter,2023,81.04993743,81.0,81.199281,172,84.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,48,150
+2003,Bhanuka Rajapaksa,batter,2022,80.77178892,80.8,81.912522,281,118.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,49,151
+4246,Nitish Rana,batter,2025,80.60359737,80.6,83.482621,134,69.0,['IPL'],[np.int64(1)],Domestic,50,272
+1187,Jason Roy,batter,2023,80.15631541,80.2,78.704046,187,65.0,['IPL'],[np.int64(1)],Overseas,51,608
+4246,Nitish Rana,batter,2026,79.88966106,79.9,81.009954,149,60.0,['IPL'],[np.int64(1)],Domestic,52,272
+8301,Asif Khan,batter,2025,79.49694656,79.5,77.974144,146,114.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,53,167
+1183,Alex Hales,batter,2022,79.41660752,79.4,122.715474,149,1.0,['T20I'],[np.int64(2)],Overseas,54,168
+49027,Bevon Jacobs,batter,2026,79.39982993,79.4,79.39983,167,36.0,['T20I'],[np.int64(2)],Overseas,55,170
+4106,Daryl Mitchell,batter,2024,79.00250788,79.0,79.002508,309,82.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,56,326
+143,Dinesh Karthik,batter,2022,78.7460153,78.7,78.003958,331,106.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Domestic,57,433
+443,Paul Stirling,batter,2025,78.6836137,78.7,84.11977,100,10.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,58,324
+3297,Shimron Hetmyer,batter,2023,78.65525927,78.7,78.655259,286,132.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,59,414
+838,Glenn Maxwell,batter,2022,78.37115641,78.4,78.371156,341,80.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,60,209
+49003,Hasan Nawaz,batter,2025,78.26755368,78.3,78.267554,295,68.0,['T20I'],"[np.int64(2), np.int64(4)]",Overseas,61,179
+2984,Sikandar Raza,batter,2022,78.19078239,78.2,79.251783,132,83.0,['T20I'],[np.int64(3)],Overseas,62,423
+6931,Pathum Nissanka,batter,2026,77.56801971,77.6,75.683648,338,98.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,63,459
+1101,George Dockrell,batter,2022,77.38138616,77.4,77.381386,166,96.0,['T20I'],[np.int64(3)],Overseas,64,562
+6931,Pathum Nissanka,batter,2024,77.1733492,77.2,77.173349,320,83.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,65,459
+3727,Matthew Short,batter,2023,76.94454228,76.9,76.944542,185,39.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,66,192
+768,Reeza Hendricks,batter,2022,76.61601545,76.6,76.616015,231,53.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,67,570
+2214,Gulbadin Naib,batter,2024,76.39251493,76.4,76.392515,141,33.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,68,197
+305,Ravichandran Ashwin,batter,2022,76.15184981,76.2,76.15185,156,67.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Domestic,69,199
+2485,Babar Azam,batter,2022,75.98112031,76.0,75.98112,262,87.0,['T20I'],[np.int64(2)],Overseas,70,591
+838,Glenn Maxwell,batter,2024,75.42997796,75.4,76.527522,181,32.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,71,209
+1596,Moeen Ali,batter,2022,75.3974439,75.4,75.397444,454,149.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,72,297
+3374,Mark Chapman,batter,2024,75.3227534,75.3,80.251218,147,38.0,['T20I'],[np.int64(2)],Overseas,73,318
+1941,Devon Conway,batter,2022,75.0246788,75.0,75.024679,252,27.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,74,554
+4246,Nitish Rana,batter,2023,74.65393435,74.7,74.653934,291,144.0,['IPL'],[np.int64(1)],Domestic,75,272
+499,Shakib Al Hasan,batter,2022/23,74.58495235,74.6,74.584952,102,53.0,['T20I'],[np.int64(3)],Overseas,76,314
+19781,Mitchell Owen,batter,2025,74.49694426,74.5,76.358645,104,32.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,77,223
+4369,Shai Hope,batter,2023,74.41092551,74.4,83.982616,145,16.0,['T20I'],[np.int64(2)],Overseas,78,514
+2671,Liton Das,batter,2022,74.13686395,74.1,73.018295,131,23.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,79,517
+23311,Jacob Bethell,batter,2024,73.70732997,73.7,75.761579,103,18.0,['T20I'],[np.int64(2)],Overseas,80,243
+3669,Sadeera Samarawickrama,batter,2024,73.66980039,73.7,73.6698,162,28.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,81,233
+7049,Kamil Mishara,batter,2025,73.61150242,73.6,74.025792,255,20.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,82,581
+4904,Kamindu Mendis,batter,2024,73.13987401,73.1,73.139874,201,48.0,['T20I'],[np.int64(2)],Overseas,83,519
+2485,Babar Azam,batter,2024,72.99285498,73.0,72.992855,433,155.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,84,591
+4854,Rachin Ravindra,batter,2024,72.91802739,72.9,72.918027,174,50.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,85,294
+27137,Hammad Mirza,batter,2025,72.89362098,72.9,72.893621,120,65.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,86,240
+1318,Andre Russell,batter,2023,72.80427993,72.8,70.709955,217,133.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,87,391
+23311,Jacob Bethell,batter,2026,72.77527841,72.8,77.1963,160,72.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,88,243
+6651,Towhid Hridoy,batter,2026,72.47336699,72.5,72.473367,165,101.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,89,503
+4812,Harry Tector,batter,2025,72.38354265,72.4,72.383543,170,37.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,90,594
+167,Ajinkya Rahane,batter,2025,71.8894973,71.9,71.85909,264,80.0,['IPL'],[np.int64(1)],Domestic,91,609
+2416,Kyle Mayers,batter,2023,71.52510568,71.5,69.526296,371,87.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,92,330
+1107,Mohammad Nabi,batter,2024,71.48149045,71.5,71.48149,249,112.0,"['T20I', 'IPL']","[np.int64(2), np.int64(3), np.int64(1)]",Overseas,93,515
+3297,Shimron Hetmyer,batter,2024,71.46823545,71.5,71.468235,100,42.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,94,414
+2671,Liton Das,batter,2023,71.44430404,71.4,113.165426,238,4.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,95,517
+8647,Sediqullah Atal,batter,2024,71.03908966,71.0,71.03909,327,59.0,"['T20I', 'Other_T20']","[np.int64(3), np.int64(5)]",Overseas,96,595
+4773,Jaker Ali Anik,batter,2024,70.79288382,70.8,70.792884,203,96.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,97,496
+16284,Habibur Rahman Sohan,batter,2025,70.65919884,70.7,67.114903,125,0.0,['Other_T20'],[np.int64(5)],Overseas,98,264
+1481,Kusal Perera,batter,2025,70.38134991,70.4,73.244382,207,38.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,99,392
+7059,Nehal Wadhera,batter,2023,70.19809706,70.2,70.198097,165,111.0,['IPL'],[np.int64(1)],Domestic,100,567
+2463,Ryan Burl,batter,2025,70.14730239,70.1,70.147302,196,67.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,101,508
+4246,Nitish Rana,batter,2022,70.07323138,70.1,70.073231,249,117.0,['IPL'],[np.int64(1)],Domestic,102,272
+19714,Abishek Porel,batter,2025,69.97833677,70.0,77.207958,195,37.0,['IPL'],[np.int64(1)],Domestic,103,273
+220,David Warner,batter,2024,69.86814964,69.9,68.154298,248,128.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,104,345
+2367,Travis Head,batter,2025,69.45887913,69.5,67.587202,305,68.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,105,279
+443,Paul Stirling,batter,2022,69.27007704,69.3,67.842018,172,56.0,['T20I'],[np.int64(3)],Overseas,106,324
+4106,Daryl Mitchell,batter,2025,69.14945509,69.1,69.149455,140,26.0,['T20I'],[np.int64(2)],Overseas,107,326
+1596,Moeen Ali,batter,2024,68.62572468,68.6,68.625725,105,37.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,108,297
+4854,Rachin Ravindra,batter,2025,68.41617966,68.4,71.269134,214,77.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,109,294
+4106,Daryl Mitchell,batter,2022,68.393355,68.4,68.393355,185,34.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,110,326
+1596,Moeen Ali,batter,2023,68.35951068,68.4,68.359511,176,67.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,111,297
+2485,Babar Azam,batter,2022/23,68.31723182,68.3,68.317232,154,39.0,['T20I'],[np.int64(3)],Overseas,112,591
+3415,Matthew Cross,batter,2024,68.22379314,68.2,68.223793,110,32.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,113,300
+507,Mohammad Mahmudullah,batter,2024,68.02081394,68.0,71.010734,140,89.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,114,548
+7094,Curtis Campher,batter,2024,67.87821493,67.9,69.20405,136,32.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,115,473
+3374,Mark Chapman,batter,2023,67.80376657,67.8,67.803767,363,228.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,116,318
+4814,Lorcan Tucker,batter,2022,67.5906892,67.6,67.590689,201,101.0,['T20I'],[np.int64(3)],Overseas,117,596
+3672,Kusal Mendis,batter,2023,67.34017148,67.3,66.322392,129,22.0,['T20I'],[np.int64(2)],Overseas,118,399
+499,Shakib Al Hasan,batter,2023,67.21939865,67.2,67.219399,104,10.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,119,314
+1205,Jonny Bairstow,batter,2022,67.04393028,67.0,67.04393,275,57.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,120,568
+4867,Wesley Madhevere,batter,2022,66.92241742,66.9,106.693062,105,1.0,['T20I'],[np.int64(3)],Overseas,121,599
+3374,Mark Chapman,batter,2025,66.86482325,66.9,67.676049,153,25.0,['T20I'],[np.int64(2)],Overseas,122,318
+4840,Odean Smith,batter,2022,66.82593665,66.8,66.825937,109,79.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,123,320
+24017,Brian Bennett,batter,2024,66.66871317,66.7,66.668713,349,73.0,['T20I'],[np.int64(3)],Overseas,124,397
+796,Matthew Wade,batter,2022,66.64565844,66.6,66.645658,320,114.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,125,323
+443,Paul Stirling,batter,2024,66.60931773,66.6,65.385762,152,5.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,126,324
+4106,Daryl Mitchell,batter,2023,66.4870093,66.5,66.487009,225,138.0,['T20I'],[np.int64(2)],Overseas,127,326
+3672,Kusal Mendis,batter,2025,66.34330117,66.3,66.343301,308,61.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,128,399
+3024,Mohammad Rizwan,batter,2024,66.2142848,66.2,66.214285,399,163.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,129,583
+2416,Kyle Mayers,batter,2022,65.9907729,66.0,67.492166,267,80.0,['T20I'],[np.int64(2)],Overseas,130,330
+8647,Sediqullah Atal,batter,2025,65.91336332,65.9,66.161514,348,35.0,"['IPL', 'T20I', 'Other_T20']","[np.int64(1), np.int64(2), np.int64(4), np.int64(3), np.int64(5)]",Overseas,131,595
+7900,Tanzid Hasan,batter,2025,65.68043499,65.7,65.680435,569,57.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,132,447
+250,Aaron Finch,batter,2022,65.647405,65.6,65.647405,344,78.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,133,336
+7059,Nehal Wadhera,batter,2025,65.51739336,65.5,65.517393,324,120.0,"['IPL', 'Other_T20']","[np.int64(1), np.int64(5)]",Domestic,134,567
+3648,Deepak Hooda,batter,2022,65.42951913,65.4,65.429519,498,164.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Domestic,135,590
+6651,Towhid Hridoy,batter,2023,65.33605035,65.3,65.33605,151,30.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,136,503
+3672,Kusal Mendis,batter,2022,65.24678151,65.2,65.246782,236,95.0,['T20I'],[np.int64(2)],Overseas,137,399
+220,David Warner,batter,2023,64.98896721,65.0,64.988967,391,177.0,['IPL'],[np.int64(1)],Overseas,138,345
+3097,Shan Masood,batter,2022,64.91668288,64.9,64.916683,118,82.0,['T20I'],[np.int64(2)],Overseas,139,346
+2984,Sikandar Raza,batter,2025,64.58970225,64.6,64.589702,241,79.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,140,423
+6466,Atharwa Taide,batter,2023,64.5217374,64.5,63.503958,129,95.0,['IPL'],[np.int64(1)],Domestic,141,351
+1440,Rahul Tripathi,batter,2024,64.51572459,64.5,63.679391,113,46.0,['IPL'],[np.int64(1)],Domestic,142,455
+6280,Harry Brook,batter,2023,63.87906263,63.9,64.112574,257,51.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,143,422
+4812,Harry Tector,batter,2023/24,63.65355695,63.7,63.653557,103,12.0,['T20I'],[np.int64(4)],Overseas,144,594
+3672,Kusal Mendis,batter,2026,63.48915827,63.5,66.173031,206,22.0,['T20I'],[np.int64(2)],Overseas,145,399
+6674,Rahmanullah Gurbaz,batter,2024,63.42090221,63.4,61.836574,214,40.0,"['T20I', 'IPL']","[np.int64(2), np.int64(3), np.int64(1)]",Overseas,146,576
+4412,Max ODowd,batter,2024,63.37809656,63.4,63.378097,161,7.0,['T20I'],[np.int64(4)],Overseas,147,368
+24017,Brian Bennett,batter,2025,63.34761898,63.3,63.347619,265,41.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,148,397
+142,Shikhar Dhawan,batter,2022,63.32452855,63.3,63.324529,372,29.0,['IPL'],[np.int64(1)],Domestic,149,470
+8726,Alishan Sharafu,batter,2025,63.0515139,63.1,63.051514,242,76.0,"['T20I', 'Other_T20']","[np.int64(3), np.int64(2), np.int64(4), np.int64(5)]",Overseas,150,371
+223,Steven Smith,batter,2022,63.03031389,63.0,63.030314,109,25.0,['T20I'],[np.int64(2)],Overseas,151,372
+1924,Sam Billings,batter,2022,63.01409269,63.0,63.014093,178,84.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,152,373
+7901,Parvez Emon,batter,2024,63.00004839,63.0,62.189347,111,13.0,"['Other_T20', 'T20I']","[np.int64(5), np.int64(2)]",Overseas,153,444
+2671,Liton Das,batter,2025,62.99905232,63.0,62.999052,432,87.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,154,517
+8,Mahendra Singh Dhoni,batter,2025,62.97623826,63.0,61.464792,145,113.0,['IPL'],[np.int64(1)],Domestic,155,492
+7690,Saim Ayub,batter,2025,62.94480962,62.9,62.94481,450,75.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,156,379
+6674,Rahmanullah Gurbaz,batter,2025,62.64099803,62.6,62.640998,329,72.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(4), np.int64(3)]",Overseas,157,576
+3954,Andrew Balbirnie,batter,2023,62.55937726,62.6,63.003771,102,55.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,158,533
+109,Wriddhiman Saha,batter,2022,62.5127835,62.5,62.512783,259,86.0,['IPL'],[np.int64(1)],Domestic,159,513
+4904,Kamindu Mendis,batter,2025,62.44663567,62.4,62.446636,189,128.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,160,519
+4812,Harry Tector,batter,2024,62.22023055,62.2,62.220231,162,56.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,161,594
+2671,Liton Das,batter,2022/23,62.14701688,62.1,61.401039,100,40.0,['T20I'],[np.int64(3)],Overseas,162,517
+7900,Tanzid Hasan,batter,2024,62.06303392,62.1,62.063034,165,11.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,163,447
+1318,Andre Russell,batter,2025,62.02575089,62.0,60.585264,139,44.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,164,391
+1481,Kusal Perera,batter,2024,61.90747585,61.9,61.907476,180,16.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,165,392
+6674,Rahmanullah Gurbaz,batter,2026,61.65335745,61.7,61.653357,102,26.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,166,576
+3639,Brandon King,batter,2024,61.56830026,61.6,59.958555,220,48.0,['T20I'],[np.int64(2)],Overseas,167,604
+88,Faf du Plessis,batter,2025,61.5340137,61.5,60.303306,153,80.0,['IPL'],[np.int64(1)],Domestic,168,520
+24017,Brian Bennett,batter,2026,61.4028184,61.4,60.505146,130,55.0,['T20I'],[np.int64(3)],Overseas,169,397
+3672,Kusal Mendis,batter,2024,61.27609824,61.3,61.276098,377,43.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,170,399
+4780,Mohammad Saif Hassan,batter,2025,61.2298092,61.2,61.229809,297,55.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,171,539
+6881,Scott Edwards,batter,2024,61.1818266,61.2,61.181827,120,24.0,['T20I'],[np.int64(4)],Overseas,172,404
+3024,Mohammad Rizwan,batter,2022,61.03770388,61.0,61.037704,465,166.0,['T20I'],[np.int64(2)],Overseas,173,583
+535,Ambati Rayudu,batter,2022,60.95697934,61.0,60.956979,223,98.0,['IPL'],[np.int64(1)],Domestic,174,556
+3297,Shimron Hetmyer,batter,2022,60.60847804,60.6,60.608478,316,157.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,175,414
+2930,Rassie van der Dussen,batter,2024,60.30122029,60.3,60.30122,142,103.0,['T20I'],[np.int64(2)],Overseas,176,491
+4812,Harry Tector,batter,2022,60.17077418,60.2,60.170774,171,96.0,['T20I'],[np.int64(3)],Overseas,177,594
+6448,Ibrahim Zadran,batter,2026,60.16025655,60.2,60.1617,191,25.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,178,560
+6280,Harry Brook,batter,2022,59.99154433,60.0,59.991544,211,56.0,['T20I'],[np.int64(2)],Overseas,179,422
+2984,Sikandar Raza,batter,2024,59.90484072,59.9,59.904841,338,124.0,"['T20I', 'IPL']","[np.int64(3), np.int64(1)]",Overseas,180,423
+5882,Afif Hossain,batter,2022,59.80521607,59.8,59.805216,230,99.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,181,426
+3091,Sahibzada Farhan,batter,2025,59.67369943,59.7,59.673699,575,48.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,182,427
+109,Wriddhiman Saha,batter,2024,59.56058111,59.6,58.699323,115,42.0,['IPL'],[np.int64(1)],Domestic,183,513
+167,Ajinkya Rahane,batter,2026,59.31108139,59.3,57.694592,242,71.0,['IPL'],[np.int64(1)],Domestic,184,609
+143,Dinesh Karthik,batter,2023,59.23778397,59.2,58.33739,104,43.0,['IPL'],[np.int64(1)],Domestic,185,433
+7155,Sahan Arachchige,batter,2024,59.20452184,59.2,59.204522,112,50.0,['Other_T20'],[np.int64(5)],Overseas,186,434
+728,Dawid Malan,batter,2022,59.1731028,59.2,59.173103,297,57.0,['T20I'],[np.int64(2)],Overseas,187,606
+2921,Fakhar Zaman,batter,2025,58.73514545,58.7,58.859302,398,79.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,188,438
+2379,Ben Duckett,batter,2022,58.61559662,58.6,46.588759,146,0.0,['T20I'],[np.int64(2)],Overseas,189,440
+2490,Mohammad Nawaz,batter,2025,58.55256684,58.6,56.248537,260,128.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,190,534
+992,Mayank Agarwal,batter,2023,58.50796085,58.5,58.507961,208,66.0,['IPL'],[np.int64(1)],Domestic,191,500
+6651,Towhid Hridoy,batter,2024,58.38205382,58.4,58.382054,256,73.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(3), np.int64(5)]",Overseas,192,503
+7901,Parvez Emon,batter,2025,58.38091874,58.4,58.686201,375,26.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,193,444
+7406,Rizwan CP,batter,2022,58.20115028,58.2,58.20115,102,52.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,194,445
+7900,Tanzid Hasan,batter,2026,57.93085957,57.9,57.93086,171,39.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,195,447
+167,Ajinkya Rahane,batter,2024,57.7039184,57.7,56.203938,196,57.0,['IPL'],[np.int64(1)],Domestic,196,609
+4895,Charith Asalanka,batter,2024,57.59769695,57.6,57.597697,202,42.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,197,593
+6574,Alick Athanaze,batter,2025,57.59742242,57.6,56.227536,173,77.0,['T20I'],[np.int64(2)],Overseas,198,453
+1941,Devon Conway,batter,2025,57.52115375,57.5,57.521154,234,63.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,199,554
+1440,Rahul Tripathi,batter,2023,57.47416549,57.5,57.474165,279,69.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Domestic,200,455
+3954,Andrew Balbirnie,batter,2024,57.46262383,57.5,57.462624,230,61.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,201,533
+6985,Bas de Leede,batter,2022,57.46193135,57.5,57.461931,101,28.0,['T20I'],[np.int64(3)],Overseas,202,457
+4895,Charith Asalanka,batter,2023,57.4067339,57.4,57.406734,114,25.0,['T20I'],[np.int64(2)],Overseas,203,593
+6931,Pathum Nissanka,batter,2022,57.3750361,57.4,57.375036,370,103.0,['T20I'],[np.int64(2)],Overseas,204,459
+1327,Johnson Charles,batter,2023,57.17632815,57.2,46.385126,106,0.0,['T20I'],[np.int64(2)],Overseas,205,588
+1107,Mohammad Nabi,batter,2025,56.38763482,56.4,56.209058,127,77.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,206,515
+1107,Mohammad Nabi,batter,2023,56.25048802,56.3,56.250488,119,44.0,['T20I'],[np.int64(2)],Overseas,207,515
+2351,Danushka Gunathilaka,batter,2022,56.12831187,56.1,56.128312,117,47.0,['T20I'],[np.int64(2)],Overseas,208,469
+142,Shikhar Dhawan,batter,2024,55.99354138,56.0,55.993541,121,68.0,['IPL'],[np.int64(1)],Domestic,209,470
+6342,Matthew Breetzke,batter,2024,55.98150014,56.0,55.9815,104,78.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,210,471
+15551,Ackeem Auguste,batter,2025,55.9637313,56.0,55.067099,118,46.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,211,472
+7094,Curtis Campher,batter,2023,55.94346368,55.9,55.943464,145,63.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,212,473
+5189,Faheem Ashraf,batter,2025,55.81603393,55.8,54.17633,157,111.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,213,475
+7692,Qasim Akram,batter,2024,55.74937493,55.7,55.048909,103,37.0,"['Other_T20', 'T20I']","[np.int64(5), np.int64(3)]",Overseas,214,477
+3024,Mohammad Rizwan,batter,2022/23,55.5348768,55.5,55.534877,164,62.0,['T20I'],[np.int64(3)],Overseas,215,583
+6739,Amir Jangoo,batter,2025,55.37509455,55.4,54.605038,108,14.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,216,482
+21790,Tashinga Musekiwa,batter,2025,55.30467019,55.3,54.31087,109,44.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,217,484
+6433,Darwish Rasooli,batter,2025,55.29174726,55.3,56.174275,174,54.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(4), np.int64(3), np.int64(5)]",Overseas,218,511
+26646,Rahul Chopra,batter,2025,55.20597375,55.2,55.205974,142,96.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,219,486
+6664,Dion Myers,batter,2026,55.19167807,55.2,55.191678,116,34.0,['T20I'],[np.int64(3)],Overseas,220,545
+20327,Usman Khan,batter,2024,55.12652732,55.1,53.794864,167,43.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,221,488
+2687,Roston Chase,batter,2025,55.04554861,55.0,55.045549,214,73.0,['T20I'],[np.int64(2)],Overseas,222,525
+8739,Muhammad Irfan,batter,2024,55.04121122,55.0,54.046331,109,31.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,223,490
+2930,Rassie van der Dussen,batter,2022,54.86788489,54.9,54.884529,121,83.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,224,491
+8,Mahendra Singh Dhoni,batter,2022,54.6294386,54.6,54.629439,186,101.0,['IPL'],[np.int64(1)],Domestic,225,492
+332,Angelo Mathews,batter,2024,54.17969034,54.2,54.17969,150,65.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,226,494
+1941,Devon Conway,batter,2023,54.10788456,54.1,54.107885,550,59.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,227,554
+4773,Jaker Ali Anik,batter,2025,53.77697542,53.8,53.776975,291,161.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,228,496
+3639,Brandon King,batter,2026,53.75470453,53.8,52.507893,170,55.0,['T20I'],[np.int64(2)],Overseas,229,604
+992,Mayank Agarwal,batter,2022,53.57939006,53.6,52.228088,160,24.0,['IPL'],[np.int64(1)],Domestic,230,500
+5808,Karim Janat,batter,2024,53.56346767,53.6,53.563468,187,94.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5), np.int64(3)]",Overseas,231,501
+6651,Towhid Hridoy,batter,2025,53.36737967,53.4,53.36738,406,143.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,232,503
+3782,M Shahrukh Khan,batter,2022,52.85444671,52.9,55.757083,108,26.0,['IPL'],[np.int64(1)],Domestic,233,505
+6448,Ibrahim Zadran,batter,2024,52.83486556,52.8,52.834866,218,73.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,234,560
+8600,Tadiwanashe Marumani,batter,2024,52.78969209,52.8,51.413019,174,25.0,['T20I'],[np.int64(3)],Overseas,235,579
+2463,Ryan Burl,batter,2026,52.58657796,52.6,52.586578,203,154.0,['T20I'],[np.int64(3)],Overseas,236,508
+3377,Babar Hayat,batter,2024,52.50903297,52.5,52.509033,139,61.0,['Other_T20'],[np.int64(5)],Overseas,237,580
+28970,Connor Esterhuizen,batter,2026,52.47045074,52.5,54.544689,135,11.0,['T20I'],[np.int64(2)],Overseas,238,510
+6433,Darwish Rasooli,batter,2026,52.35000744,52.4,51.032173,126,19.0,['T20I'],[np.int64(2)],Overseas,239,511
+4814,Lorcan Tucker,batter,2024,52.13833039,52.1,52.13833,179,16.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,240,596
+109,Wriddhiman Saha,batter,2023,52.11746128,52.1,50.294627,285,30.0,['IPL'],[np.int64(1)],Domestic,241,513
+4369,Shai Hope,batter,2025,51.87874246,51.9,51.878742,401,77.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,242,514
+1107,Mohammad Nabi,batter,2022,51.83398043,51.8,51.83398,106,43.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,243,515
+2671,Liton Das,batter,2024,51.37349557,51.4,50.223803,143,43.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,244,517
+4904,Kamindu Mendis,batter,2026,51.00544534,51.0,51.005445,193,35.0,['T20I'],[np.int64(2)],Overseas,245,519
+88,Faf du Plessis,batter,2022,50.89589127,50.9,50.895891,367,26.0,['IPL'],[np.int64(1)],Domestic,246,520
+1568,Kane Williamson,batter,2022/23,50.85954219,50.9,50.859542,158,52.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,247,585
+4895,Charith Asalanka,batter,2026,50.85003983,50.9,50.85004,109,23.0,['T20I'],[np.int64(2)],Overseas,248,593
+7903,Shamim Hossain,batter,2025,50.65465362,50.7,50.654654,196,74.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,249,543
+6035,Chirag Suri,batter,2022,50.44786757,50.4,50.447868,103,5.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,250,524
+2687,Roston Chase,batter,2024,50.33148895,50.3,50.331489,204,52.0,['T20I'],[np.int64(2)],Overseas,251,525
+1941,Devon Conway,batter,2022/23,50.33028587,50.3,50.330286,259,22.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,252,554
+4900,Wanindu Hasaranga,batter,2022,50.18685369,50.2,48.665634,137,85.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,253,589
+3639,Brandon King,batter,2022,49.98751861,50.0,49.987519,343,85.0,['T20I'],[np.int64(2)],Overseas,254,604
+39374,Muhammad Zohaib,batter,2025,49.62704069,49.6,49.627041,131,65.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,255,530
+3280,Nazmul Hossain Shanto,batter,2024,49.61848403,49.6,49.618484,187,68.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,256,575
+3954,Andrew Balbirnie,batter,2022,49.38148638,49.4,47.885279,184,67.0,['T20I'],[np.int64(3)],Overseas,257,533
+2490,Mohammad Nawaz,batter,2022,49.28398501,49.3,48.328842,100,86.0,['T20I'],[np.int64(2)],Overseas,258,534
+6448,Ibrahim Zadran,batter,2022,49.26318882,49.3,49.263189,252,91.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,259,560
+4639,Wellington Masakadza,batter,2024,49.06264001,49.1,47.96368,115,115.0,['T20I'],[np.int64(3)],Overseas,260,536
+6671,Lalit Yadav,batter,2022,48.5864129,48.6,48.586413,144,87.0,['IPL'],[np.int64(1)],Domestic,261,537
+7978,Johnathan Campbell,batter,2024,48.52739257,48.5,48.527393,101,66.0,['T20I'],[np.int64(3)],Overseas,262,538
+4780,Mohammad Saif Hassan,batter,2026,48.248703,48.2,47.1745,148,44.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,263,539
+25534,Chad Bowes,batter,2023,48.12634596,48.1,47.241268,117,61.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,264,540
+169,Robin Uthappa,batter,2022,48.07728234,48.1,48.279385,170,24.0,['IPL'],[np.int64(1)],Domestic,265,542
+7903,Shamim Hossain,batter,2023,47.99435309,48.0,47.018314,108,67.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,266,543
+2246,Tom Latham,batter,2023,47.92912787,47.9,47.929128,163,67.0,['T20I'],[np.int64(2)],Overseas,267,544
+6664,Dion Myers,batter,2024,47.82789569,47.8,47.827896,198,79.0,['T20I'],[np.int64(3)],Overseas,268,545
+2972,Yasim Murtaza,batter,2022,47.75628183,47.8,47.756282,120,23.0,['T20I'],[np.int64(2)],Overseas,269,546
+507,Mohammad Mahmudullah,batter,2022,47.33013138,47.3,47.330131,102,48.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,270,548
+6674,Rahmanullah Gurbaz,batter,2023,47.2169847,47.2,45.458782,262,63.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,271,576
+7905,Tanzim Sakib,batter,2025,46.75939118,46.8,45.644945,116,103.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,272,552
+3056,Iftikhar Ahmed,batter,2022,46.54831027,46.5,46.54831,179,61.0,['T20I'],[np.int64(2)],Overseas,273,555
+1941,Devon Conway,batter,2026,46.27577042,46.3,35.546405,116,2.0,['T20I'],[np.int64(2)],Overseas,274,554
+3056,Iftikhar Ahmed,batter,2024,46.25118693,46.3,44.847199,136,81.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,275,555
+535,Ambati Rayudu,batter,2023,46.07148934,46.1,45.006846,113,12.0,['IPL'],[np.int64(1)],Domestic,276,556
+20894,Aman Khan,batter,2023,46.0592022,46.1,46.059202,101,94.0,['IPL'],[np.int64(1)],Domestic,277,557
+4111,Khushdil Shah,batter,2022,45.98333229,46.0,45.983332,104,67.0,['T20I'],[np.int64(2)],Overseas,278,607
+4895,Charith Asalanka,batter,2025,45.89534278,45.9,45.895343,103,44.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,279,593
+6448,Ibrahim Zadran,batter,2025,45.67643745,45.7,45.676437,375,16.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,280,560
+1101,George Dockrell,batter,2024,45.12873195,45.1,43.888859,124,63.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,281,562
+17937,Zubaid Akbari,batter,2024,44.71236005,44.7,34.449809,110,0.0,"['Other_T20', 'T20I']","[np.int64(5), np.int64(3)]",Overseas,282,563
+3489,Salman Agha,batter,2025,44.68170828,44.7,44.681708,541,185.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,283,564
+7059,Nehal Wadhera,batter,2024,43.42185384,43.4,43.419539,133,66.0,"['IPL', 'Other_T20']","[np.int64(1), np.int64(5)]",Domestic,284,567
+1205,Jonny Bairstow,batter,2023,43.14829548,43.1,43.148295,119,16.0,['T20I'],[np.int64(2)],Overseas,285,568
+768,Reeza Hendricks,batter,2025,42.04266193,42.0,42.042662,103,43.0,['T20I'],[np.int64(2)],Overseas,286,570
+6440,Omair Yousuf,batter,2024,41.73299395,41.7,41.732994,115,14.0,"['Other_T20', 'T20I']","[np.int64(5), np.int64(3)]",Overseas,287,572
+3382,Nizakat Khan,batter,2022,41.49604722,41.5,42.461809,110,26.0,['T20I'],[np.int64(2)],Overseas,288,573
+4372,Rony Talukder,batter,2023,41.41608532,41.4,28.628033,143,0.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,289,574
+3280,Nazmul Hossain Shanto,batter,2023,40.99268453,41.0,28.278568,182,0.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,290,575
+6674,Rahmanullah Gurbaz,batter,2022,40.85397129,40.9,25.751286,210,1.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,291,576
+494,Kieron Pollard,batter,2022,40.62265905,40.6,38.490735,211,134.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,292,578
+8600,Tadiwanashe Marumani,batter,2025,40.54010013,40.5,39.840468,103,5.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,293,579
+3377,Babar Hayat,batter,2025,40.51582374,40.5,40.515824,141,43.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,294,580
+7049,Kamil Mishara,batter,2026,40.505818,40.5,40.113193,148,14.0,['T20I'],[np.int64(2)],Overseas,295,581
+42811,Michael Levitt,batter,2024,40.30798168,40.3,27.162868,203,0.0,['T20I'],[np.int64(4)],Overseas,296,582
+3024,Mohammad Rizwan,batter,2023,40.28877686,40.3,28.406538,116,0.0,['T20I'],[np.int64(2)],Overseas,297,583
+21781,Clive Madande,batter,2024,40.0974688,40.1,40.097469,175,145.0,['T20I'],[np.int64(3)],Overseas,298,584
+1568,Kane Williamson,batter,2022,39.91097726,39.9,39.910977,293,114.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,299,585
+7152,Hazratullah Zazai,batter,2022,39.77735094,39.8,25.131497,190,4.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,300,586
+2661,Shamarh Brooks,batter,2022,39.71448885,39.7,39.714489,150,76.0,['T20I'],[np.int64(2)],Overseas,301,587
+1327,Johnson Charles,batter,2025,39.26061042,39.3,38.590654,101,61.0,['T20I'],[np.int64(2)],Overseas,302,588
+4900,Wanindu Hasaranga,batter,2024,39.11406597,39.1,38.119186,109,17.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,303,589
+3648,Deepak Hooda,batter,2023,38.98904952,39.0,38.98905,139,66.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Domestic,304,590
+2485,Babar Azam,batter,2025,37.98953899,38.0,25.321754,180,4.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,305,591
+2213,Soumya Sarkar,batter,2024,37.87927093,37.9,36.811549,134,39.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,306,592
+4895,Charith Asalanka,batter,2022,37.65502913,37.7,37.655029,163,35.0,['T20I'],[np.int64(2)],Overseas,307,593
+4812,Harry Tector,batter,2023,37.48235576,37.5,37.482356,144,44.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,308,594
+8647,Sediqullah Atal,batter,2026,35.800662,35.8,35.800662,125,26.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,309,595
+4814,Lorcan Tucker,batter,2025,35.44736694,35.4,20.823053,136,4.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,310,596
+274,Martin Guptill,batter,2022,34.97681102,35.0,32.165748,131,2.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,311,597
+3578,Imad Wasim,batter,2023,34.73016628,34.7,33.044262,132,58.0,['T20I'],[np.int64(2)],Overseas,312,598
+4867,Wesley Madhevere,batter,2024,34.65044669,34.7,34.650447,133,52.0,['T20I'],[np.int64(3)],Overseas,313,599
+3986,Matthew Renshaw,batter,2026,34.20990529,34.2,29.799752,108,11.0,['T20I'],[np.int64(2)],Overseas,314,601
+3639,Brandon King,batter,2025,32.01165409,32.0,18.675369,157,3.0,['T20I'],[np.int64(2)],Overseas,315,604
+3802,Anshuman Rath,batter,2025,30.57315841,30.6,30.573158,129,12.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,316,605
+728,Dawid Malan,batter,2023,30.17712579,30.2,21.174573,139,11.0,['T20I'],[np.int64(2)],Overseas,317,606
+4111,Khushdil Shah,batter,2025,29.49467135,29.5,29.494671,102,81.0,['T20I'],[np.int64(2)],Overseas,318,607
+1187,Jason Roy,batter,2022,29.27561822,29.3,27.708971,198,72.0,['T20I'],[np.int64(2)],Overseas,319,608
+167,Ajinkya Rahane,batter,2022,28.68836351,28.7,26.552286,128,17.0,['IPL'],[np.int64(1)],Domestic,320,609
+6512,Michael Bracewell,bowler,2022/23,86.1497469,86.1,91.742011,102,4.0,['T20I'],[np.int64(3)],Overseas,1,581
+2364,Ashton Agar,bowler,2022,84.09619554,84.1,87.250999,144,11.0,['T20I'],[np.int64(2)],Overseas,2,2
+20310,Ahmed Daniyal,bowler,2025,82.05772053,82.1,83.067601,150,6.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,3,4
+4812,Harry Tector,bowler,2023,80.56585332,80.6,84.004789,120,34.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,4,5
+5750,Ehsan Khan,bowler,2022,80.48840617,80.5,85.432735,120,0.0,['T20I'],[np.int64(2)],Overseas,5,241
+7935,Mohammad Ghazanfar,bowler,2022,79.2088856,79.2,83.57084,108,12.0,['T20I'],[np.int64(2)],Overseas,6,7
+24767,Ripon Mondol,bowler,2025,78.62985728,78.6,78.629857,120,7.0,['Other_T20'],[np.int64(5)],Overseas,7,9
+2490,Mohammad Nawaz,bowler,2025,76.14987062,76.1,77.025579,448,72.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,8,109
+20704,Salman Mirza,bowler,2025,75.89663081,75.9,75.910068,250,22.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,9,12
+2984,Sikandar Raza,bowler,2025,75.59386613,75.6,77.636958,264,89.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,10,539
+26854,SM Meherob Hasan,bowler,2025,75.52619205,75.5,80.235885,120,0.0,['Other_T20'],[np.int64(5)],Overseas,11,14
+27743,DT Doram,bowler,2024,75.38056449,75.4,80.606644,138,0.0,['T20I'],[np.int64(4)],Overseas,12,15
+499,Shakib Al Hasan,bowler,2023,75.16221908,75.2,75.162219,150,18.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,13,16
+48616,Abdul Saqlain,bowler,2025,74.99406693,75.0,79.503817,114,0.0,['Other_T20'],[np.int64(5)],Overseas,14,17
+34485,Sufiyan Muqeem,bowler,2024,74.71703727,74.7,76.533275,208,64.0,"['Other_T20', 'T20I']","[np.int64(5), np.int64(2), np.int64(3)]",Overseas,15,22
+2984,Sikandar Raza,bowler,2022,73.88764107,73.9,75.164582,126,18.0,['T20I'],[np.int64(3)],Overseas,16,539
+3578,Imad Wasim,bowler,2023,73.61126717,73.6,73.611267,108,6.0,['T20I'],[np.int64(2)],Overseas,17,79
+34485,Sufiyan Muqeem,bowler,2025,73.42773247,73.4,75.826717,286,17.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(4), np.int64(5)]",Overseas,18,22
+4926,Shadab Khan,bowler,2023,73.31361146,73.3,77.601831,138,6.0,['T20I'],[np.int64(2)],Overseas,19,388
+6450,Mujeeb Ur Rahman,bowler,2022,72.85426385,72.9,72.854264,210,30.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,20,317
+6512,Michael Bracewell,bowler,2023,72.60887454,72.6,76.04781,120,14.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,21,581
+2636,Adam Zampa,bowler,2026,72.39737622,72.4,73.512149,132,54.0,['T20I'],[np.int64(2)],Overseas,22,343
+27504,Dushan Hemantha,bowler,2024,71.75617384,71.8,75.18859,120,19.0,['Other_T20'],[np.int64(5)],Overseas,23,28
+6450,Mujeeb Ur Rahman,bowler,2024,71.59307822,71.6,71.593078,108,5.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,24,317
+4373,Mustafizur Rahman,bowler,2025,71.27969656,71.3,71.279697,518,58.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,25,429
+4856,Benjamin Sears,bowler,2026,71.14255565,71.1,71.142556,122,13.0,['T20I'],[np.int64(2)],Overseas,26,299
+278,Tim Southee,bowler,2024,70.59813885,70.6,75.899345,141,0.0,['T20I'],[np.int64(2)],Overseas,27,371
+46378,Kyle Klein,bowler,2024,70.44690978,70.4,70.947677,114,5.0,['T20I'],[np.int64(4)],Overseas,28,35
+2997,Paul van Meekeren,bowler,2024,70.42433644,70.4,75.675754,139,0.0,['T20I'],[np.int64(4)],Overseas,29,36
+4658,Nasum Ahmed,bowler,2025,70.39152516,70.4,70.391525,306,107.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,30,500
+479,Adil Rashid,bowler,2024,70.12028254,70.1,71.439166,138,80.0,['T20I'],[np.int64(2)],Overseas,31,455
+2681,Taskin Ahmed,bowler,2023,69.64931069,69.6,69.649311,180,22.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,32,426
+4926,Shadab Khan,bowler,2022/23,69.62153538,69.6,70.825913,120,30.0,['T20I'],[np.int64(3)],Overseas,33,388
+19316,Maheesh Theekshana,bowler,2022,69.55459053,69.6,69.554591,540,68.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,34,327
+8295,Matthew Forde,bowler,2025,68.76448462,68.8,69.325582,132,3.0,['T20I'],[np.int64(2)],Overseas,35,542
+6450,Mujeeb Ur Rahman,bowler,2023,68.68419309,68.7,68.684193,108,18.0,['T20I'],[np.int64(2)],Overseas,36,317
+7741,Gareth Delany,bowler,2024,68.21542079,68.2,68.215421,102,15.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,37,166
+6628,Gerald Coetzee,bowler,2026,67.99720975,68.0,68.594555,113,10.0,['T20I'],[np.int64(2)],Overseas,38,520
+7906,Rakibul Hasan,bowler,2025,67.97280366,68.0,67.972804,114,6.0,['Other_T20'],[np.int64(5)],Overseas,39,49
+2526,Ish Sodhi,bowler,2022,67.84250861,67.8,69.527202,174,16.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,40,525
+3174,Matt Henry,bowler,2023,67.39955899,67.4,67.399559,144,18.0,['T20I'],[np.int64(2)],Overseas,41,616
+3281,Mosaddek Hossain,bowler,2022,67.23592202,67.2,67.235922,129,14.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,42,55
+7690,Saim Ayub,bowler,2025,67.10965638,67.1,67.109656,414,77.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,43,56
+5979,Abrar Ahmed,bowler,2026,66.98694166,67.0,66.986942,138,20.0,['T20I'],[np.int64(2)],Overseas,44,153
+1772,Sheldon Cottrell,bowler,2022,66.84639782,66.8,66.846398,173,6.0,['T20I'],[np.int64(2)],Overseas,45,58
+5034,Murugan Ashwin,bowler,2022,65.68050518,65.7,65.680505,174,71.0,['IPL'],[np.int64(1)],Domestic,46,63
+838,Glenn Maxwell,bowler,2022,65.50693624,65.5,65.506936,246,32.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,47,354
+6450,Mujeeb Ur Rahman,bowler,2025,65.15963924,65.2,65.159639,220,27.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(4), np.int64(3)]",Overseas,48,317
+2490,Mohammad Nawaz,bowler,2022,64.91130223,64.9,64.911302,250,73.0,['T20I'],[np.int64(2)],Overseas,49,109
+19316,Maheesh Theekshana,bowler,2024,64.79173119,64.8,64.791731,473,96.0,"['T20I', 'IPL']","[np.int64(3), np.int64(2), np.int64(1)]",Overseas,50,327
+32862,Allah Ghazanfar,bowler,2025,64.64945141,64.6,65.149737,144,14.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(4), np.int64(5)]",Overseas,51,545
+28756,Haider Ali,bowler,2025,64.32144553,64.3,64.321446,222,79.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,52,71
+4373,Mustafizur Rahman,bowler,2023,63.96748544,64.0,63.967485,228,22.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,53,429
+4499,Saqib Mahmood,bowler,2024,63.89767365,63.9,63.897674,126,36.0,['T20I'],[np.int64(2)],Overseas,54,75
+3578,Imad Wasim,bowler,2024,63.40466379,63.4,63.404664,114,64.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,55,79
+4658,Nasum Ahmed,bowler,2023,63.3496962,63.3,67.420265,102,2.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,56,500
+5809,Naveen ul Haq,bowler,2023,63.25463956,63.3,63.25464,204,11.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,57,464
+5837,Mahedi Hasan,bowler,2025,63.22743547,63.2,63.227435,375,62.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,58,306
+2526,Ish Sodhi,bowler,2023,62.93431265,62.9,65.115417,312,143.0,['T20I'],[np.int64(2)],Overseas,59,525
+479,Adil Rashid,bowler,2026,62.89256769,62.9,62.892568,190,59.0,['T20I'],[np.int64(2)],Overseas,60,455
+4926,Shadab Khan,bowler,2026,62.30161341,62.3,62.301613,132,18.0,['T20I'],[np.int64(2)],Overseas,61,388
+305,Ravichandran Ashwin,bowler,2023,62.22352004,62.2,62.22352,294,63.0,['IPL'],[np.int64(1)],Domestic,62,518
+22471,Matthew Humphreys,bowler,2025,62.18575895,62.2,62.185759,132,36.0,['T20I'],[np.int64(3)],Overseas,63,90
+278,Tim Southee,bowler,2022/23,61.70379024,61.7,61.70379,162,18.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,64,371
+4900,Wanindu Hasaranga,bowler,2024,61.36965735,61.4,61.369657,342,60.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,65,345
+23,Piyush Chawla,bowler,2023,61.28095049,61.3,61.28095,366,161.0,['IPL'],[np.int64(1)],Domestic,66,319
+7240,FazalHaq Farooqi,bowler,2024,61.15825817,61.2,61.158258,166,20.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,67,563
+2681,Taskin Ahmed,bowler,2024,61.05289058,61.1,61.052891,300,42.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,68,426
+722,Liam Dawson,bowler,2026,61.00306921,61.0,61.003069,156,77.0,['T20I'],[np.int64(2)],Overseas,69,297
+4639,Wellington Masakadza,bowler,2025,60.89020867,60.9,64.015563,108,49.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,70,425
+2984,Sikandar Raza,bowler,2024,60.87717765,60.9,60.877178,419,56.0,"['T20I', 'IPL']","[np.int64(3), np.int64(1)]",Overseas,71,539
+4636,Bjorn Fortuin,bowler,2024,60.84679701,60.8,64.412115,126,54.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,72,103
+6523,Blessing Muzarabani,bowler,2024,60.63020362,60.6,60.630204,421,53.0,['T20I'],[np.int64(3)],Overseas,73,377
+7696,Mohammad Wasim,bowler,2022/23,60.5861241,60.6,60.586124,108,18.0,['T20I'],[np.int64(3)],Overseas,74,106
+4900,Wanindu Hasaranga,bowler,2022,60.53514317,60.5,60.535143,588,108.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,75,345
+1071,Jaydev Unadkat,bowler,2025,60.4057542,60.4,60.405754,119,35.0,['IPL'],[np.int64(1)],Domestic,76,524
+2490,Mohammad Nawaz,bowler,2022/23,60.40222214,60.4,61.531371,114,40.0,['T20I'],[np.int64(3)],Overseas,77,109
+2687,Roston Chase,bowler,2026,59.89837203,59.9,59.898372,214,70.0,['T20I'],[np.int64(2)],Overseas,78,239
+2972,Yasim Murtaza,bowler,2022,59.83399283,59.8,61.041616,120,6.0,['T20I'],[np.int64(2)],Overseas,79,451
+7533,Simarjeet Singh,bowler,2022,59.68552732,59.7,59.989191,108,6.0,['IPL'],[np.int64(1)],Domestic,80,117
+5979,Abrar Ahmed,bowler,2025,59.66906068,59.7,59.669061,491,125.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,81,153
+7689,Dilshan Madushanka,bowler,2022,59.34523584,59.3,59.345236,120,31.0,['T20I'],[np.int64(2)],Overseas,82,121
+30925,Bradley Currie,bowler,2024,59.30481562,59.3,59.304816,108,12.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,83,123
+158,Amit Mishra,bowler,2023,59.20943784,59.2,60.250966,114,27.0,['IPL'],[np.int64(1)],Domestic,84,124
+3275,Alzarri Joseph,bowler,2022,59.1977111,59.2,59.197711,348,75.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,85,612
+3276,Gudakesh Motie,bowler,2024,59.16486065,59.2,59.164861,318,64.0,['T20I'],[np.int64(2)],Overseas,86,385
+7364,Haris Rauf,bowler,2022,58.88754895,58.9,58.887549,264,60.0,['T20I'],[np.int64(2)],Overseas,87,420
+8424,Tanveer Sangha,bowler,2023,58.88364153,58.9,60.461995,168,72.0,['T20I'],[np.int64(2)],Overseas,88,130
+479,Adil Rashid,bowler,2022,58.58258339,58.6,58.582583,378,117.0,['T20I'],[np.int64(2)],Overseas,89,455
+7240,FazalHaq Farooqi,bowler,2023,58.5804716,58.6,58.580472,194,42.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,90,563
+6683,Mayank Markande,bowler,2023,58.31550034,58.3,60.226769,228,81.0,['IPL'],[np.int64(1)],Domestic,91,594
+8661,Matheesha Pathirana,bowler,2023,58.15329565,58.2,60.179004,258,32.0,['IPL'],[np.int64(1)],Overseas,92,565
+4229,George Linde,bowler,2026,58.15030036,58.2,58.1503,127,42.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,93,164
+3720,Craig Young,bowler,2022,57.85579091,57.9,57.855791,102,26.0,['T20I'],[np.int64(3)],Overseas,94,315
+27466,Dhruv Parashar,bowler,2025,57.84341278,57.8,62.197451,174,71.0,['T20I'],"[np.int64(3), np.int64(2), np.int64(4)]",Overseas,95,144
+6436,Qais Ahmad,bowler,2024,57.83941663,57.8,59.271033,150,52.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,96,145
+3622,Hayden Walsh,bowler,2022,57.22456527,57.2,58.781014,156,65.0,['T20I'],[np.int64(2)],Overseas,97,148
+4926,Shadab Khan,bowler,2022,56.91607384,56.9,56.916074,178,43.0,['T20I'],[np.int64(2)],Overseas,98,388
+3623,Hasan Ali,bowler,2025,56.66817126,56.7,61.441004,122,1.0,['T20I'],"[np.int64(2), np.int64(4)]",Overseas,99,150
+494,Kieron Pollard,bowler,2022,56.61414516,56.6,58.366639,185,59.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,100,151
+7052,Dunith Wellalage,bowler,2025,56.58901641,56.6,56.589016,125,14.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,101,466
+5979,Abrar Ahmed,bowler,2024,56.5007286,56.5,56.500729,135,15.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,102,153
+6523,Blessing Muzarabani,bowler,2026,56.36522488,56.4,56.365225,204,73.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3)]",Overseas,103,377
+6355,Shaheen Afridi,bowler,2024,56.33019018,56.3,56.33019,395,113.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,104,207
+5837,Mahedi Hasan,bowler,2022,56.06506857,56.1,56.065069,128,18.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,105,306
+1944,Keshav Maharaj,bowler,2024,55.96039833,56.0,59.525717,126,61.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,106,543
+2315,Reece Topley,bowler,2022,55.9228197,55.9,55.92282,360,62.0,['T20I'],[np.int64(2)],Overseas,107,611
+4229,George Linde,bowler,2025,55.82615543,55.8,58.95151,108,36.0,['T20I'],[np.int64(2)],Overseas,108,164
+4900,Wanindu Hasaranga,bowler,2025,55.78845416,55.8,55.788454,510,179.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,109,345
+7741,Gareth Delany,bowler,2022,55.68985314,55.7,55.689853,180,70.0,['T20I'],[np.int64(3)],Overseas,110,166
+1107,Mohammad Nabi,bowler,2024,55.60139497,55.6,55.601395,212,55.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,111,443
+5379,Mark Adair,bowler,2024,55.53420943,55.5,55.534209,255,42.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,112,490
+19316,Maheesh Theekshana,bowler,2023,55.49039205,55.5,55.490392,414,102.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,113,327
+1107,Mohammad Nabi,bowler,2025,55.40938472,55.4,55.409385,174,28.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,114,443
+479,Adil Rashid,bowler,2023,55.1113588,55.1,55.111359,312,88.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,115,455
+8661,Matheesha Pathirana,bowler,2024,54.95367659,55.0,54.840116,362,79.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,116,565
+305,Ravichandran Ashwin,bowler,2022,54.88270048,54.9,54.8827,522,89.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Domestic,117,518
+8380,Mohammad Rishad Hossain,bowler,2026,54.75664595,54.8,56.022167,146,33.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,118,383
+7699,Abbas Afridi,bowler,2024,54.7391887,54.7,54.739189,358,152.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(3), np.int64(5)]",Overseas,119,177
+4692,Lockie Ferguson,bowler,2024,54.49271318,54.5,54.492713,275,62.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,120,606
+403,Umesh Yadav,bowler,2022,54.22539637,54.2,54.225396,300,52.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Domestic,121,567
+838,Glenn Maxwell,bowler,2025,54.05835247,54.1,58.412391,174,52.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,122,354
+2526,Ish Sodhi,bowler,2024,53.93808257,53.9,55.887937,238,58.0,['T20I'],[np.int64(2)],Overseas,123,525
+2636,Adam Zampa,bowler,2022,53.90897683,53.9,53.908977,222,20.0,['T20I'],[np.int64(2)],Overseas,124,343
+27959,Hrithik Shokeen,bowler,2023,53.8819705,53.9,57.175732,114,53.0,['IPL'],[np.int64(1)],Domestic,125,191
+5441,Barry McCarthy,bowler,2024,53.81344816,53.8,53.813448,166,6.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,126,480
+278,Tim Southee,bowler,2022,53.79683831,53.8,53.796838,282,40.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,127,371
+286,Kane Richardson,bowler,2022,53.57284334,53.6,53.572843,180,25.0,['T20I'],[np.int64(2)],Overseas,128,195
+2687,Roston Chase,bowler,2024,53.57028234,53.6,53.570282,264,73.0,['T20I'],[np.int64(2)],Overseas,129,239
+7905,Tanzim Sakib,bowler,2025,53.42300923,53.4,53.423009,455,114.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,130,588
+8380,Mohammad Rishad Hossain,bowler,2025,53.31378631,53.3,55.804992,518,133.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,131,383
+4926,Shadab Khan,bowler,2025,53.27734433,53.3,54.532677,132,66.0,['T20I'],[np.int64(2)],Overseas,132,388
+1389,Sean Abbott,bowler,2024,53.26240293,53.3,53.262403,128,18.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,133,510
+6643,Hasan Mahmud,bowler,2023,53.24697943,53.2,53.246979,114,6.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,134,536
+7364,Haris Rauf,bowler,2025,53.18161567,53.2,53.181616,307,52.0,['T20I'],"[np.int64(2), np.int64(4)]",Overseas,135,420
+7344,Shoriful Islam,bowler,2025,53.15970507,53.2,53.159705,327,75.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,136,341
+1596,Moeen Ali,bowler,2023,53.14236068,53.1,53.142361,266,55.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,137,285
+4874,Richard Ngarava,bowler,2024,53.08633346,53.1,53.086333,330,33.0,['T20I'],[np.int64(3)],Overseas,138,410
+6355,Shaheen Afridi,bowler,2025,53.06619138,53.1,53.066191,449,65.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,139,207
+28,Ishant Sharma,bowler,2023,52.53134704,52.5,52.531347,150,13.0,['IPL'],[np.int64(1)],Domestic,140,521
+2985,Mark Wood,bowler,2023,52.51095756,52.5,53.496066,108,40.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,141,214
+8614,William ORourke,bowler,2025,52.23286388,52.2,56.599797,110,2.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,142,220
+38855,Mohammad Saifuddin,bowler,2025,52.23128189,52.2,52.231282,167,42.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,143,221
+24475,Rehan Ahmed,bowler,2023,52.18002187,52.2,53.560922,144,22.0,['T20I'],[np.int64(2)],Overseas,144,222
+5940,Riley Meredith,bowler,2022,52.13523701,52.1,52.135237,168,24.0,['IPL'],[np.int64(1)],Overseas,145,540
+8177,Akash Madhwal,bowler,2023,51.96939088,52.0,51.969391,153,55.0,['IPL'],[np.int64(1)],Domestic,146,599
+4874,Richard Ngarava,bowler,2026,51.80459377,51.8,51.804594,104,19.0,['T20I'],[np.int64(3)],Overseas,147,410
+2636,Adam Zampa,bowler,2023,51.72594462,51.7,51.725945,180,32.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,148,343
+7240,FazalHaq Farooqi,bowler,2022,51.64956523,51.6,51.649565,313,18.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,149,563
+6160,Chamika Karunaratne,bowler,2022,51.58206284,51.6,51.582063,228,42.0,['T20I'],[np.int64(2)],Overseas,150,234
+7344,Shoriful Islam,bowler,2024,51.52275319,51.5,51.522753,132,20.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,151,341
+2878,Mohit Sharma,bowler,2023,51.40168612,51.4,51.499937,265,48.0,['IPL'],[np.int64(1)],Domestic,152,596
+1813,Deepak Chahar,bowler,2023,51.28798236,51.3,51.287982,204,13.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Domestic,153,560
+2687,Roston Chase,bowler,2025,51.23701709,51.2,51.237017,212,21.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,154,239
+2852,Jagadeesha Suchith,bowler,2022,51.21433436,51.2,47.751903,108,13.0,['IPL'],[np.int64(1)],Domestic,155,240
+5750,Ehsan Khan,bowler,2025,51.09162883,51.1,51.091629,131,31.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,156,241
+2399,Dushmantha Chameera,bowler,2025,50.96139571,51.0,50.961396,418,95.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,157,465
+5837,Mahedi Hasan,bowler,2026,50.90126304,50.9,50.901263,138,49.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,158,306
+5189,Faheem Ashraf,bowler,2025,50.85499837,50.9,50.854998,374,45.0,['T20I'],"[np.int64(2), np.int64(4), np.int64(3)]",Overseas,159,247
+2681,Taskin Ahmed,bowler,2025,50.83961505,50.8,50.839615,296,44.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,160,426
+295,Wayne Parnell,bowler,2022,50.51431292,50.5,50.514313,120,13.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,161,431
+4692,Lockie Ferguson,bowler,2022,50.44061874,50.4,50.440619,390,83.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,162,606
+2636,Adam Zampa,bowler,2025,50.43010383,50.4,52.594045,306,167.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,163,343
+5562,Richard Gleeson,bowler,2022,50.27202029,50.3,50.27202,126,34.0,['T20I'],[np.int64(2)],Overseas,164,258
+1219,David Willey,bowler,2022,50.22369558,50.2,50.223696,285,32.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,165,260
+4807,Joshua Little,bowler,2023,50.1962397,50.2,50.19624,246,49.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3)]",Overseas,166,267
+7270,Anrich Nortje,bowler,2022,50.04413445,50.0,50.044134,224,44.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,167,617
+28655,Muhammad Rohid,bowler,2025,50.00189953,50.0,50.0019,178,41.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(4), np.int64(5)]",Overseas,168,266
+4807,Joshua Little,bowler,2022,49.9583429,50.0,49.958343,260,71.0,['T20I'],[np.int64(3)],Overseas,169,267
+21784,Brad Evans,bowler,2025,49.87886592,49.9,49.878866,208,60.0,['T20I'],[np.int64(3)],Overseas,170,552
+7574,Kumar Kartikeya Singh,bowler,2023,49.58897749,49.6,51.074974,156,119.0,['IPL'],[np.int64(1)],Domestic,171,271
+6797,Dominic Drakes,bowler,2022,49.31556554,49.3,49.315566,126,28.0,['T20I'],[np.int64(2)],Overseas,172,274
+332,Angelo Mathews,bowler,2024,49.29632694,49.3,37.240611,110,15.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,173,275
+8009,Junaid Siddique,bowler,2025,49.06658017,49.1,49.06658,150,25.0,['T20I'],"[np.int64(2), np.int64(4)]",Overseas,174,277
+4373,Mustafizur Rahman,bowler,2022,48.9088345,48.9,48.908834,366,44.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,175,429
+2320,Trent Boult,bowler,2023,48.74409953,48.7,48.7441,228,48.0,['IPL'],[np.int64(1)],Overseas,176,353
+470,Mohammad Amir,bowler,2024,48.7230943,48.7,48.723094,146,21.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,177,284
+1596,Moeen Ali,bowler,2022,48.68318233,48.7,48.683182,335,111.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,178,285
+6512,Michael Bracewell,bowler,2024,48.63098924,48.6,48.630989,127,32.0,['T20I'],[np.int64(2)],Overseas,179,581
+3673,Ramesh Mendis,bowler,2024,48.5094158,48.5,48.509416,114,12.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,180,287
+4900,Wanindu Hasaranga,bowler,2023,48.50931406,48.5,48.509314,306,84.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,181,345
+6354,Spencer Johnson,bowler,2026,48.31543826,48.3,48.315438,114,33.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,182,310
+3660,Luke Wood,bowler,2025,48.23905891,48.2,48.239059,138,16.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,183,293
+4815,Benjamin White,bowler,2024,48.04203906,48.0,49.868223,210,37.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,184,296
+722,Liam Dawson,bowler,2025,48.02571381,48.0,48.025714,157,22.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,185,297
+829,Mitchell Starc,bowler,2022,48.01455875,48.0,48.014559,144,14.0,['T20I'],[np.int64(2)],Overseas,186,528
+4856,Benjamin Sears,bowler,2024,47.97556532,48.0,47.975565,150,42.0,['T20I'],[np.int64(2)],Overseas,187,299
+2526,Ish Sodhi,bowler,2022/23,47.82442359,47.8,45.836819,146,8.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,188,525
+5837,Mahedi Hasan,bowler,2024,47.642691,47.6,47.642691,213,29.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,189,306
+7270,Anrich Nortje,bowler,2023,47.61864265,47.6,47.618643,282,86.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,190,617
+6806,Tushar Deshpande,bowler,2024,47.55356371,47.6,47.553564,324,50.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3)]",Domestic,191,613
+6354,Spencer Johnson,bowler,2024,47.40179861,47.4,47.401799,211,53.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,192,310
+8805,Ottneil Baartman,bowler,2024,47.36483664,47.4,47.364837,150,46.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,193,312
+3720,Craig Young,bowler,2024,47.19592985,47.2,47.19593,132,31.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,194,315
+6450,Mujeeb Ur Rahman,bowler,2026,46.96389199,47.0,46.963892,174,36.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,195,317
+2320,Trent Boult,bowler,2022,46.87364995,46.9,46.87365,420,47.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,196,353
+23,Piyush Chawla,bowler,2024,46.81553196,46.8,46.815532,210,120.0,['IPL'],[np.int64(1)],Domestic,197,319
+6518,Daniel Sams,bowler,2022,46.69189479,46.7,46.691895,350,45.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,198,320
+2320,Trent Boult,bowler,2025,46.5767373,46.6,46.576737,346,54.0,['IPL'],[np.int64(1)],Overseas,199,353
+7545,Kuldeep Sen,bowler,2022,46.49233574,46.5,46.492336,151,24.0,['IPL'],[np.int64(1)],Domestic,200,322
+19316,Maheesh Theekshana,bowler,2025,46.21383172,46.2,46.213832,537,165.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,201,327
+3323,Jimmy Neesham,bowler,2023,46.19062253,46.2,46.190623,174,60.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,202,350
+19316,Maheesh Theekshana,bowler,2026,45.88582811,45.9,45.885828,210,39.0,['T20I'],[np.int64(2)],Overseas,203,327
+1944,Keshav Maharaj,bowler,2022,45.74244037,45.7,45.74244,184,42.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,204,543
+2526,Ish Sodhi,bowler,2025,45.55166389,45.6,43.571212,170,9.0,['T20I'],[np.int64(2)],Overseas,205,525
+4201,Fareed Malik,bowler,2025,45.36056624,45.4,45.360566,120,6.0,['T20I'],"[np.int64(4), np.int64(2), np.int64(3)]",Overseas,206,337
+6515,Benjamin Lister,bowler,2023,45.33600473,45.3,45.336005,209,66.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,207,339
+3689,Mark Watt,bowler,2024,45.30331627,45.3,45.303316,125,33.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,208,340
+7344,Shoriful Islam,bowler,2022,45.22942047,45.2,45.22942,100,9.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,209,341
+2054,Jason Behrendorff,bowler,2023,45.13815372,45.1,45.138154,372,61.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,210,342
+2636,Adam Zampa,bowler,2024,45.12712664,45.1,45.127127,300,89.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,211,343
+1617,Rishi Dhawan,bowler,2022,45.09041707,45.1,44.654887,114,12.0,['IPL'],[np.int64(1)],Domestic,212,344
+4900,Wanindu Hasaranga,bowler,2026,45.05336534,45.1,44.93773,216,48.0,['T20I'],[np.int64(2)],Overseas,213,345
+1071,Jaydev Unadkat,bowler,2022,45.02688091,45.0,45.026881,120,41.0,['IPL'],[np.int64(1)],Domestic,214,524
+3323,Jimmy Neesham,bowler,2025,44.73543122,44.7,44.085824,142,18.0,['T20I'],[np.int64(2)],Overseas,215,350
+5866,Patrick Kruger,bowler,2024,44.69141841,44.7,44.691418,116,66.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,216,351
+1487,Adam Milne,bowler,2023,44.65941701,44.7,44.659417,228,43.0,['T20I'],[np.int64(2)],Overseas,217,532
+2320,Trent Boult,bowler,2024,44.59381976,44.6,44.59382,356,87.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,218,353
+838,Glenn Maxwell,bowler,2024,44.46502087,44.5,44.465021,126,41.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,219,354
+25048,Umran Malik,bowler,2022,44.30058049,44.3,38.506849,349,102.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Domestic,220,556
+161,Dwayne Bravo,bowler,2022,44.29499731,44.3,44.294997,206,31.0,['IPL'],[np.int64(1)],Domestic,221,359
+3276,Gudakesh Motie,bowler,2026,44.0759245,44.1,44.075925,132,78.0,['T20I'],[np.int64(2)],Overseas,222,385
+29066,Zakary Foulkes,bowler,2025,43.96480841,44.0,43.964808,111,8.0,['T20I'],[np.int64(2)],Overseas,223,363
+4854,Rachin Ravindra,bowler,2023,43.8463255,43.8,42.844225,108,66.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,224,366
+4857,Nathan Smith,bowler,2026,43.8368137,43.8,43.836814,102,13.0,['T20I'],[np.int64(2)],Overseas,225,367
+3174,Matt Henry,bowler,2024,43.72743422,43.7,43.727434,162,16.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,226,616
+278,Tim Southee,bowler,2023,43.67742543,43.7,43.677425,241,51.0,"['IPL', 'T20I']","[np.int64(1), np.int64(3), np.int64(2)]",Overseas,227,371
+2399,Dushmantha Chameera,bowler,2022,43.58612095,43.6,43.586121,456,88.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,228,465
+25030,Zaman Khan,bowler,2024,43.5771904,43.6,43.57719,114,42.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,229,375
+6523,Blessing Muzarabani,bowler,2025,43.36152873,43.4,43.361529,103,15.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,230,377
+8380,Mohammad Rishad Hossain,bowler,2024,43.04689039,43.0,44.368391,288,55.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,231,383
+3276,Gudakesh Motie,bowler,2025,43.01581048,43.0,44.672184,180,54.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,232,385
+4926,Shadab Khan,bowler,2024,42.64736148,42.6,43.001733,114,30.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,233,388
+1318,Andre Russell,bowler,2022,42.55295677,42.6,42.552957,169,48.0,['IPL'],[np.int64(1)],Overseas,234,614
+4837,Obed McCoy,bowler,2022,42.36803907,42.4,42.368039,377,75.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,235,487
+36553,Jediah Blades,bowler,2025,42.35479567,42.4,42.354796,119,12.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,236,396
+26663,Kwena Maphaka,bowler,2025,42.30937292,42.3,42.309373,120,72.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,237,609
+8049,Naseem Shah,bowler,2022,41.89345396,41.9,41.398181,132,18.0,['T20I'],[np.int64(2)],Overseas,238,603
+25231,Samay Shrivastava,bowler,2025,41.87706864,41.9,40.754045,108,46.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,239,404
+4874,Richard Ngarava,bowler,2025,41.69752835,41.7,41.697528,246,61.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,240,410
+25128,Nqabayomzi Peter,bowler,2024,41.68386458,41.7,39.512531,144,73.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,241,411
+7094,Curtis Campher,bowler,2024,41.57690818,41.6,41.576908,126,5.0,['T20I'],"[np.int64(3), np.int64(4)]",Overseas,242,413
+5379,Mark Adair,bowler,2023,41.56522954,41.6,41.56523,152,56.0,['T20I'],"[np.int64(4), np.int64(3)]",Overseas,243,490
+5441,Barry McCarthy,bowler,2022,41.56135701,41.6,41.561357,174,44.0,['T20I'],[np.int64(3)],Overseas,244,480
+6677,Mohammad Hasnain,bowler,2022,41.54453558,41.5,41.544536,186,46.0,['T20I'],[np.int64(2)],Overseas,245,417
+7364,Haris Rauf,bowler,2024,41.22521341,41.2,41.225213,268,106.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,246,420
+2334,Dwaine Pretorius,bowler,2022,41.18671795,41.2,41.186718,263,45.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,247,421
+786,Chris Jordan,bowler,2022,41.17546365,41.2,41.175464,317,85.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,248,550
+403,Umesh Yadav,bowler,2024,41.13491362,41.1,39.506709,126,16.0,['IPL'],[np.int64(1)],Domestic,249,567
+3664,Binura Fernando,bowler,2024,41.11834746,41.1,41.118347,102,6.0,['T20I'],[np.int64(2)],Overseas,250,424
+4639,Wellington Masakadza,bowler,2024,41.00475669,41.0,41.004757,222,18.0,['T20I'],[np.int64(3)],Overseas,251,425
+2681,Taskin Ahmed,bowler,2022,40.99554455,41.0,40.995545,108,16.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,252,426
+6196,Josh Tongue,bowler,2026,40.94262058,40.9,40.942621,120,8.0,['T20I'],[np.int64(2)],Overseas,253,428
+4373,Mustafizur Rahman,bowler,2024,40.87436286,40.9,40.874363,386,112.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,254,429
+295,Wayne Parnell,bowler,2023,40.58354101,40.6,40.583541,208,40.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,255,431
+395,Karn Sharma,bowler,2023,40.54479348,40.5,41.772016,129,33.0,['IPL'],[np.int64(1)],Domestic,256,476
+6671,Lalit Yadav,bowler,2022,40.48109841,40.5,40.481098,108,23.0,['IPL'],[np.int64(1)],Domestic,257,433
+5809,Naveen ul Haq,bowler,2022,40.4524509,40.5,15.920981,149,1.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,258,464
+4840,Odean Smith,bowler,2022,40.33991955,40.3,40.33992,336,68.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,259,435
+4237,Tabraiz Shamsi,bowler,2022,40.2641741,40.3,41.948867,174,54.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,260,506
+3077,Usama Mir,bowler,2024,40.21779825,40.2,40.616137,120,72.0,['T20I'],[np.int64(2)],Overseas,261,438
+1813,Deepak Chahar,bowler,2024,39.98532319,40.0,4.109099,141,11.0,['IPL'],[np.int64(1)],Domestic,262,560
+1107,Mohammad Nabi,bowler,2022,39.74002978,39.7,39.280626,186,35.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,263,443
+4947,Kasun Rajitha,bowler,2023,39.20737045,39.2,39.20737,108,28.0,['T20I'],[np.int64(2)],Overseas,264,447
+47050,Shamar Joseph,bowler,2024,39.13364711,39.1,39.133647,192,29.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,265,530
+2972,Yasim Murtaza,bowler,2025,39.1168163,39.1,39.116816,126,8.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,266,451
+305,Ravichandran Ashwin,bowler,2024,39.06877819,39.1,39.068778,330,111.0,['IPL'],[np.int64(1)],Domestic,267,518
+829,Mitchell Starc,bowler,2025,39.03184268,39.0,39.031843,216,88.0,['IPL'],[np.int64(1)],Overseas,268,528
+479,Adil Rashid,bowler,2025,39.01693865,39.0,39.016939,282,64.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,269,455
+5808,Karim Janat,bowler,2024,38.89192286,38.9,38.891923,174,35.0,"['T20I', 'Other_T20']","[np.int64(2), np.int64(5)]",Overseas,270,457
+1389,Sean Abbott,bowler,2025,38.84084927,38.8,38.840849,165,99.0,['T20I'],[np.int64(2)],Overseas,271,510
+6286,Shivam Mavi,bowler,2022,38.80747337,38.8,38.807473,132,33.0,['IPL'],[np.int64(1)],Domestic,272,460
+5809,Naveen ul Haq,bowler,2024,38.73487531,38.7,38.734875,433,76.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Overseas,273,464
+2399,Dushmantha Chameera,bowler,2026,38.72753606,38.7,38.727536,187,49.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,274,465
+7052,Dunith Wellalage,bowler,2026,38.60055404,38.6,34.889155,114,24.0,['T20I'],[np.int64(2)],Overseas,275,466
+829,Mitchell Starc,bowler,2026,38.40557117,38.4,38.405571,132,71.0,['IPL'],[np.int64(1)],Overseas,276,528
+3653,Avesh Khan,bowler,2024,38.28123651,38.3,38.281237,454,72.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Domestic,277,598
+395,Karn Sharma,bowler,2024,37.86334267,37.9,31.510179,144,35.0,['IPL'],[np.int64(1)],Domestic,278,476
+3653,Avesh Khan,bowler,2022,37.86211738,37.9,37.862117,540,61.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1), np.int64(3)]",Domestic,279,598
+5441,Barry McCarthy,bowler,2025,37.46634034,37.5,37.46634,112,37.0,['T20I'],[np.int64(3)],Overseas,280,480
+3275,Alzarri Joseph,bowler,2024,37.34298573,37.3,37.342986,316,93.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,281,612
+4837,Obed McCoy,bowler,2024,37.22068865,37.2,37.220689,144,28.0,['T20I'],[np.int64(2)],Overseas,282,487
+6806,Tushar Deshpande,bowler,2023,37.1364488,37.1,37.136449,335,52.0,['IPL'],[np.int64(1)],Domestic,283,613
+5379,Mark Adair,bowler,2022,37.11025556,37.1,37.110256,240,59.0,['T20I'],[np.int64(3)],Overseas,284,490
+2483,Lizaad Williams,bowler,2024,36.87067459,36.9,36.870675,114,26.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,285,491
+3653,Avesh Khan,bowler,2023,36.79814387,36.8,36.798144,246,53.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Domestic,286,598
+4692,Lockie Ferguson,bowler,2026,36.69303335,36.7,36.693033,171,64.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,287,606
+28,Ishant Sharma,bowler,2025,36.64178768,36.6,36.641788,110,22.0,['IPL'],[np.int64(1)],Domestic,288,521
+4658,Nasum Ahmed,bowler,2022,35.79481008,35.8,35.79481,108,14.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,289,500
+3275,Alzarri Joseph,bowler,2023,35.77424082,35.8,35.774241,339,97.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,290,612
+4237,Tabraiz Shamsi,bowler,2023,35.26770538,35.3,34.60075,120,90.0,['T20I'],[np.int64(2)],Overseas,291,506
+2878,Mohit Sharma,bowler,2025,35.13357081,35.1,35.133571,150,72.0,['IPL'],[np.int64(1)],Domestic,292,596
+56685,Abdullah Ahmadzai,bowler,2025,34.98809065,35.0,34.548739,139,24.0,"['T20I', 'Other_T20']","[np.int64(4), np.int64(2), np.int64(3), np.int64(5)]",Overseas,293,509
+1389,Sean Abbott,bowler,2023,34.81904999,34.8,32.87493,101,35.0,['T20I'],[np.int64(2)],Overseas,294,510
+305,Ravichandran Ashwin,bowler,2025,34.10385084,34.1,27.407012,186,110.0,['IPL'],[np.int64(1)],Domestic,295,518
+6628,Gerald Coetzee,bowler,2024,34.03456893,34.0,34.034569,327,132.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,296,520
+28,Ishant Sharma,bowler,2024,33.84737747,33.8,33.847377,162,36.0,['IPL'],[np.int64(1)],Domestic,297,521
+1071,Jaydev Unadkat,bowler,2024,33.4870242,33.5,31.550163,187,68.0,['IPL'],[np.int64(1)],Domestic,298,524
+2526,Ish Sodhi,bowler,2026,33.46868327,33.5,30.880547,132,41.0,['T20I'],[np.int64(2)],Overseas,299,525
+829,Mitchell Starc,bowler,2024,33.28716772,33.3,33.287168,287,47.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,300,528
+47050,Shamar Joseph,bowler,2026,33.03196255,33.0,33.031963,201,59.0,['T20I'],[np.int64(2)],Overseas,301,530
+3653,Avesh Khan,bowler,2025,33.01075085,33.0,33.010751,284,104.0,['IPL'],[np.int64(1)],Domestic,302,598
+1487,Adam Milne,bowler,2024,33.00446719,33.0,33.004467,132,33.0,['T20I'],[np.int64(2)],Overseas,303,532
+6643,Hasan Mahmud,bowler,2025,32.83746112,32.8,32.837461,103,47.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,304,536
+2984,Sikandar Raza,bowler,2026,32.62408245,32.6,32.624082,186,80.0,['T20I'],[np.int64(3)],Overseas,305,539
+5940,Riley Meredith,bowler,2023,32.59028681,32.6,32.590287,118,37.0,['IPL'],[np.int64(1)],Overseas,306,540
+8295,Matthew Forde,bowler,2026,32.57863531,32.6,32.578635,171,36.0,['T20I'],[np.int64(2)],Overseas,307,542
+1944,Keshav Maharaj,bowler,2026,32.57618085,32.6,29.383769,162,60.0,['T20I'],[np.int64(2)],Overseas,308,543
+32862,Allah Ghazanfar,bowler,2026,32.2752336,32.3,32.275234,233,120.0,['IPL'],[np.int64(1)],Overseas,309,545
+1813,Deepak Chahar,bowler,2026,32.04429383,32.0,32.044294,153,43.0,['IPL'],[np.int64(1)],Domestic,310,560
+1318,Andre Russell,bowler,2024,31.96145136,32.0,31.961451,242,65.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,311,614
+786,Chris Jordan,bowler,2023,31.53435869,31.5,31.534359,191,65.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,312,550
+21784,Brad Evans,bowler,2026,31.00391356,31.0,31.003914,172,40.0,['T20I'],[np.int64(3)],Overseas,313,552
+1318,Andre Russell,bowler,2023,30.3420985,30.3,30.342098,204,72.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,314,614
+8326,Jayden Seales,bowler,2025,30.23887216,30.2,19.634426,114,18.0,['T20I'],[np.int64(2)],Overseas,315,554
+25048,Umran Malik,bowler,2023,29.68665159,29.7,29.686652,205,49.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Domestic,316,556
+42548,Muhammad Jawadullah,bowler,2025,29.57460168,29.6,27.742443,134,84.0,"['T20I', 'Other_T20']","[np.int64(3), np.int64(2), np.int64(4), np.int64(5)]",Overseas,317,558
+1813,Deepak Chahar,bowler,2025,29.29511375,29.3,26.811027,246,25.0,['IPL'],[np.int64(1)],Domestic,318,560
+7240,FazalHaq Farooqi,bowler,2025,29.13905874,29.1,27.899651,258,63.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(4), np.int64(3)]",Overseas,319,563
+8661,Matheesha Pathirana,bowler,2025,28.90591583,28.9,28.905916,299,96.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2), np.int64(3)]",Overseas,320,565
+403,Umesh Yadav,bowler,2023,28.75866633,28.8,28.758666,114,49.0,['IPL'],[np.int64(1)],Domestic,321,567
+33969,Tinotenda Maposa,bowler,2025,28.13313205,28.1,27.914376,158,47.0,['T20I'],[np.int64(3)],Overseas,322,573
+2304,Tymal Mills,bowler,2022,27.9224869,27.9,27.922487,175,84.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,323,575
+6512,Michael Bracewell,bowler,2025,27.59206691,27.6,27.356381,120,30.0,['T20I'],[np.int64(2)],Overseas,324,581
+6806,Tushar Deshpande,bowler,2025,27.36759766,27.4,27.367598,192,115.0,['IPL'],[np.int64(1)],Domestic,325,613
+22134,Luke Jongwe,bowler,2024,26.30974691,26.3,23.487339,176,32.0,['T20I'],[np.int64(3)],Overseas,326,584
+7905,Tanzim Sakib,bowler,2024,25.30919007,25.3,17.550187,162,37.0,['T20I'],"[np.int64(3), np.int64(2)]",Overseas,327,588
+4842,Shamar Springer,bowler,2026,25.25479125,25.3,24.577167,126,51.0,['T20I'],[np.int64(2)],Overseas,328,589
+7473,Akash Deep,bowler,2025,25.25049137,25.3,25.250491,114,19.0,['IPL'],[np.int64(1)],Domestic,329,605
+6683,Mayank Markande,bowler,2024,24.47165623,24.5,17.331891,132,34.0,['IPL'],[np.int64(1)],Domestic,330,594
+2878,Mohit Sharma,bowler,2024,23.85153309,23.9,23.451164,234,64.0,['IPL'],[np.int64(1)],Domestic,331,596
+3653,Avesh Khan,bowler,2026,23.51157933,23.5,19.823548,148,42.0,['IPL'],[np.int64(1)],Domestic,332,598
+8177,Akash Madhwal,bowler,2024,23.24925212,23.2,15.726459,109,14.0,['IPL'],[np.int64(1)],Domestic,333,599
+8049,Naseem Shah,bowler,2024,22.67647801,22.7,21.828985,150,52.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,334,603
+7473,Akash Deep,bowler,2022,21.35288966,21.4,8.121606,113,8.0,['IPL'],[np.int64(1)],Domestic,335,605
+4692,Lockie Ferguson,bowler,2023,21.11930938,21.1,21.119309,142,40.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,336,606
+19530,Shahnawaz Dhani,bowler,2022,20.58076919,20.6,16.263253,116,22.0,['T20I'],[np.int64(2)],Overseas,337,607
+26663,Kwena Maphaka,bowler,2024,18.92496147,18.9,18.924961,137,38.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,338,609
+2315,Reece Topley,bowler,2024,17.59017154,17.6,17.291615,150,61.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,339,611
+3275,Alzarri Joseph,bowler,2025,16.58479489,16.6,9.572822,150,42.0,['T20I'],"[np.int64(2), np.int64(3)]",Overseas,340,612
+6806,Tushar Deshpande,bowler,2026,16.56728218,16.6,16.567282,138,56.0,['IPL'],[np.int64(1)],Domestic,341,613
+1318,Andre Russell,bowler,2025,14.69564613,14.7,6.793438,121,51.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,342,614
+3174,Matt Henry,bowler,2026,11.53239101,11.5,10.804823,142,18.0,"['T20I', 'IPL']","[np.int64(2), np.int64(1)]",Overseas,343,616
+7270,Anrich Nortje,bowler,2024,10.34968668,10.3,6.624609,168,74.0,"['IPL', 'T20I']","[np.int64(1), np.int64(2)]",Overseas,344,617

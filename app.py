@@ -28,6 +28,7 @@ from dashboard.utils import (
     load_current_form_audit,
     load_retained_players,
     get_all_shortlist_players,
+    load_complete_eligible_pool,
     apply_custom_css,
     RR_PINK,
     RR_ROYAL_BLUE,
@@ -50,6 +51,8 @@ from dashboard.charts import (
 )
 from models.bowling_eq_model import EvidenceQualifiedBowlingModel
 from dashboard.pages.ai_scouting_lab import render_ai_scouting_lab
+from dashboard.pages.scouting_explorer import render_scouting_explorer
+from dashboard.utils.scouting_data import load_complete_pool_enriched
 
 # Configure Page
 st.set_page_config(
@@ -78,6 +81,7 @@ zero_opp_df = load_zero_opportunity_audit()
 form_audit_df = load_current_form_audit()
 retained_df = load_retained_players()
 all_players_df = get_all_shortlist_players()
+complete_pool_df = load_complete_eligible_pool()
 eq_model = EvidenceQualifiedBowlingModel()
 
 # Sidebar Branding & Navigation
@@ -98,10 +102,11 @@ with st.sidebar:
         "Navigation",
         [
             "📊 Executive Overview",
-            "🏏 Top 10 Batters",
-            "🎳 Top 10 Bowlers",
+            "🎯 Interactive Scouting Explorer",
+            "🏏 Top 10 Batters (Official)",
+            "🎳 Top 10 Bowlers (Official)",
             "⚔️ Player Comparison",
-            "🤖 AI Scouting Lab",
+            "🤖 Ask AI Assistant (Optional)",
             "👑 RR Long-Term Strategy",
             "📐 Methodology & Reliability"
         ],
@@ -210,13 +215,20 @@ if page == "📊 Executive Overview":
 
 
 # ==============================================================================
-# PAGE 2: TOP 10 BATTERS
+# PAGE 2: INTERACTIVE SCOUTING EXPLORER (PRIMARY DASHBOARD INTERACTION)
 # ==============================================================================
-elif page == "🏏 Top 10 Batters":
+elif page == "🎯 Interactive Scouting Explorer":
+    render_scouting_explorer()
+
+
+# ==============================================================================
+# PAGE 3: TOP 10 BATTERS (OFFICIAL VERIFIED RANKINGS)
+# ==============================================================================
+elif page == "🏏 Top 10 Batters (Official)":
     st.markdown("""
     <div class="rr-header-box">
         <h1 class="rr-title">Official Top 10 Batters <span>| RR Auction Playbook</span></h1>
-        <p class="rr-subtitle">Combined Indian + Overseas auction-eligible rankings ordered by verified RR Scouting Composite.</p>
+        <p class="rr-subtitle">Verified read-only rankings ordered by audited RR Scouting Composite (40/30/20/10).</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -277,13 +289,13 @@ elif page == "🏏 Top 10 Batters":
 
 
 # ==============================================================================
-# PAGE 3: TOP 10 BOWLERS
+# PAGE 4: TOP 10 BOWLERS (OFFICIAL VERIFIED RANKINGS)
 # ==============================================================================
-elif page == "🎳 Top 10 Bowlers":
+elif page == "🎳 Top 10 Bowlers (Official)":
     st.markdown("""
     <div class="rr-header-box">
         <h1 class="rr-title">Official Top 10 Bowlers <span>| Evidence-Qualified Playbook</span></h1>
-        <p class="rr-subtitle">Evaluated on observed deliveries with codified tactical deployment boundaries.</p>
+        <p class="rr-subtitle">Verified read-only rankings evaluated on observed deliveries with codified tactical boundaries.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -357,7 +369,7 @@ elif page == "🎳 Top 10 Bowlers":
 
 
 # ==============================================================================
-# PAGE 4: PLAYER COMPARISON
+# PAGE 5: PLAYER COMPARISON
 # ==============================================================================
 elif page == "⚔️ Player Comparison":
     st.markdown("""
@@ -367,11 +379,12 @@ elif page == "⚔️ Player Comparison":
     </div>
     """, unsafe_allow_html=True)
 
-    player_options = all_players_df['player_name'].tolist()
+    enriched_pool = load_complete_pool_enriched()
+    player_options = enriched_pool['player_name'].tolist()
     default_selection = ["Jake Fraser-McGurk", "Jacob Bethell", "Harry Brook"]
     
     selected_players = st.multiselect(
-        "Select Players to Compare (2 or more)",
+        "Select Candidates to Compare (Search any of 303 Eligible Players)",
         options=player_options,
         default=[p for p in default_selection if p in player_options]
     )
@@ -379,27 +392,16 @@ elif page == "⚔️ Player Comparison":
     if len(selected_players) < 2:
         st.warning("Please select at least 2 players to compare.")
     else:
-        comp_df = all_players_df[all_players_df['player_name'].isin(selected_players)].copy()
+        comp_df = enriched_pool[enriched_pool['player_name'].isin(selected_players)].copy()
         
-        # Enrich with detailed scouting dimensions
         enriched_data = []
         for _, r in comp_df.iterrows():
             p_dict = r.to_dict()
-            # Lookup detailed dimensions if available
-            p_id = r['player_id']
-            if not scouting_scores_df.empty and p_id in scouting_scores_df['player_id'].values:
-                match = scouting_scores_df[scouting_scores_df['player_id'] == p_id].iloc[0]
-                p_dict['dimA_pressure'] = match['dimA_historical_pressure_score']
-                p_dict['dimB_age_dev'] = match['dimB_age_development_score']
-                p_dict['dimC_skill_ceiling'] = match['dimC_skill_ceiling_score']
-                p_dict['dimD_current_form'] = match['dimD_current_form_score']
-                p_dict['tactical_fit'] = 90.0
-            else:
-                p_dict['dimA_pressure'] = float(r['pressure_or_eq_score'])
-                p_dict['dimB_age_dev'] = 85.0 if r['age_as_of_2027_04_01'] <= 25 else 60.0
-                p_dict['dimC_skill_ceiling'] = 85.0
-                p_dict['dimD_current_form'] = 80.0
-                p_dict['tactical_fit'] = 85.0
+            p_dict['dimA_pressure'] = float(r.get('dimA_pressure', r['pressure_or_eq_score']))
+            p_dict['dimB_age_dev'] = float(r.get('dimB_runway', 65.0))
+            p_dict['dimC_skill_ceiling'] = float(r.get('dimC_ceiling', 70.0))
+            p_dict['dimD_current_form'] = float(r.get('dimD_form', 70.0))
+            p_dict['tactical_fit'] = 90.0 if r['is_shortlisted'] else 75.0
             enriched_data.append(p_dict)
 
         c1, c2 = st.columns([1.2, 1])
@@ -418,7 +420,7 @@ elif page == "⚔️ Player Comparison":
 
         st.markdown("---")
         st.markdown("#### 📋 Individual Player War-Room Cards")
-        cols = st.columns(len(enriched_data))
+        cols = st.columns(min(len(enriched_data), 3))
         for idx, p_dict in enumerate(enriched_data):
             with cols[idx % len(cols)]:
                 guideline = eq_model.get_tactical_guideline(p_dict['player_id'])
@@ -426,10 +428,10 @@ elif page == "⚔️ Player Comparison":
 
 
 # ==============================================================================
-# PAGE 5: AI SCOUTING LAB
+# PAGE 6: ASK AI ASSISTANT (OPTIONAL)
 # ==============================================================================
-elif page == "🤖 AI Scouting Lab":
-    render_ai_scouting_lab(all_players_df)
+elif page == "🤖 Ask AI Assistant (Optional)":
+    render_ai_scouting_lab(complete_pool_df)
 
 
 # ==============================================================================
