@@ -1,0 +1,311 @@
+{
+  "filter_tests": {
+    "Role=Batter, Nat=Indian": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "Batter",
+        "nationality": "Indian"
+      }
+    },
+    "Role=Batter, Nat=Overseas": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "Batter",
+        "nationality": "Overseas"
+      }
+    },
+    "Role=Bowler, Nat=Indian": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "Bowler",
+        "nationality": "Indian"
+      }
+    },
+    "Role=Bowler, Nat=Overseas": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "Bowler",
+        "nationality": "Overseas"
+      }
+    },
+    "Role=All-rounder, Nat=Both": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "All-rounder",
+        "nationality": "Both"
+      }
+    },
+    "Min Pressure=80": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_pressure_score": 80
+      }
+    },
+    "Min RR Score=85": {
+      "status": "OK",
+      "count": 3,
+      "kwargs": {
+        "min_rr_score": 85
+      }
+    },
+    "Min Pressure=70 + RR=75": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_pressure_score": 70,
+        "min_rr_score": 75
+      }
+    },
+    "Min 100 balls": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_sample_balls": 100
+      }
+    },
+    "Min 50 balls": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_sample_balls": 50
+      }
+    },
+    "Dom runs >100": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "domestic_min_runs": 100
+      }
+    },
+    "Dom avg >30": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "domestic_min_avg": 30
+      }
+    },
+    "Dom SR >130": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "domestic_min_sr": 130
+      }
+    },
+    "Dom wkts >5": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "domestic_min_wickets": 5
+      }
+    },
+    "Dom econ <8": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "domestic_max_econ": 8
+      }
+    },
+    "Emerging (<24)": {
+      "status": "OK",
+      "count": 2,
+      "kwargs": {
+        "age_group": "Emerging (<24)"
+      }
+    },
+    "Development (24-27)": {
+      "status": "OK",
+      "count": 5,
+      "kwargs": {
+        "age_group": "Development (24-27)"
+      }
+    },
+    "Prime (27-31)": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "age_group": "Prime (27-31)"
+      }
+    },
+    "Experienced (31+)": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "age_group": "Experienced (31+)"
+      }
+    },
+    "Search: Sharma": {
+      "status": "OK",
+      "count": 3,
+      "kwargs": {
+        "search_query": "Sharma"
+      }
+    },
+    "Search: Kumar": {
+      "status": "OK",
+      "count": 1,
+      "kwargs": {
+        "search_query": "Kumar"
+      }
+    },
+    "Search: Singh": {
+      "status": "OK",
+      "count": 4,
+      "kwargs": {
+        "search_query": "Singh"
+      }
+    },
+    "View A: Complete Pool": {
+      "status": "OK",
+      "count": 274,
+      "kwargs": {
+        "view_filter": "View A: Complete Pool",
+        "limit": null
+      }
+    },
+    "View B: Official Shortlist": {
+      "status": "OK",
+      "count": 28,
+      "kwargs": {
+        "view_filter": "View B: Official Shortlist",
+        "limit": null
+      }
+    },
+    "View C: RR Squad": {
+      "status": "OK",
+      "count": 1,
+      "kwargs": {
+        "view_filter": "View C: RR Squad",
+        "limit": null
+      }
+    },
+    "Batter + Indian + Min Pressure 70 + Min 50 balls": {
+      "status": "OK",
+      "count": 7,
+      "kwargs": {
+        "role": "Batter",
+        "nationality": "Indian",
+        "min_pressure_score": 70,
+        "min_sample_balls": 50
+      }
+    },
+    "Bowler + Overseas + Min RR 75 + Dom wkts >3": {
+      "status": "OK",
+      "count": 3,
+      "kwargs": {
+        "role": "Bowler",
+        "nationality": "Overseas",
+        "min_rr_score": 75,
+        "domestic_min_wickets": 3
+      }
+    },
+    "Shortlist + Indian + Emerging": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "view_filter": "View B: Official Shortlist",
+        "nationality": "Indian",
+        "age_group": "Emerging (<24)"
+      }
+    },
+    "RR Squad + Bowler": {
+      "status": "OK",
+      "count": 1,
+      "kwargs": {
+        "view_filter": "View C: RR Squad",
+        "role": "Bowler"
+      }
+    },
+    "RR Squad + Batter": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "view_filter": "View C: RR Squad",
+        "role": "Batter"
+      }
+    },
+    "Impossible score (RR>99)": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "min_rr_score": 99
+      }
+    },
+    "Impossible domestic (runs>1000)": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "domestic_min_runs": 1000
+      }
+    },
+    "Search non-existent": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "search_query": "XYZNONEXISTENT"
+      }
+    },
+    "All-rounder filter (may be empty)": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "All-rounder"
+      }
+    },
+    "Min balls = 0": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_sample_balls": 0
+      }
+    },
+    "Min pressure = 0": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "min_pressure_score": 0
+      }
+    },
+    "Age min=18 max=45": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "age_min": 18,
+        "age_max": 45
+      }
+    },
+    "Age min=25 max=25": {
+      "status": "OK",
+      "count": 0,
+      "kwargs": {
+        "age_min": 25,
+        "age_max": 25
+      }
+    },
+    "No filters (defaults)": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {}
+    },
+    "role=Any, nat=Both": {
+      "status": "OK",
+      "count": 10,
+      "kwargs": {
+        "role": "Any",
+        "nationality": "Both"
+      }
+    }
+  },
+  "pool_size": 303,
+  "shortlist_size": 28,
+  "rr_squad_size": 19,
+  "view_a_size": 274,
+  "view_b_size": 28,
+  "view_c_size": 1,
+  "timestamp": "2026-11-18T22:11:08.270395"
+}

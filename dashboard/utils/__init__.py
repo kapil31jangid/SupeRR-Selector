@@ -7,6 +7,7 @@ from .data_loader import (
     load_zero_opportunity_audit,
     load_current_form_audit,
     load_retained_players,
+    load_bowling_zero_opp,
     get_all_shortlist_players,
     get_official_shortlist,
     load_complete_pool_enriched,
@@ -29,17 +30,6 @@ from .data_loader import (
     build_standard_scouting_report,
     export_standard_scouting_report
 )
-from .scouting_data import (
-    load_official_batters,
-    load_official_bowlers,
-    load_official_reserves,
-    load_scouting_scores,
-    load_form_evidence,
-    load_bowling_deployment as load_official_bowling_deployment,
-    load_bowling_zero_opp,
-    apply_scouting_filters as apply_scouting_filters_v1,
-    get_comparison_data as get_comparison_data_v1
-)
 from .formatting import (
     apply_custom_css,
     format_category_badge,
@@ -60,6 +50,7 @@ __all__ = [
     "load_zero_opportunity_audit",
     "load_current_form_audit",
     "load_retained_players",
+    "load_bowling_zero_opp",
     "get_all_shortlist_players",
     "get_official_shortlist",
     "load_complete_pool_enriched",
@@ -81,13 +72,6 @@ __all__ = [
     "get_comparison_data",
     "build_standard_scouting_report",
     "export_standard_scouting_report",
-    "load_official_batters",
-    "load_official_bowlers",
-    "load_official_reserves",
-    "load_scouting_scores",
-    "load_form_evidence",
-    "load_official_bowling_deployment",
-    "load_bowling_zero_opp",
     "apply_custom_css",
     "format_category_badge",
     "format_nationality_badge",

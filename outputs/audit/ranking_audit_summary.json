@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-18T22:16:30.488256",
+  "scoring_reproduction": {
+    "total_players": 28,
+    "all_within_tolerance": true
+  },
+  "sensitivity_analysis": {
+    "max_rank_delta": null,
+    "stable": null
+  },
+  "eq_bowling": {
+    "prohibited_deployments": 14,
+    "zero_opportunity_players": 10
+  },
+  "scoring_formula": {
+    "weights": "40/30/20/10",
+    "validated": "True"
+  },
+  "ranking_consistency": {
+    "batters_sorted": true,
+    "bowlers_sorted": true,
+    "reserves_sorted": true
+  }
+}

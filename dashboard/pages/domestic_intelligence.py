@@ -400,13 +400,13 @@ def render_domestic_intelligence():
             help="Choose how to rank bowlers. Bowling Average requires wickets."
         )
 
-    # Get role mapping from player master
+    # Get role mapping from enriched pool (has correct Batter/Bowler roles)
     role_lookup = {}
-    if not master.empty:
-        role_lookup = dict(zip(master['player_id'].astype(int), master['role']))
+    if not full_pool.empty:
+        role_lookup = dict(zip(full_pool['player_id'].astype(int), full_pool['role']))
 
     def get_role(pid):
-        """Get player role from master, fallback to 'Unverified'."""
+        """Get player role from pool, fallback to 'Unverified'."""
         role = role_lookup.get(int(pid), 'Unverified')
         if pd.isna(role) or role == '':
             return 'Unverified'

@@ -115,6 +115,15 @@ def load_current_form_audit() -> pd.DataFrame:
 
 
 @st.cache_data
+def load_bowling_zero_opp() -> pd.DataFrame:
+    """Load bowling zero-opportunity audit data (EQ components)."""
+    p = SUPPORTING_EVIDENCE_DIR / "bowling_zero_opportunity_audit.csv"
+    if p.exists():
+        return pd.read_csv(p)
+    return pd.DataFrame()
+
+
+@st.cache_data
 def load_retained_players() -> pd.DataFrame:
     """Load 184 excluded retained players across all 10 franchises."""
     p = SUPPORTING_EVIDENCE_DIR / "retained_players.csv"
@@ -270,8 +279,11 @@ def load_complete_pool_enriched() -> pd.DataFrame:
     if pool_df.empty:
         return shortlist_df
 
-    # Use ALL players from auction pool (already filtered for eligibility)
-    # Remove duplicates, keep highest composite_score
+    # Filter pool to ELIGIBLE players only (per IPL eligibility audit)
+    eligible_ids = set(audit_df[audit_df['eligibility_status'] == 'ELIGIBLE']['player_id'].astype(int).tolist())
+    pool_df = pool_df[pool_df['player_id'].isin(eligible_ids)].copy()
+
+    # Remove duplicates (player-seasons), keep highest composite_score
     pool_df = pool_df.sort_values('composite_score', ascending=False).drop_duplicates('player_id')
 
     # Build lookups
@@ -324,8 +336,8 @@ def load_complete_pool_enriched() -> pd.DataFrame:
     perf_season_bowl_lookup = build_lookup(perf_season_bowl, 'bowler_id')
     pressure_bat_lookup = build_lookup(pressure_bat, 'player_id')
     pressure_bowl_lookup = build_lookup(pressure_bowl, 'player_id')
-    domestic_bat_lookup = build_lookup(domestic_bat, 'player_id')
-    domestic_bowl_lookup = build_lookup(domestic_bowl, 'player_id')
+    domestic_bat_lookup = build_lookup(domestic_bat, 'striker_id')
+    domestic_bowl_lookup = build_lookup(domestic_bowl, 'bowler_id')
     bowl_phase_lookup = build_lookup(bowl_phase, 'bowler_id')
     form_lookup = build_lookup(current_form, 'player_id')
     scouting_lookup = build_lookup(scouting_scores, 'player_id')
@@ -474,11 +486,17 @@ def load_complete_pool_enriched() -> pd.DataFrame:
 
         base['domestic_matches'] = int(d_bat.get('matches', 0) + d_bowl.get('matches', 0))
         base['domestic_batting_runs'] = d_bat.get('total_runs', np.nan)
-        base['domestic_batting_avg'] = d_bat.get('strike_rate', np.nan)  # SR in domestic
+        # Batting average = runs / dismissals
+        bat_runs = d_bat.get('total_runs', 0)
+        bat_dismissals = d_bat.get('total_dismissals', 0)
+        base['domestic_batting_avg'] = (bat_runs / bat_dismissals) if bat_dismissals > 0 else np.nan
         base['domestic_batting_sr'] = d_bat.get('strike_rate', np.nan)
         base['domestic_bowling_wickets'] = d_bowl.get('total_wickets', np.nan)
         base['domestic_bowling_econ'] = d_bowl.get('economy', np.nan)
-        base['domestic_bowling_avg'] = np.nan
+        # Bowling average = runs / wickets
+        bowl_runs = d_bowl.get('total_runs', 0)
+        bowl_wickets = d_bowl.get('total_wickets', 0)
+        base['domestic_bowling_avg'] = (bowl_runs / bowl_wickets) if bowl_wickets > 0 else np.nan
         base['has_domestic_evidence'] = base['domestic_matches'] > 0
 
         # Enrich with bowling phase metrics

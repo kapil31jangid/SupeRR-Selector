@@ -14,7 +14,7 @@ from typing import Dict, Any, List, Optional
 import pandas as pd
 import streamlit as st
 
-from dashboard.utils.scouting_data import (
+from dashboard.utils.data_loader import (
     load_complete_pool_enriched,
     apply_scouting_filters,
     load_bowling_zero_opp
@@ -404,9 +404,18 @@ def render_scouting_explorer():
             st.rerun()
 
     # Apply filters dynamically
+    # Map pool_scope to new view_filter values
+    view_filter_map = {
+        "Full Eligible Pool (311 Players)": "View A: Complete Pool",
+        "Official Shortlist (28 Players)": "View B: Official Shortlist",
+        "RR Squad Analysis (19 Players)": "View C: RR Squad"
+    }
+    view_filter = view_filter_map.get(pool_scope, "View A: Complete Pool")
+
     filtered_df = apply_scouting_filters(
         full_pool_df,
         pool_scope=pool_scope,
+        view_filter=view_filter,
         role=role,
         nationality=nat,
         country=None if country == "All" else country,

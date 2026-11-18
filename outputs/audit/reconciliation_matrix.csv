@@ -1,0 +1,14 @@
+dataset,id_column,total_unique_ids,eligible_ids_covered,shortlist_ids_covered,rr_ids_covered,orphan_ids,missing_eligible_ids,coverage_pct_eligible
+all_competition_batter_season_features,striker_id,888,300,28,16,588,3,99.0
+all_competition_bowler_season_features,bowler_id,647,218,22,15,429,85,71.9
+player_domestic_metrics_batter,striker_id,284,96,6,1,188,207,31.7
+player_domestic_metrics_bowler,bowler_id,196,69,6,0,127,234,22.8
+player_performance_by_competition_batter,striker_id,888,300,28,16,588,3,99.0
+player_performance_by_competition_bowler,bowler_id,647,218,22,15,429,85,71.9
+player_performance_by_season_batter,striker_id,888,300,28,16,588,3,99.0
+player_performance_by_season_bowler,bowler_id,647,218,22,15,429,85,71.9
+player_pressure_metrics_batter,player_id,888,300,28,16,588,3,99.0
+player_pressure_metrics_bowler,player_id,647,218,22,15,429,85,71.9
+player_master,player_id,1217,303,28,19,914,0,100.0
+player_master_canonical,player_id,1217,303,28,19,914,0,100.0
+auction_eligible_player_pool,player_id,311,303,28,1,8,0,100.0

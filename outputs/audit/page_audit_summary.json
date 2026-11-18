@@ -1,0 +1,115 @@
+{
+  "imports": {
+    "scouting_explorer": "OK",
+    "dynamic_ranking": "OK",
+    "rr_squad_analysis": "OK",
+    "domestic_intelligence": "OK",
+    "ai_scouting_lab": "OK",
+    "app": "OK"
+  },
+  "functions": {
+    "load_complete_pool_enriched": {
+      "status": "OK",
+      "rows": 303
+    },
+    "load_final_batters": {
+      "status": "OK",
+      "rows": 10
+    },
+    "load_final_bowlers": {
+      "status": "OK",
+      "rows": 10
+    },
+    "load_final_reserves": {
+      "status": "OK",
+      "rows": 8
+    },
+    "load_rr_current_squad": {
+      "status": "OK",
+      "rows": 19
+    },
+    "load_domestic_metrics_batter": {
+      "status": "OK",
+      "rows": 386
+    },
+    "load_domestic_metrics_bowler": {
+      "status": "OK",
+      "rows": 272
+    },
+    "load_performance_by_competition_batter": {
+      "status": "OK",
+      "rows": 4317
+    },
+    "load_performance_by_competition_bowler": {
+      "status": "OK",
+      "rows": 3095
+    },
+    "load_performance_by_season_batter": {
+      "status": "OK",
+      "rows": 2225
+    },
+    "load_performance_by_season_bowler": {
+      "status": "OK",
+      "rows": 1601
+    },
+    "load_pressure_metrics_batter": {
+      "status": "OK",
+      "rows": 2225
+    },
+    "load_pressure_metrics_bowler": {
+      "status": "OK",
+      "rows": 1601
+    },
+    "load_bowling_phase_metrics": {
+      "status": "OK",
+      "rows": 1601
+    },
+    "load_current_form": {
+      "status": "OK",
+      "rows": 82
+    },
+    "load_player_master": {
+      "status": "OK",
+      "rows": 1570
+    },
+    "load_ipl_eligibility_audit": {
+      "status": "OK",
+      "rows": 311
+    },
+    "load_auction_eligible_pool": {
+      "status": "OK",
+      "rows": 664
+    },
+    "load_scouting_priority_scores": {
+      "status": "OK",
+      "rows": 24
+    },
+    "load_bowling_deployment": {
+      "status": "OK",
+      "rows": 14
+    },
+    "load_zero_opportunity_audit": {
+      "status": "OK",
+      "rows": 10
+    },
+    "load_current_form_audit": {
+      "status": "OK",
+      "rows": 28
+    },
+    "load_retained_players": {
+      "status": "OK",
+      "rows": 184
+    },
+    "get_all_shortlist_players": {
+      "status": "OK",
+      "rows": 28
+    },
+    "get_official_shortlist": {
+      "status": "OK",
+      "rows": 28
+    }
+  },
+  "pool_size": 303,
+  "rr_squad_size": 19,
+  "timestamp": "2026-11-18T22:08:06.423249"
+}

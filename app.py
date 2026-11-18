@@ -395,19 +395,24 @@ elif page == "⚔️ 7. Player Comparison":
     </div>
     """, unsafe_allow_html=True)
 
-    player_options = complete_pool_df['player_name'].tolist()
-    default_selection = ["Jake Fraser-McGurk", "Jacob Bethell", "Harry Brook"]
+    # Create player_id -> name mapping for stable selection
+    player_id_to_name = dict(zip(complete_pool_df['player_id'].astype(int), complete_pool_df['player_name']))
+    player_options = list(player_id_to_name.items())  # [(id, name), ...]
+    default_ids = [int(complete_pool_df[complete_pool_df['player_name'] == p]['player_id'].iloc[0])
+                   for p in ["Jake Fraser-McGurk", "Jacob Bethell", "Harry Brook"]
+                   if p in complete_pool_df['player_name'].values]
 
-    selected_players = st.multiselect(
-        "Select Candidates to Compare (Search any of 664 Eligible Players)",
-        options=player_options,
-        default=[p for p in default_selection if p in player_options]
+    selected_ids = st.multiselect(
+        "Select Candidates to Compare (Search any of 303 Eligible Players)",
+        options=[pid for pid, _ in player_options],
+        format_func=lambda pid: f"{pid} - {player_id_to_name.get(pid, 'Unknown')}",
+        default=default_ids
     )
 
-    if len(selected_players) < 2:
+    if len(selected_ids) < 2:
         st.warning("Please select at least 2 players to compare.")
     else:
-        comp_df = complete_pool_df[complete_pool_df['player_name'].isin(selected_players)].copy()
+        comp_df = complete_pool_df[complete_pool_df['player_id'].isin(selected_ids)].copy()
 
         enriched_data = []
         for _, r in comp_df.iterrows():

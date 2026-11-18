@@ -23,7 +23,7 @@ from dashboard.utils.scouting_data import (
     get_comparison_data
 )
 from dashboard.pages.scouting_explorer import _compute_filter_hash
-from src.utilities.paths import OUTPUTS_DIR
+from src.utilities.paths import OUTPUTS_DIR, OFFICIAL_REFERENCE_DIR
 
 
 class TestOfficialRankingsIntegrity(unittest.TestCase):
@@ -50,8 +50,8 @@ class TestOfficialRankingsIntegrity(unittest.TestCase):
         self.assertEqual(len(df), 8, "Official Reserves must have exactly 8 rows")
 
     def test_official_csv_files_unmodified(self):
-        p_bat = OUTPUTS_DIR / "final_combined_top10_batters.csv"
-        p_bowl = OUTPUTS_DIR / "final_combined_top10_bowlers.csv"
+        p_bat = OFFICIAL_REFERENCE_DIR / "final_combined_top10_batters.csv"
+        p_bowl = OFFICIAL_REFERENCE_DIR / "final_combined_top10_bowlers.csv"
         self.assertTrue(p_bat.exists())
         self.assertTrue(p_bowl.exists())
         df_b = pd.read_csv(p_bat)
