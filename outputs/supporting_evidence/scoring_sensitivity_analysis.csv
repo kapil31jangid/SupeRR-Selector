@@ -1,0 +1,29 @@
+player_id,player_name,role,is_finalist,base_score_40_30_20_10,scenario1_youth_35_35_20_10,scenario2_perf_50_20_20_10,scenario3_skill_40_25_25_10
+7341,Jake Fraser-McGurk,Batter,True,91.88,91.77,92.1,92.08
+23311,Jacob Bethell,Batter,True,88.57,89.01,87.69,88.37
+6280,Harry Brook,Batter,True,89.42,88.66,90.95,90.32
+6931,Pathum Nissanka,Batter,True,81.13,80.52,82.34,81.43
+4369,Shai Hope,Batter,True,76.28,74.42,80.0,78.03
+3782,M Shahrukh Khan,Batter,True,73.76,72.28,76.73,75.01
+772,Rilee Rossouw,Batter,True,71.41,68.75,76.74,73.71
+838,Glenn Maxwell,Batter,True,70.92,68.21,76.32,73.57
+930,Karun Nair,Batter,True,68.41,66.11,73.01,70.21
+2877,Vijay Shankar,Batter,True,66.85,64.47,71.61,68.7
+4106,Daryl Mitchell,Batter,False,71.76,69.59,76.11,73.66
+768,Reeza Hendricks,Batter,False,69.14,66.6,74.22,71.14
+7912,Vikramjit Singh,Batter,False,81.15,81.05,81.34,80.65
+3648,Deepak Hooda,Batter,False,71.38,69.87,74.4,72.43
+7935,Mohammad Ghazanfar,Bowler,True,84.52,85.91,81.75,84.32
+24767,Ripon Mondol,Bowler,True,81.95,82.42,81.02,81.95
+6450,Mujeeb Ur Rahman,Bowler,True,79.94,80.5,78.83,80.04
+4812,Harry Tector,Bowler,True,76.18,76.15,76.26,76.23
+8295,Matthew Forde,Bowler,True,75.8,76.62,74.18,75.65
+2364,Ashton Agar,Bowler,True,74.04,72.34,77.45,75.74
+4856,Benjamin Sears,Bowler,True,73.26,73.2,73.37,73.86
+6512,Michael Bracewell,Bowler,True,69.48,67.34,73.74,71.48
+2984,Sikandar Raza,Bowler,True,65.95,63.91,70.04,68.85
+7533,Simarjeet Singh,Bowler,True,65.68,66.09,64.85,65.88
+499,Shakib Al Hasan,Bowler,False,63.46,61.21,67.98,65.96
+5034,Murugan Ashwin,Bowler,False,60.27,58.99,62.84,62.02
+1071,Jaydev Unadkat,Bowler,False,57.96,57.04,59.81,59.46
+5750,Ehsan Khan,Bowler,False,54.09,51.64,58.99,55.59

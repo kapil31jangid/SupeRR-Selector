@@ -1,0 +1,25 @@
+player_id,player_name,role,nationality,country,age_as_of_2027_04_01,development_category,dimA_historical_pressure_score,dimB_age_development_score,dimC_skill_ceiling_score,dimD_current_form_score,rr_scouting_score,unrounded_scouting_score,scouting_rank_within_role,task07k_original_rank,rank_delta
+7341,Jake Fraser-McGurk,Batter,Overseas,AUS,24,Young development candidate,92.2031,90.0,94.0,92.0,91.88,91.88124,1,2,1
+23311,Jacob Bethell,Batter,Overseas,ENG,23,Emerging,87.1824,96.0,92.0,82.0,90.27,90.27296,2,12,10
+6280,Harry Brook,Batter,Overseas,ENG,28,Prime-age performer,93.3014,78.0,96.0,95.0,89.42,89.42056,3,1,-2
+6931,Pathum Nissanka,Batter,Overseas,SL,28,Prime-age performer,86.0712,74.0,80.0,85.0,81.13,81.12848,4,14,10
+4369,Shai Hope,Batter,Overseas,WI,33,Experienced performer,87.1985,50.0,85.0,94.0,76.28,76.27940000000001,5,7,2
+3782,M Shahrukh Khan,Batter,Indian,IND,31,Experienced performer,84.6521,55.0,80.0,80.0,74.36,74.36084,6,11,5
+772,Rilee Rossouw,Batter,Overseas,SA,37,Experienced performer,89.2783,36.0,82.0,85.0,71.41,71.41132,7,3,-4
+838,Glenn Maxwell,Batter,Overseas,AUS,38,Experienced performer,89.0412,35.0,88.0,72.0,70.92,70.91648,8,4,-4
+930,Karun Nair,Batter,Indian,IND,35,Experienced performer,88.0195,42.0,78.0,50.0,68.41,68.40780000000001,9,5,-4
+2877,Vijay Shankar,Batter,Indian,IND,36,Experienced performer,85.6278,38.0,75.0,62.0,66.85,66.85112,10,9,-1
+7935,Mohammad Ghazanfar,Bowler,Overseas,AFG,21,Emerging,70.3021,98.0,94.0,82.0,84.52,84.52084,1,5,4
+24767,Ripon Mondol,Bowler,Overseas,BAN,24,Young development candidate,78.6314,88.0,88.0,65.0,81.95,81.95256,2,6,4
+6450,Mujeeb Ur Rahman,Bowler,Overseas,AFG,26,Young development candidate,72.8512,84.0,86.0,84.0,79.94,79.94048000000001,3,9,6
+4812,Harry Tector,Bowler,Overseas,IRE,27,Prime-age performer,75.712,75.0,76.0,82.0,76.18,76.18480000000001,4,3,-1
+8295,Matthew Forde,Bowler,Overseas,WI,24,Young development candidate,68.7612,85.0,82.0,64.0,75.8,75.80448000000001,5,24,19
+2364,Ashton Agar,Bowler,Overseas,AUS,33,Experienced performer,84.1023,50.0,84.0,86.0,74.04,74.04092,6,2,-4
+4856,Benjamin Sears,Bowler,Overseas,NZ,29,Prime-age performer,71.1423,70.0,82.0,74.0,73.26,73.25692000000001,7,16,9
+6512,Michael Bracewell,Bowler,Overseas,NZ,36,Experienced performer,82.6895,40.0,80.0,84.0,69.48,69.4758,8,1,-7
+2984,Sikandar Raza,Bowler,Overseas,ZIM,40,Experienced performer,72.8821,32.0,90.0,92.0,65.95,65.95284,9,7,-2
+1998,Simarjeet Singh,Bowler,Indian,IND,29,Prime-age performer,59.6912,68.0,72.0,70.0,65.68,65.67648,10,15,5
+499,Shakib Al Hasan,Bowler,Overseas,BAN,40,Experienced performer,75.161,30.0,80.0,84.0,63.46,63.464400000000005,11,8,-3
+3807,Murugan Ashwin,Bowler,Indian,IND,36,Experienced performer,65.6812,40.0,75.0,70.0,60.27,60.27248,12,10,-2
+1991,Jaydev Unadkat,Bowler,Indian,IND,35,Experienced performer,60.412,42.0,72.0,68.0,57.96,57.9648,13,13,0
+5750,Ehsan Khan,Bowler,Overseas,HK,42,Experienced performer,73.9812,25.0,55.0,60.0,54.09,54.09248,14,4,-10

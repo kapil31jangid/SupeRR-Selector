@@ -1,0 +1,11 @@
+final_verified_rank,player_id,player_name,country,nationality,age_as_of_2027_04_01,development_category,validated_evidence_qualified_score,verified_rr_scouting_score,unrounded_scouting_score,current_form_rating,eligibility_status
+1,7935,Mohammad Ghazanfar,AFG,Overseas,21,Emerging,70.3021,84.52,84.52084,POSITIVE,ELIGIBLE
+2,24767,Ripon Mondol,BAN,Overseas,24,Young development candidate,78.6314,81.95,81.95256,INSUFFICIENT DATA,ELIGIBLE
+3,6450,Mujeeb Ur Rahman,AFG,Overseas,26,Young development candidate,72.8512,79.94,79.94048000000001,POSITIVE,ELIGIBLE
+4,4812,Harry Tector,IRE,Overseas,27,Prime-age performer,75.712,76.18,76.18480000000001,POSITIVE,ELIGIBLE
+5,8295,Matthew Forde,WI,Overseas,24,Young development candidate,68.7612,75.8,75.80448000000001,INSUFFICIENT DATA,ELIGIBLE
+6,2364,Ashton Agar,AUS,Overseas,33,Experienced performer,84.1023,74.04,74.04092,POSITIVE,ELIGIBLE
+7,4856,Benjamin Sears,NZ,Overseas,29,Prime-age performer,71.1423,73.26,73.25692000000001,MIXED,ELIGIBLE
+8,6512,Michael Bracewell,NZ,Overseas,36,Experienced performer,82.6895,69.48,69.4758,POSITIVE,ELIGIBLE
+9,2984,Sikandar Raza,ZIM,Overseas,40,Experienced performer,72.8821,65.95,65.95284,STRONG,ELIGIBLE
+10,7533,Simarjeet Singh,IND,Indian,29,Prime-age performer,59.6912,65.68,65.67648,MIXED,ELIGIBLE

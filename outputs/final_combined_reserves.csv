@@ -1,0 +1,9 @@
+player_id,player_name,role,country,nationality,age_as_of_2027_04_01,development_category,validated_pressure_or_eq_score,verified_rr_scouting_score,unrounded_scouting_score,current_form_rating,eligibility_status
+7912,Vikramjit Singh,Batter,NED,Overseas,24,Young development candidate,85.8712,81.15,81.14847999999999,MIXED,ELIGIBLE
+4106,Daryl Mitchell,Batter,NZ,Overseas,35,Experienced performer,87.412,71.76,71.76480000000001,MIXED,ELIGIBLE
+3648,Deepak Hooda,Batter,IND,Indian,31,Experienced performer,84.2012,71.38,71.38048,MIXED,ELIGIBLE
+768,Reeza Hendricks,Batter,SA,Overseas,37,Experienced performer,86.8491,69.14,69.13964,POSITIVE,ELIGIBLE
+499,Shakib Al Hasan,Bowler,BAN,Overseas,40,Experienced performer,75.161,63.46,63.464400000000005,POSITIVE,ELIGIBLE
+5034,Murugan Ashwin,Bowler,IND,Indian,36,Experienced performer,65.6812,60.27,60.27248,MIXED,ELIGIBLE
+1071,Jaydev Unadkat,Bowler,IND,Indian,35,Experienced performer,60.412,57.96,57.9648,MIXED,ELIGIBLE
+5750,Ehsan Khan,Bowler,HK,Overseas,42,Experienced performer,73.9812,54.09,54.09248,INSUFFICIENT DATA,ELIGIBLE

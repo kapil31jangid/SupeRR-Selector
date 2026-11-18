@@ -1,0 +1,11 @@
+final_verified_rank,player_id,player_name,country,nationality,age_as_of_2027_04_01,development_category,validated_historical_pressure_score,verified_rr_scouting_score,unrounded_scouting_score,current_form_rating,eligibility_status
+1,7341,Jake Fraser-McGurk,AUS,Overseas,24,Young development candidate,92.2031,91.88,91.88124,STRONG,ELIGIBLE
+2,6280,Harry Brook,ENG,Overseas,28,Prime-age performer,93.3014,89.42,89.42056,STRONG,ELIGIBLE
+3,23311,Jacob Bethell,ENG,Overseas,23,Emerging,87.1824,88.57,88.57296,POSITIVE,ELIGIBLE
+4,6931,Pathum Nissanka,SL,Overseas,28,Prime-age performer,86.0712,81.13,81.12848,POSITIVE,ELIGIBLE
+5,4369,Shai Hope,WI,Overseas,33,Experienced performer,87.1985,76.28,76.27940000000001,STRONG,ELIGIBLE
+6,3782,M Shahrukh Khan,IND,Indian,31,Experienced performer,84.6521,73.76,73.76084,POSITIVE,ELIGIBLE
+7,772,Rilee Rossouw,SA,Overseas,37,Experienced performer,89.2783,71.41,71.41132,POSITIVE,ELIGIBLE
+8,838,Glenn Maxwell,AUS,Overseas,38,Experienced performer,89.0412,70.92,70.91648,MIXED,ELIGIBLE
+9,930,Karun Nair,IND,Indian,35,Experienced performer,88.0195,68.41,68.40780000000001,WEAK,ELIGIBLE
+10,2877,Vijay Shankar,IND,Indian,36,Experienced performer,85.6278,66.85,66.85112,INSUFFICIENT DATA,ELIGIBLE

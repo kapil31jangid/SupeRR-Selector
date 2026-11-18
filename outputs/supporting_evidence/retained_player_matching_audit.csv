@@ -1,0 +1,185 @@
+player_name,franchise,overseas_status,trade_status,matched_player_id,matched_dataset_name,match_method,is_in_eligible_pool,is_in_bat_elig,is_in_bowl_elig,notes
+Akeal Hosein,CSK,Overseas,Retained,2417,Akeal Hosein,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Anshul Kamboj,CSK,Domestic,Retained,27964,Anshul Kamboj,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Ayush Mhatre,CSK,Domestic,Retained,48504,Ayush Mhatre,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Dewald Brevis,CSK,Overseas,Retained,25213,Dewald Brevis,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Gurjapneet Singh,CSK,Domestic,Retained,23467,Gurjapneet Singh,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Jack Edwards,CSK,Overseas,Traded,6166,Jack Edwards,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Jamie Overton,CSK,Overseas,Retained,2382,Jamie Overton,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Kartik Sharma,CSK,Domestic,Retained,46137,Kartik Sharma,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Liam Livingstone,CSK,Overseas,Traded,4391,Liam Livingstone,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Mukesh Choudhary,CSK,Domestic,Retained,7250,Mukesh Choudhary,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Noor Ahmad,CSK,Overseas,Retained,7967,Noor Ahmad,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Rahul Chahar,CSK,Domestic,Retained,6161,Rahul Chahar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Ramakrishna Ghosh,CSK,Domestic,Retained,35072,Ramakrishna Ghosh,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Ruturaj Gaikwad,CSK,Domestic,Retained,6059,Ruturaj Gaikwad,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Sanju Samson,CSK,Domestic,Retained,2258,Sanju Samson,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Sarfaraz Khan,CSK,Domestic,Retained,3645,Sarfaraz Khan,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Shivam Dube,CSK,Domestic,Retained,4755,Shivam Dube,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Shreyas Gopal,CSK,Domestic,Retained,3469,Shreyas Gopal,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Urvil Patel,CSK,Domestic,Retained,6457,Urvil Patel,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Ashutosh Sharma,DC,Domestic,Retained,8101,Ashutosh Sharma,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Auqib Nabi,DC,Domestic,Retained,8141,Auqib Nabi,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Axar Patel,DC,Domestic,Retained,2876,Axar Patel,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+David Miller,DC,Overseas,Retained,1077,David Miller,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+KL Rahul,DC,Domestic,Retained,953,Lokesh Rahul,VERIFIED_ALIAS,True,True,False,Well-known standard alias for KL Rahul
+Kyle Jamieson,DC,Overseas,Retained,3697,Kyle Jamieson,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Lungisani Ngidi,DC,Overseas,Retained,4641,Lungi Ngidi,VERIFIED_ALIAS,True,False,True,Standard formal name for Lungi Ngidi
+Madhav Tiwari,DC,Domestic,Retained,56830,Madhav Tiwari,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Mukesh Kumar,DC,Domestic,Retained,5041,Mukesh Kumar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Prithvi Shaw,DC,Domestic,Retained,5928,Prithvi Shaw,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rishabh Pant,DC,Domestic,Traded,4703,Rishabh Pant,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Sameer Rizvi,DC,Domestic,Retained,8238,Sameer Rizvi,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Tripurana Vijay,DC,Domestic,Retained,32244,Tripurana Vijay,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Tristan Stubbs,DC,Overseas,Retained,20702,Tristan Stubbs,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Vipraj Nigam,DC,Domestic,Retained,46066,Vipraj Nigam,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Zeeshan Ansari,DC,Domestic,Traded,4824,Zeeshan Ansari,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Anuj Rawat,GT,Domestic,Retained,6467,Anuj Rawat,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Ashok Sharma,GT,Domestic,Retained,28018,Ashok Sharma,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Glenn Phillips,GT,Overseas,Retained,4853,Glenn Phillips,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Gurnoor Brar,GT,Domestic,Retained,27970,Gurnoor Brar,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Harshal Patel,GT,Domestic,Traded,2261,Harshal Patel,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Jason Holder,GT,Overseas,Retained,2633,Jason Holder,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Jayant Yadav,GT,Domestic,Retained,3320,Jayant Yadav,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Jos Buttler,GT,Overseas,Retained,813,Jos Buttler,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Kagiso Rabada,GT,Overseas,Retained,3628,Kagiso Rabada,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Kumar Kushagra,GT,Domestic,Retained,8251,Kumar Kushagra,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Manav Suthar,GT,Domestic,Retained,34969,Manav Suthar,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Mohd. Siraj,GT,Domestic,Retained,5944,Mohammed Siraj,NORMALIZED_NAME,True,False,True,Normalized string match with 'Mohammed Siraj'
+Mohd. Arshad Khan,GT,Domestic,Retained,20005,Arshad Khan,VERIFIED_ALIAS,True,False,True,Prefix abbreviation Mohd. Arshad Khan
+Nishant Sindhu,GT,Domestic,Retained,26830,Nishant Kumar Sindhu,VERIFIED_ALIAS,False,False,False,Middle name Kumar omitted in retained list
+Prasidh Krishna,GT,Domestic,Retained,4489,Prasidh Krishna,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+R. Sai Kishore,GT,Domestic,Retained,5577,Sai Kishore,VERIFIED_ALIAS,True,False,True,Initial R. Sai Kishore
+Rahul Tewatia,GT,Domestic,Retained,3926,Rahul Tewatia,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rashid Khan,GT,Overseas,Retained,4722,Rashid Khan,DISAMBIGUATION_FRANCHISE_VERIFIED,True,True,True,"Resolved to ID 4722 (Gujarat Titans / Afghanistan), excluding Nepal player ID 20172"
+Sai Sudharsan,GT,Domestic,Retained,23450,Sai Sudharsan,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Shubman Gill,GT,Domestic,Retained,6288,Shubman Gill,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Tom Banton,GT,Overseas,Retained,6273,Tom Banton,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Washington Sundar,GT,Domestic,Retained,4823,Washington Sundar,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Angkrish Raghuvanshi,KKR,Domestic,Retained,26906,Angkrish Raghuvanshi,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Anukul Roy,KKR,Domestic,Retained,6284,Anukul Roy,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Cameron Green,KKR,Overseas,Retained,5939,Cameron Green,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Finn Allen,KKR,Overseas,Retained,4847,Finn Allen,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Harshit Rana,KKR,Domestic,Retained,29888,Harshit Rana,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Kartik Tyagi,KKR,Domestic,Retained,8530,Kartik Tyagi,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Manish Pandey,KKR,Domestic,Retained,198,Manish Pandey,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Prashant Solanki,KKR,Domestic,Retained,27956,Prashant Solanki,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Ramandeep Singh,KKR,Domestic,Retained,20006,Ramandeep Singh,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rinku Singh,KKR,Domestic,Retained,4708,Rinku Singh,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rovman Powell,KKR,Overseas,Retained,4986,Rovman Powell,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Sarthak Ranjan,KKR,Domestic,Retained,7534,Sarthak Ranjan,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Saurabh Dubey,KKR,Domestic,Retained,28021,Saurabh Dubey,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Sunil Narine,KKR,Overseas,Retained,781,Sunil Narine,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Tim Seifert,KKR,Overseas,Retained,3700,Tim Seifert,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Vaibhav Arora,KKR,Domestic,Retained,8746,Vaibhav Arora,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Varun Chakaravarthy,KKR,Domestic,Retained,6256,Varun Chakravarthy,VERIFIED_ALIAS,True,False,True,Alternative phonetic spelling of Chakravarthy
+Abdul Samad,LSG,Domestic,Retained,7446,Abdul Samad,DISAMBIGUATION_FRANCHISE_VERIFIED,True,True,False,"Resolved to ID 7446 (Lucknow Super Giants / SRH / India), excluding Pakistan player ID 6922"
+Aiden Markram,LSG,Overseas,Retained,3605,Aiden Markram,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Akash Singh,LSG,Domestic,Retained,7896,Akash Singh,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Akshat Raghuvanshi,LSG,Domestic,Retained,31518,Akshat Raghuwanshi,VERIFIED_ALIAS,False,False,False,Spelling variant v/w
+Arjun Tendulkar,LSG,Domestic,Retained,7060,Arjun Tendulkar,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Arshin Kulkarni,LSG,Domestic,Retained,42845,Arshin Kulkarni,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Ayush Badoni,LSG,Domestic,Retained,6460,Ayush Badoni,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Digvesh Rathi,LSG,Domestic,Retained,58134,Digvesh Rathi,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Josh Inglis,LSG,Overseas,Retained,4736,Josh Inglis,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Kuldeep Yadav,LSG,Domestic,Traded,3644,Kuldeep Yadav,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Mayank Yadav,LSG,Domestic,Retained,27960,Mayank Yadav,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Mitchell Marsh,LSG,Overseas,Retained,818,Mitchell Marsh,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Mohsin Khan,LSG,Domestic,Retained,6669,Mohsin Khan,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Mukul Choudhary,LSG,Domestic,Retained,45749,Mukul Choudhary,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Nicholas Pooran,LSG,Overseas,Retained,3125,Nicholas Pooran,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Prince Yadav,LSG,Domestic,Retained,58246,Prince Yadav,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Sam Curran,LSG,Overseas,Traded,4409,Sam Curran,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Shahbaz Ahmed,LSG,Domestic,Retained,7472,Shahbaz Ahmed,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Arshdeep Singh,MI,Domestic,Traded,6464,Arshdeep Singh,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Ashwani Kumar,MI,Domestic,Retained,8634,Ashwani Kumar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Corbin Bosch,MI,Overseas,Retained,3629,Corbin Bosch,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Jasprit Bumrah,MI,Domestic,Retained,2933,Jasprit Bumrah,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Mitchell Santner,MI,Overseas,Retained,4101,Mitchell Santner,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Naman Dhir,MI,Domestic,Retained,37052,Naman Dhir,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Quinton de Kock,MI,Overseas,Retained,2101,Quinton de Kock,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Raghu Sharma,MI,Domestic,Retained,6359,Raghu Sharma,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Raj Angad Bawa,MI,Domestic,Retained,26834,Raj Bawa,VERIFIED_ALIAS,False,False,False,Middle name Angad omitted in mapping
+Rohit Sharma,MI,Domestic,Retained,126,Rohit Sharma,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Ryan Rickelton,MI,Overseas,Retained,4007,Ryan Rickelton,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Shardul Thakur,MI,Domestic,Retained,2847,Shardul Thakur,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Sherfane Rutherford,MI,Overseas,Retained,6725,Sherfane Rutherford,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Suryakumar Yadav,MI,Domestic,Retained,1699,Suryakumar Yadav,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Tilak Varma,MI,Domestic,Retained,7897,Namboori Tilak Varma,VERIFIED_ALIAS,True,True,False,Formal full name Namboori Tilak Varma
+Will Jacks,MI,Overseas,Retained,6272,William Jacks,VERIFIED_ALIAS,True,True,True,Formal first name William
+Azmatullah Omarzai,PBKS,Overseas,Retained,6676,Azmatullah Omarzai,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Ben Dwarshuis,PBKS,Overseas,Retained,3641,Ben Dwarshuis,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Cooper Connolly,PBKS,Overseas,Retained,8654,Cooper Connolly,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Hardik Pandya,PBKS,Domestic,Traded,3330,Hardik Pandya,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Harnoor Pannu,PBKS,Domestic,Retained,26911,Harnoor Pannu,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Harpreet Brar,PBKS,Domestic,Retained,7325,Harpreet Brar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Marco Jansen,PBKS,Overseas,Retained,7808,Marco Jansen,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Marcus Stoinis,PBKS,Overseas,Retained,2639,Marcus Stoinis,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Musheer Khan,PBKS,Domestic,Retained,37731,Musheer Khan,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Prabhsimran Singh,PBKS,Domestic,Retained,7216,Prabhsimran Singh,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Priyansh Arya,PBKS,Domestic,Retained,25669,Priyansh Arya,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Shashank Singh,PBKS,Domestic,Retained,2756,Shashank Singh,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Shreyas Iyer,PBKS,Domestic,Retained,3647,Shreyas Iyer,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Suryansh Shedge,PBKS,Domestic,Retained,7625,Suryansh Shedge,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Vishnu Vinod,PBKS,Domestic,Retained,4211,Vishnu Vinod,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Vyshak Vijaykumar,PBKS,Domestic,Retained,4487,Vyshak Kumar,VERIFIED_ALIAS,True,False,True,Patronymic/middle name Vijaykumar
+Xavier Bartlett,PBKS,Overseas,Retained,5738,Xavier Bartlett,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Yash Thakur,PBKS,Domestic,Retained,6287,Yash Thakur,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Yuzvendra Chahal,PBKS,Domestic,Retained,1612,Yuzvendra Chahal,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Aman Rao Perala,RR,Domestic,Retained,47523,Aman Rao Perala,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Brijesh Sharma,RR,Domestic,Retained,67036,Brijesh Sharma,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Dasun Shanaka,RR,Overseas,Retained,2436,Dasun Shanaka,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Dhruv Jurel,RR,Domestic,Retained,7260,Dhruv Jurel,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Donovan Ferreira,RR,Overseas,Retained,8182,Donovan Ferreira,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Jofra Archer,RR,Overseas,Retained,3298,Jofra Archer,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Lhuan-dre Pretorius,RR,Overseas,Retained,43798,Lhuan Pretorius,VERIFIED_ALIAS,False,False,False,Hyphenated first name Lhuan-dre
+Manimaran Siddharth,RR,Domestic,Traded,6237,Manimaran Siddharth,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Mohd. Shami,RR,Domestic,Traded,1566,Mohammed Shami,NORMALIZED_NAME,True,False,True,Normalized string match with 'Mohammed Shami'
+Nandre Burger,RR,Overseas,Retained,7312,Nandre Burger,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Ravi Bishnoi,RR,Domestic,Retained,7503,Ravi Bishnoi,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Ravindra Jadeja,RR,Domestic,Retained,152,Ravindra Jadeja,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Riyan Parag,RR,Domestic,Retained,6423,Riyan Parag,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Sandeep Sharma,RR,Domestic,Retained,2411,Sandeep Sharma,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Shubham Dubey,RR,Domestic,Retained,25139,Shubham Dubey,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Sushant Mishra,RR,Domestic,Retained,7269,Sushant Mishra,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Vaibhav Suryavanshi,RR,Domestic,Retained,50284,Vaibhav Sooryavanshi,VERIFIED_ALIAS,True,True,False,Alternative phonetic transliteration Sooryavanshi/Suryavanshi
+Yash Raj Punja,RR,Domestic,Retained,41503,Yash Punja,VERIFIED_ALIAS,True,False,True,Middle name Raj omitted in mapping
+Yashasvi Jaiswal,RR,Domestic,Retained,6819,Yashasvi Jaiswal,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Abhinandan Singh,RCB,Domestic,Retained,58727,Abhinandan Singh,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Bhuvneshwar Kumar,RCB,Domestic,Retained,360,Bhuvneshwar Kumar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Devdutt Padikkal,RCB,Domestic,Retained,6314,Devdutt Padikkal,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Jacob Duffy,RCB,Overseas,Retained,22920,Jacob Duffy,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Jitesh Sharma,RCB,Domestic,Retained,3916,Jitesh Sharma,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Jordan Cox,RCB,Overseas,Retained,7744,Jordan Cox,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Josh Hazlewood,RCB,Overseas,Retained,830,Josh Hazlewood,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Kanishk Chouhan,RCB,Domestic,Retained,66540,Kanishk Chouhan,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Krunal Pandya,RCB,Domestic,Retained,4219,Krunal Pandya,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Nuwan Thushara,RCB,Overseas,Retained,19312,Nuwan Thushara,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Phil Salt,RCB,Overseas,Retained,5553,Phil Salt,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rajat Patidar,RCB,Domestic,Retained,5039,Rajat Patidar,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Rasikh Dar,RCB,Domestic,Retained,7327,Rasikh Salam,VERIFIED_ALIAS,True,False,True,"Full name Rasikh Salam Dar, recorded as Rasikh Salam"
+Romario Shepherd,RCB,Overseas,Retained,6726,Romario Shepherd,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Suyash Sharma,RCB,Domestic,Retained,36982,Suyash Sharma,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Tim David,RCB,Overseas,Retained,6396,Tim David,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Venkatesh Iyer,RCB,Domestic,Retained,7544,Venkatesh Iyer,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Vicky Ostwal,RCB,Domestic,Retained,26836,Vicky Ostwal,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Virat Kohli,RCB,Domestic,Retained,47,Virat Kohli,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Yash Dayal,RCB,Domestic,Retained,7322,Yash Dayal,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Abhishek Sharma,SRH,Domestic,Retained,6281,Abhishek Sharma,EXACT_NAME,True,True,True,Exact match in canonical competition player mapping
+Aniket Verma,SRH,Domestic,Retained,47370,Aniket Verma,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Brydon Carse,SRH,Overseas,Retained,6097,Brydon Carse,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Eshan Malinga,SRH,Overseas,Retained,39657,Eshan Malinga,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Harsh Dubey,SRH,Domestic,Retained,25138,Harsh Dubey,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Heinrich Klaasen,SRH,Overseas,Retained,4260,Heinrich Klaasen,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Ishan Kishan,SRH,Domestic,Retained,4117,Ishan Kishan,EXACT_NAME,True,True,False,Exact match in canonical competition player mapping
+Khaleel Ahmed,SRH,Domestic,Traded,4816,Khaleel Ahmed,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Krains Fuletra,SRH,Domestic,Retained,62526,Krains Fuletra,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Nathan Ellis,SRH,Overseas,Traded,7920,Nathan Ellis,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Nitish Kumar Reddy,SRH,Domestic,Retained,8221,Nitish Reddy,VERIFIED_ALIAS,True,True,True,Middle name Kumar omitted in mapping
+Pat Cummins,SRH,Overseas,Retained,1758,Patrick Cummins,VERIFIED_ALIAS,True,True,True,Formal first name Patrick
+Praful Hinge,SRH,Domestic,Retained,25132,Praful Hinge,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Sakib Hussain,SRH,Domestic,Retained,35318,Sakib Hussain,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Salil Arora,SRH,Domestic,Retained,25679,Salil Arora,EXACT_NAME,False,False,False,Exact match in canonical competition player mapping
+Shivang Kumar,SRH,Domestic,Retained,56817,Shivang Kumar,EXACT_NAME,True,False,True,Exact match in canonical competition player mapping
+Smaran Ravichandran,SRH,Domestic,Retained,33067,Ravichandran Smaran,VERIFIED_ALIAS,False,False,False,Inverted first/last name order in retained list
+T. Natarajan,SRH,Domestic,Traded,4265,T Natarajan,NORMALIZED_NAME,True,False,True,Normalized string match with 'T Natarajan'
