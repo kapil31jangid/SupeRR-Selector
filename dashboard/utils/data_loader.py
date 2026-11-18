@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR, PROCESSED_DATA_DIR
+from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR, PROCESSED_DATA_DIR, OFFICIAL_REFERENCE_DIR
 
 
 # ==============================================================================
@@ -23,21 +23,21 @@ from src.utilities.paths import OUTPUTS_DIR, SUPPORTING_EVIDENCE_DIR, PROCESSED_
 @st.cache_data
 def load_final_batters() -> pd.DataFrame:
     """Load verified final Top 10 batters (official View B)."""
-    df = pd.read_csv(OUTPUTS_DIR / "final_combined_top10_batters.csv")
+    df = pd.read_csv(OFFICIAL_REFERENCE_DIR / "final_combined_top10_batters.csv")
     return df
 
 
 @st.cache_data
 def load_final_bowlers() -> pd.DataFrame:
     """Load verified final Top 10 bowlers (official View B)."""
-    df = pd.read_csv(OUTPUTS_DIR / "final_combined_top10_bowlers.csv")
+    df = pd.read_csv(OFFICIAL_REFERENCE_DIR / "final_combined_top10_bowlers.csv")
     return df
 
 
 @st.cache_data
 def load_final_reserves() -> pd.DataFrame:
     """Load verified final reserves (official View B)."""
-    df = pd.read_csv(OUTPUTS_DIR / "final_combined_reserves.csv")
+    df = pd.read_csv(OFFICIAL_REFERENCE_DIR / "final_combined_reserves.csv")
     return df
 
 
