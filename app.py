@@ -503,3 +503,4 @@ elif page == "📐 Methodology & Reliability":
         • <b>Challenge Scope:</b> Proposed scouting framework developed for SupeRR Selector Season 2; not an official internal document of Rajasthan Royals.
     </div>
     """, unsafe_allow_html=True)
+

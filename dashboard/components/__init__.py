@@ -8,3 +8,4 @@ __all__ = [
     "render_interactive_bowler_table",
     "render_player_scouting_card"
 ]
+

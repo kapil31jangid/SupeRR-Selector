@@ -20,3 +20,4 @@ def apply_empirical_bayes_shrinkage(
     lam = sample_sizes / (sample_sizes + k_factor)
     shrunk = lam * observed_rates + (1.0 - lam) * prior_mean
     return shrunk
+

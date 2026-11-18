@@ -18,3 +18,4 @@ def render_kpi_card(label: str, value: str, subtext: str = "", border_color: str
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
+

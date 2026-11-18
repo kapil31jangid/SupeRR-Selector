@@ -54,8 +54,7 @@ def plot_ranking_bar_chart(
         plot_bgcolor='#1C2541',
         margin=dict(l=20, r=40, t=50, b=30),
         xaxis=dict(
-            title="RR Scouting Priority Score (40/30/20/10)",
-            titlefont=dict(size=12, color='#94A3B8'),
+            title=dict(text="RR Scouting Priority Score (40/30/20/10)", font=dict(size=12, color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)',
             range=[0, 105]
@@ -67,3 +66,4 @@ def plot_ranking_bar_chart(
         height=450
     )
     return fig
+

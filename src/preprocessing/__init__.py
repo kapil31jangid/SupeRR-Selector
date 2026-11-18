@@ -9,3 +9,4 @@ __all__ = [
     "COMPETITION_TIERS",
     "TIER_MULTIPLIERS"
 ]
+

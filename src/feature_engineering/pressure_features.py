@@ -47,3 +47,4 @@ def compute_bowler_phase_rates(deliveries_df: pd.DataFrame) -> pd.DataFrame:
     agg_df['wicket_rate'] = np.where(agg_df['total_balls'] > 0, agg_df['wickets'] / agg_df['total_balls'], 0.0)
     agg_df['dot_ball_pct'] = np.where(agg_df['total_balls'] > 0, agg_df['dot_balls'] / agg_df['total_balls'] * 100.0, 0.0)
     return agg_df
+

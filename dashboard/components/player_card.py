@@ -67,3 +67,4 @@ def render_player_scouting_card(p: Dict[str, Any], tactical_guideline: Any = Non
     </div>
     """
     st.markdown(card_html, unsafe_allow_html=True)
+

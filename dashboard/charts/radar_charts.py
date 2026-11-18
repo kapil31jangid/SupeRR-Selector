@@ -82,3 +82,4 @@ def plot_player_radar_comparison(players_data: List[Dict]) -> go.Figure:
         height=450
     )
     return fig
+

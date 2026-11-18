@@ -58,3 +58,4 @@ def render_interactive_bowler_table(df: pd.DataFrame):
         hide_index=True,
         use_container_width=True
     )
+

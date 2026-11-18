@@ -100,3 +100,4 @@ def get_all_shortlist_players() -> pd.DataFrame:
         reserves[common_cols]
     ], ignore_index=True)
     return combined
+

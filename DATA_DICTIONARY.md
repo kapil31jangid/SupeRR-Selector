@@ -148,3 +148,4 @@ Contains the 16 forensic audit files validating all scoring steps, eligibility r
 - `rr_scouting_selection_audit.csv`: Strategic selection rationale for finalists vs reserves.
 - `scoring_reproduction.csv`: Mathematical reproduction verification for composite scores.
 - `scoring_sensitivity_analysis.csv`: Weight sensitivity tests across model parameters.
+

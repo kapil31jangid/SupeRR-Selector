@@ -55,14 +55,12 @@ def plot_pressure_vs_scouting(
         plot_bgcolor='#1C2541',
         margin=dict(l=20, r=20, t=50, b=30),
         xaxis=dict(
-            title="Historical Pressure / Evidence-Qualified Score",
-            titlefont=dict(color='#94A3B8'),
+            title=dict(text="Historical Pressure / Evidence-Qualified Score", font=dict(color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
         yaxis=dict(
-            title="RR Scouting Priority Score",
-            titlefont=dict(color='#94A3B8'),
+            title=dict(text="RR Scouting Priority Score", font=dict(color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
@@ -105,14 +103,12 @@ def plot_age_vs_scouting(df: pd.DataFrame, title: str) -> go.Figure:
         plot_bgcolor='#1C2541',
         margin=dict(l=20, r=20, t=50, b=30),
         xaxis=dict(
-            title="Age as of 1 April 2027",
-            titlefont=dict(color='#94A3B8'),
+            title=dict(text="Age as of 1 April 2027", font=dict(color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
         yaxis=dict(
-            title="RR Scouting Score",
-            titlefont=dict(color='#94A3B8'),
+            title=dict(text="RR Scouting Score", font=dict(color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
@@ -123,3 +119,4 @@ def plot_age_vs_scouting(df: pd.DataFrame, title: str) -> go.Figure:
         height=420
     )
     return fig
+

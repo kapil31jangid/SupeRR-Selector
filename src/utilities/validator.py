@@ -132,3 +132,4 @@ class DataValidator:
             'batter_checks': b_check,
             'bowler_checks': bo_check
         }
+

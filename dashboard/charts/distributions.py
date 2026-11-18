@@ -87,31 +87,39 @@ def plot_bowling_phase_evidence(zero_opp_df: pd.DataFrame) -> go.Figure:
     if zero_opp_df.empty:
         return go.Figure()
 
+    name_col = 'player_name' if 'player_name' in zero_opp_df.columns else ('bowler_name' if 'bowler_name' in zero_opp_df.columns else zero_opp_df.columns[1])
+    he_col = 'high_extreme_balls' if 'high_extreme_balls' in zero_opp_df.columns else ('he_balls' if 'he_balls' in zero_opp_df.columns else None)
+    death_col = 'death_balls' if 'death_balls' in zero_opp_df.columns else None
+    pp_col = 'powerplay_balls' if 'powerplay_balls' in zero_opp_df.columns else ('pp_balls' if 'pp_balls' in zero_opp_df.columns else None)
+
     fig = go.Figure()
 
-    fig.add_trace(go.Bar(
-        y=zero_opp_df['player_name'],
-        x=zero_opp_df['he_balls'],
-        name='High-Extreme Pressure Balls',
-        orientation='h',
-        marker=dict(color='#EF4444')
-    ))
+    if he_col:
+        fig.add_trace(go.Bar(
+            y=zero_opp_df[name_col],
+            x=zero_opp_df[he_col],
+            name='High-Extreme Pressure Balls',
+            orientation='h',
+            marker=dict(color='#EF4444')
+        ))
 
-    fig.add_trace(go.Bar(
-        y=zero_opp_df['player_name'],
-        x=zero_opp_df['death_balls'],
-        name='Death Overs Balls (17-20)',
-        orientation='h',
-        marker=dict(color='#F59E0B')
-    ))
+    if death_col:
+        fig.add_trace(go.Bar(
+            y=zero_opp_df[name_col],
+            x=zero_opp_df[death_col],
+            name='Death Overs Balls (17-20)',
+            orientation='h',
+            marker=dict(color='#F59E0B')
+        ))
 
-    fig.add_trace(go.Bar(
-        y=zero_opp_df['player_name'],
-        x=zero_opp_df['pp_balls'],
-        name='Powerplay Balls (1-6)',
-        orientation='h',
-        marker=dict(color='#3B82F6')
-    ))
+    if pp_col:
+        fig.add_trace(go.Bar(
+            y=zero_opp_df[name_col],
+            x=zero_opp_df[pp_col],
+            name='Powerplay Balls (1-6)',
+            orientation='h',
+            marker=dict(color='#3B82F6')
+        ))
 
     fig.update_layout(
         barmode='stack',
@@ -123,8 +131,7 @@ def plot_bowling_phase_evidence(zero_opp_df: pd.DataFrame) -> go.Figure:
         plot_bgcolor='#1C2541',
         margin=dict(l=20, r=20, t=50, b=30),
         xaxis=dict(
-            title="Total Observed Balls in Phase",
-            titlefont=dict(color='#94A3B8'),
+            title=dict(text="Total Observed Balls in Phase", font=dict(color='#94A3B8')),
             tickfont=dict(color='#94A3B8'),
             gridcolor='rgba(255, 255, 255, 0.08)'
         ),
@@ -143,3 +150,4 @@ def plot_bowling_phase_evidence(zero_opp_df: pd.DataFrame) -> go.Figure:
         height=450
     )
     return fig
+

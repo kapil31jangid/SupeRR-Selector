@@ -130,3 +130,4 @@ class EvidenceQualifiedBowlingModel:
     def get_tactical_guideline(self, player_id: int) -> Optional[BowlerDeploymentGuideline]:
         """Retrieve codified tactical boundaries for a specific bowler."""
         return self.TACTICAL_GUIDELINES.get(int(player_id))
+

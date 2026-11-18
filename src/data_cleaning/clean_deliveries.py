@@ -27,3 +27,4 @@ def filter_valid_deliveries(df: pd.DataFrame) -> pd.DataFrame:
         clean_df['is_legal_ball'] = (clean_df['wides'].fillna(0) == 0) & (clean_df['noballs'].fillna(0) == 0)
 
     return clean_df
+

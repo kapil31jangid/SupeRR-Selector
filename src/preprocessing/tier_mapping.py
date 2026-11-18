@@ -56,3 +56,4 @@ def get_competition_tier(competition_name: str) -> str:
 def get_tier_multiplier(tier_code: str) -> float:
     """Return strength factor for tier code."""
     return TIER_MULTIPLIERS.get(tier_code.strip().upper(), 0.84)
+

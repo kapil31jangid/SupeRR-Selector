@@ -45,3 +45,4 @@ def standardize_player_dataframe(df: pd.DataFrame, id_col: str = 'player_id', na
     if name_col in out.columns:
         out[name_col] = out[name_col].apply(lambda x: normalize_player_name(x) if pd.notna(x) else x)
     return out
+

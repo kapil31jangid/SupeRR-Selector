@@ -32,3 +32,4 @@ def get_output_file(filename: str, is_evidence: bool = False) -> Path:
     """Return path to output CSV/report."""
     base = SUPPORTING_EVIDENCE_DIR if is_evidence else OUTPUTS_DIR
     return base / filename
+

@@ -118,3 +118,4 @@ class RRScoutingModel:
             'verified_rr_scouting_score': rounded,
             'eligibility_status': candidate_data.get('eligibility_status', 'ELIGIBLE')
         }
+
